@@ -1,8 +1,8 @@
 .etiquette_partenaire{
-    display: grid;
     height: max-content;
-    width: max-content;
+    width: 800px;
     border: 3px solid green;
+    margin: 10px 20px 10px 20px;
 }
 .image_client_et_information_client{
     display: flex;
@@ -13,7 +13,7 @@
 }
 .information_client{
     margin-top: 50px;
-    margin-right: 500px;
+    margin-right: 600px;
     margin-left: 50px;
 }
 

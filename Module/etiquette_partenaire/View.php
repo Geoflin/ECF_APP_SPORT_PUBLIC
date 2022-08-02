@@ -1,4 +1,4 @@
-<?php for ($i=0; $i < 5; $i++) { ?>
+<?php for ($i=0; $i < 6; $i++) { ?>
 
 <!--View etiquette_partenaire-->
 <section class="etiquette_partenaire">

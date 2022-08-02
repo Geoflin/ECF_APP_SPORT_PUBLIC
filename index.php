@@ -25,7 +25,9 @@
     
     <?php require_once 'Module/filtre_partenaire/View.php'  ?>
     
+    <section class="wrap">
     <?php require_once 'Module/etiquette_partenaire/View.php'  ?>
+    </section>
 
 </main>
 
