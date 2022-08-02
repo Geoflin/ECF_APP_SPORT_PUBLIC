@@ -1,0 +1,22 @@
+body{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    border: 3px solid green;
+}
+row_1{
+    display: flex;
+    justify-content: space-between;
+    float: none;
+    margin-bottom: 20px;
+    padding: 1em;
+}
+row_2{
+    display: flex;
+    justify-content: flex-start;
+    float: none;
+    padding: 1em;
+}
+row_2 :last-child{
+    margin-left: 10px;
+}
+
