@@ -1,7 +1,8 @@
-body{
+.filtre_partenaire{
     display: grid;
     grid-template-rows: 1fr 1fr;
     border: 3px solid green;
+    margin-bottom: 1rem;
 }
 row_1{
     display: flex;

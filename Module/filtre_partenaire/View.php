@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Page_des partenaires</title>
-</head>
-
-<body>
+<!--View filtre partenaire-->
+<section class="filtre_partenaire">
 
 <row_1>
     <button type="button" class="btn btn-outline-success btn-lg">client_name</button>
@@ -19,6 +11,4 @@
     <button type="button" class="btn btn-outline-success btn-lg">non actif</button>
 </row_2>
 
-</body>
-
-</html>
+</section>
