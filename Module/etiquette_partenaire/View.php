@@ -1,3 +1,5 @@
+<?php for ($i=0; $i < 5; $i++) { ?>
+
 <!--View etiquette_partenaire-->
 <section class="etiquette_partenaire">
 
@@ -33,3 +35,10 @@
 </section>
 
 </section>
+    
+<?php } ?>
+
+
+
+
+
