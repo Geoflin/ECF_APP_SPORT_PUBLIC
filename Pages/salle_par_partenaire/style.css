@@ -1,0 +1,24 @@
+body{
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.wrap{
+    display: flex;
+    width: 1700px;
+    height: max-content;
+    /*border: solid 3px blueviolet;*/
+    flex-wrap: wrap;
+}
+
+/*style sur petits écrans*/
+@media screen and (max-width: 750px){
+    body{
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .wrap{
+        width: 100vw;
+    }
+}

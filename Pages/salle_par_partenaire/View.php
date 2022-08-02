@@ -12,6 +12,10 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
   <!--Style du filtre_partenaire -->
   <link href="../../Module/salle_par_partenaire/bouton_liste_partenaire/style.css" rel="stylesheet" />
+    <!--Style du filtre_partenaire -->
+    <link href="../../Module/salle_par_partenaire\etiquette_partenaire/style.css" rel="stylesheet" />
+<!--Style du filtre_partenaire -->
+<link href="../../Module\salle_par_partenaire\filtre_partenaire\style.css" rel="stylesheet" />
 </head>
 
 <header>
@@ -22,6 +26,13 @@
     <main>
     
     <?php require_once '../../Module/salle_par_partenaire/bouton_liste_partenaire/View.php'  ?>
+
+    <?php require_once '../../Module\salle_par_partenaire\etiquette_partenaire\View.php'  ?>
+
+    <?php require_once '../../Module\salle_par_partenaire\filtre_partenaire\View.php'  ?>
+
+    <?php require_once '../../Module\salle_par_partenaire\etiquette_partenaire\View.php'  ?>
+    
     
 
 </main>
