@@ -21,3 +21,9 @@ row_2 :last-child{
     margin-left: 10px;
 }
 
+/*style sur petits écrans*/
+@media screen and (max-width: 750px){
+    .filtre_partenaire{
+        margin-bottom: 0rem;
+  }
+  }

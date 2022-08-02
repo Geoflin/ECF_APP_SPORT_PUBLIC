@@ -172,3 +172,12 @@
         left: 50%;
       }
     
+/*style sur petits écrans*/
+@media screen and (max-width: 750px){
+  .etiquette_partenaire{
+    height: max-content;
+    width: 100vw;
+    border: 3px solid green;
+    margin: 0px 0px 0px 0px;
+}
+}

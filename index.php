@@ -14,6 +14,8 @@
   <link href="Module/filtre_partenaire/style.css" rel="stylesheet" />
     <!--Style du etiquette_partenaire -->
     <link href="Module/etiquette_partenaire/style.css" rel="stylesheet" />
+   <!--Style du footer_partenaire -->
+    <link href="Module/footer_partenaire/style.css" rel="stylesheet" />
 </head>
 
 <header>
@@ -32,6 +34,7 @@
 </main>
 
 <footer>
+    <?php require_once 'Module/footer_partenaire/View.php'  ?>
 </footer>
     
 </body>
