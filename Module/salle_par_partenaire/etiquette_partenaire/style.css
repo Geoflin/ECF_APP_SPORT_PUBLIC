@@ -13,8 +13,8 @@
 }
 .information_client, .information_client_2{
     margin-top: 50px;
-    margin-right: 600px;
-    margin-left: 50px;
+    margin-right: 1vw;
+    margin-left: 1vw;
 }
 
 /*toggleSwitch*/
@@ -172,7 +172,7 @@
         left: 50%;
       }
     
-/*style sur petits écrans*/
+/*style sur petits écrans
 @media screen and (max-width: 750px){
   .etiquette_partenaire{
     height: max-content;

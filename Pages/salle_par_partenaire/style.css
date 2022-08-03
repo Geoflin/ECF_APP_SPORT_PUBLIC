@@ -1,7 +1,8 @@
 body{
-    margin-top: 20px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-top: 5vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    width: max-content;
 }
 .wrap{
     display: flex;
@@ -12,13 +13,15 @@ body{
 }
 
 /*style sur petits écrans*/
-@media screen and (max-width: 750px){
+@media screen and (max-width: 1270px){
     body{
-        margin-top: 0px;
-        margin-left: 0px;
-        margin-right: 0px;
+        width: max-content;
     }
     .wrap{
-        width: 100vw;
+        display: flex;
+        width: 1700px;
+        height: max-content;
+        /*border: solid 3px blueviolet;*/
+        flex-wrap: wrap;
     }
 }

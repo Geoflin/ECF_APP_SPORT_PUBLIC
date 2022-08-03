@@ -5,8 +5,7 @@
 <section class="permissions_des_salles">
 
 <span id="permission_moins">
-   Permission    
-   <span class="material-symbols-outlined">do_not_disturb_on</span>
+   Permission<span class="material-symbols-outlined">do_not_disturb_on</span>
 <span>
 
 <section class="box_bouton_actif_inactif">
