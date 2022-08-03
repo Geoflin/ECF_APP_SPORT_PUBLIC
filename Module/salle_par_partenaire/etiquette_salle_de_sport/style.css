@@ -1,20 +1,21 @@
-.etiquette_partenaire{
+.etiquette_salle_de_sport{
     height: max-content;
     width: 90vw;
     border: 3px solid green;
     margin: 0px 0px 20px 0px;
 }
-.image_client_et_information_client{
+.image_salle_de_sport_et_information_salle_de_sport{
     display: flex;
     justify-content: space-between;
+    width: 16vw;
 }
-.image_client{
+.image_salle_de_sport{
     float: left;
 }
-.information_client{
+.information_salle_de_sport{
     margin-top: 50px;
-    margin-right: 600px;
-    margin-left: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 /*toggleSwitch*/

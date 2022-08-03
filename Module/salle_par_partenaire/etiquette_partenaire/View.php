@@ -1,3 +1,6 @@
+<!--Style etiquette_partenaire -->
+<link href="../../Module/salle_par_partenaire\etiquette_partenaire/style.css" rel="stylesheet" />
+
 <!--View etiquette_partenaire-->
 <section class="etiquette_partenaire">
 
@@ -13,8 +16,7 @@
 <section class="information_client">
     <div>client_id</div>
     <div>client_name</div>
-    <div>short_description</div>
-    <div>url</div>
+    <div>full_description</div>
 </section>
 
 <!--Section information_client-->

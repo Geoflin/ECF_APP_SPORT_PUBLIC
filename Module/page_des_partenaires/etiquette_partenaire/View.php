@@ -1,3 +1,6 @@
+  <!--Style du etiquette_partenaire -->
+  <link href="../../Module/page_des_partenaires/etiquette_partenaire/style.css" rel="stylesheet" />
+
 <?php for ($i=0; $i < 6; $i++) { ?>
 
 <!--View etiquette_partenaire-->

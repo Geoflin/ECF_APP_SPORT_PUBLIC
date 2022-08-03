@@ -1,20 +1,22 @@
+<!--Style du etiquette_salle_de_sport -->
+<link href="../../Module\salle_par_partenaire\etiquette_salle_de_sport\style.css" rel="stylesheet" />
+
 <!--View etiquette_partenaire-->
-<section class="etiquette_partenaire">
+<section class="etiquette_salle_de_sport">
 
-<!--Span reliant image_client_et_information_client-->
-<span class="image_client_et_information_client">
+<!--Span reliant image_salle_de_sport_et_information_salle_de_sport-->
+<span class="image_salle_de_sport_et_information_salle_de_sport">
 
-<!--Section image_client-->
-<section class="image_client">
+<!--Section image_salle_de_sport-->
+<section class="image_salle_de_sport">
 <img src="../../Module\page_des_partenaires\etiquette_partenaire\test.jpg" width="200" height="170">
 </section>
 
-<!--Section information_client-->
-<section class="information_client">
+<!--Section information_salle_de_sport-->
+<section class="information_salle_de_sport">
     <div>client_id</div>
-    <div>client_name</div>
-    <div>short_description</div>
-    <div>url</div>
+    <div>install_id</div>
+    <div>branch_id</div>
 </section>
 </span>
 

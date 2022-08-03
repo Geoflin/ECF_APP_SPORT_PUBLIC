@@ -1,3 +1,6 @@
+  <!--Style du filtre_partenaire -->
+  <link href="../../Module/page_des_partenaires/filtre_partenaire/style.css" rel="stylesheet" />
+
 <!--View filtre partenaire-->
 <section class="filtre_partenaire">
 
