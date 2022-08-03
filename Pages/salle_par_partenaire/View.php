@@ -31,7 +31,7 @@
 </main>
 
 <footer>
-    
+     <?php require_once '../../Module\salle_par_partenaire\footer_partenaire\View.php'  ?>
 </footer>
     
 </body>

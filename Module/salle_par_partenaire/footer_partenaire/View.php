@@ -1,5 +1,5 @@
    <!--Style du footer_partenaire -->
-   <link href="../../Module/page_des_partenaires/footer_partenaire/style.css" rel="stylesheet" />
+   <link href="../../Module/salle_par_partenaire/footer_partenaire/style.css" rel="stylesheet" />
 
 <!--View footer_partenaire-->
 <section class="footer_partenaire">
