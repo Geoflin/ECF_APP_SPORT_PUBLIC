@@ -3,6 +3,7 @@
     grid-template-rows: 1fr 1fr;
     border: 3px solid green;
     margin-bottom: 1rem;
+    width: 90vw;
 }
 row_1{
     display: flex;
