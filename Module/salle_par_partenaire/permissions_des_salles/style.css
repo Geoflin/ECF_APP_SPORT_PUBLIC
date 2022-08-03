@@ -1,11 +1,24 @@
 .permissions_des_salles{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
     border: 3px solid green;
     margin: 0px 0px 20px 0px;
     width: 90vw;
-    height: 12vw;
+    height: 16vw;
+}
+
+#permission_moins{
+  padding-left: 80vw;
+}
+.material-symbols-outlined{
+  font-size: xx-large;
+}
+
+.box_bouton_actif_inactif{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0px 0px 20px 0px;
+  width: 90vw;
+  height: 12vw;
 }
 
 /*toggleSwitch_permissions_des_salles*/

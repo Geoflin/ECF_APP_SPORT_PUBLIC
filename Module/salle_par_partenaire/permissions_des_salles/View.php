@@ -4,6 +4,13 @@
 <!--View permissions_des_salles-->
 <section class="permissions_des_salles">
 
+<span id="permission_moins">
+   Permission    
+   <span class="material-symbols-outlined">do_not_disturb_on</span>
+<span>
+
+<section class="box_bouton_actif_inactif">
+
 <!--Tableau des permissions-->
 <?php $permissions= array ("Members_read", "Members_write", "Members_payment_schedules_read", "Members_products_read", "Members_schedules_read", "Members_add", "Payment_schedules_read", "Payment_schedules_write", "Members_statistic_read", "Payment_day_read"); ?>
 
@@ -27,6 +34,6 @@
 <?php } ?>
 
 </section>
-
+</section>
 
 
