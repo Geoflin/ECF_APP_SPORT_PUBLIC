@@ -8,19 +8,33 @@ row_1{
     display: flex;
     justify-content: space-between;
     float: none;
-    margin-bottom: 20px;
+    margin-bottom: -20px;
     padding: 1em;
+    height: max-content;
+}
+row_1 button{
+    height: 5rem;
+    width: 10rem; 
 }
 row_2{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     float: none;
     padding: 1em;
 }
 row_2 :last-child{
     margin-left: 10px;
 }
-
+row_2 button{
+    height: 5rem;
+}
+#toutes{
+    width:200px; 
+    margin-bottom:20px;
+}
+#ajouter{
+    width:200px;
+}
 /*style sur petits écrans*/
 @media screen and (max-width: 750px){
     .filtre_partenaire{

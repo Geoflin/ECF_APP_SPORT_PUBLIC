@@ -8,7 +8,7 @@
 
 <row_2>
     <button type="button" class="btn btn-outline-success btn-lg">actif</button>
-    <button type="button" class="btn btn-outline-success btn-lg">non actif</button>
+    <button type="button" class="btn btn-outline-success btn-lg">non <br/> actif</button>
 </row_2>
 
 </section>
