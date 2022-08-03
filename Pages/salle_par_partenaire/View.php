@@ -27,8 +27,6 @@
     <?php require_once '../../Module\salle_par_partenaire\filtre_partenaire\View.php'  ?>
 
     <?php require_once '../../Module\salle_par_partenaire\etiquette_salle_de_sport\View.php'  ?>
-    
-    <?php require_once '../../Module\salle_par_partenaire\permissions_des_salles\View.php'  ?>
 
 </main>
 

@@ -1,4 +1,4 @@
-<!--Style du etiquette_salle_de_sport -->
+<!--Style du permissions_des_salles -->
 <link href="../../Module\salle_par_partenaire\permissions_des_salles\style.css" rel="stylesheet" />
 
 <!--View permissions_des_salles-->
