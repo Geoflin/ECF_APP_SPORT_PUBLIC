@@ -1,3 +1,7 @@
+nav, h3, h2, form, div{
+  margin: 1vw 1vw 1vw 1vw;
+}
+
 html, body, form{
   width: max-content;
   padding-right: 0vw;

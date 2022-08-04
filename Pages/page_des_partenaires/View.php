@@ -1,8 +1,11 @@
 <?php
+/*on masque les erreurs pour raison de sécurité*/
+require_once '../../Module\connexion\debug.php';
 /*on vérifie l'identité de l'utilisateur*/
 require_once '../../Module\connexion\verification_identite.php';
 if ($isAdmin== 'oui'){
 ?>
+
   <!DOCTYPE html>
 <html>
 
