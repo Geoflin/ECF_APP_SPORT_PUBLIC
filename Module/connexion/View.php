@@ -1,4 +1,6 @@
-<?php require_once '../../Module\debug\debug.php' ?>
+<?php 
+require_once 'debug.php' 
+?>
 
 <html lang="fr">
 <head>
@@ -9,15 +11,12 @@
 </head>
 <body>
 
-<nav>
-<a href="../../index.php"><button name="accueil" type="button" class="btn btn-outline-success btn-lg">retour à l'accueil</button></a>
-</nav>
+<?php
 
+        ?>
 
 <!--On permet au client de ce connecter-->
-<h2 class="center">Connexion compte administrateur principal</h2> 
-
-<form method="post" action="">
+<form class="form" method="post" action="">
     <label for="username">utilisateur</label>
     <input type="text" required="required" name="username" id="username" placeholder="username">
     <label for="password">mot de passe</label>
@@ -26,8 +25,41 @@
     <button name="connexion_admin_principal" type="submit" type="button" class="btn btn-outline-success btn-lg">connexion</button>
     </form>
 
-    <!--On traite la connexion au compte-->
     <?php
+  
+    ?>
+
+
+
+
+
+    <?php
+    
+
+    /*if(session_status() == PHP_SESSION_NONE) {
+        ?>
+        <div><?php echo $_SESSION['counter'] ?><a href="Pages/page_des_partenaires\View.php"><button type="button" class="btn btn-outline-success btn-lg">Accèder à mon espace</button></a></div>
+        <div><a href="Pages/page_formulaire\View.php"><button type="button" class="btn btn-outline-success btn-lg">Inscrire un partenaire</button></a></div>
+        <div><form><button name="deconnexion" type="submit" onclick='window.location.reload(false)' class="btn btn-outline-success btn-lg">déconnexion</button></form></div>
+<style>
+    .form, .center{
+        display:none;
+    }
+</style>
+
+<!--Deconnexion-->
+<?php
+if(isset($_POST['deconnexion'])){
+  session_destroy();
+};
+
+?>
+
+<?php
+    }
+    */
+
+    /*On traite la connexion au compte*/
     if (isset($_POST['connexion_admin_principal'])){
         session_start();
 $_SESSION['username'] = $_POST['username'];
@@ -36,7 +68,6 @@ $_SESSION['password']= $_POST['password'];
 
     <!--Actualisation de la session administrateur-->
     <?php
-session_start();
 $pdo_kinepolise = new PDO('mysql:host=us-cdbr-east-04.cleardb.com;dbname=heroku_c4414696a201e4e', 'b37053e2dac347', '18a212b7');
 foreach ($pdo_kinepolise->query('SELECT * FROM `kinepolise_administrateur_password` WHERE username= "'.$_SESSION['username'].'" AND password="'.$_SESSION['password'].'" ', PDO::FETCH_ASSOC) as $dataCompte) {
   $username = $dataCompte['username'];
@@ -46,19 +77,29 @@ foreach ($pdo_kinepolise->query('SELECT * FROM `kinepolise_administrateur_passwo
 
 <!--Vérification d'identité-->
 <?php
-if (($_SESSION['username'] == $dataCompte['username']  && $_SESSION['password'] == $dataCompte['password'])) {
+if ($_SESSION['username'] == $dataCompte['username']  && $_SESSION['password'] == $dataCompte['password']) {
   echo sprintf("<nav class=center><h3>Bonjour %s<h3/></nav>", $_SESSION['username']) . PHP_EOL; 
+  $_SESSION['counter']= 1;
 ?>
 
-
-<div><a href="..\page_des_partenaires\View.php"><button type="button" class="btn btn-outline-success btn-lg">Accèder à mon espace</button></a></div>
-<div><a href="..\page_formulaire\View.php"><button type="button" class="btn btn-outline-success btn-lg">Inscrire un partenaire</button></a></div>
+<div><a href="Pages/page_des_partenaires\View.php"><button type="button" class="btn btn-outline-success btn-lg">Accèder à mon espace</button></a></div>
+<div><a href="Pages/page_formulaire\View.php"><button type="button" class="btn btn-outline-success btn-lg">Inscrire un partenaire</button></a></div>
+<div><form><button name="deconnexion" type="submit" onclick='window.location.reload(false)' class="btn btn-outline-success btn-lg">déconnexion</button></form></div>
 <style>
-    form, .center{
+    .form, .center{
         display:none;
     }
 </style>
-    <?php }; }?>
+
+    <?php }; } ?>
 
 </body>
 
+<!--Deconnexion-->
+<?php
+if(isset($_POST['deconnexion'])){
+  session_destroy();
+  session_unset();
+  setcookie('PHPSESSID', '', 1);
+};
+?>
