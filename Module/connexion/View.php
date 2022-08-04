@@ -79,7 +79,6 @@ foreach ($pdo_kinepolise->query('SELECT * FROM `kinepolise_administrateur_passwo
 <?php
 if ($_SESSION['username'] == $dataCompte['username']  && $_SESSION['password'] == $dataCompte['password']) {
   echo sprintf("<nav class=center><h3>Bonjour %s<h3/></nav>", $_SESSION['username']) . PHP_EOL; 
-  $_SESSION['counter']= 1;
 ?>
 
 <div><a href="Pages/page_des_partenaires\View.php"><button type="button" class="btn btn-outline-success btn-lg">Accèder à mon espace</button></a></div>

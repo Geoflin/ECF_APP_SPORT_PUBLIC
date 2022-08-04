@@ -1,14 +1,3 @@
-<?php
-/*On traite la connexion au compte*/
-if(!isset($_COOKIE['PHPSESSID'])){
-  echo '<nav>
-  <a href="../../index.php"><button name="accueil" type="button" class="btn btn-outline-success btn-lg">retour</button></a>
-  </nav>';
-}else {
-
-        ?>
-
-
 <!DOCTYPE html>
 <html>
 
@@ -45,5 +34,3 @@ if(!isset($_COOKIE['PHPSESSID'])){
 </body>
 
 </html>
-
-<?php }; ?>

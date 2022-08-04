@@ -20,7 +20,6 @@
 
   <?php require_once 'Module\connexion\View.php' ?>
 
-
 </body>
 
 </html>
