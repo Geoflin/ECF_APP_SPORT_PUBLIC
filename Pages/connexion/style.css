@@ -1,0 +1,10 @@
+nav, h3, h2, form, div{
+    margin: 1vw 1vw 1vw 1vw;
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+}
