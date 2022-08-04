@@ -11,10 +11,6 @@ require_once 'debug.php'
 </head>
 <body>
 
-<?php
-
-        ?>
-
 <!--On permet au client de ce connecter-->
 <form class="form" method="post" action="">
     <label for="username">utilisateur</label>
@@ -23,42 +19,9 @@ require_once 'debug.php'
     <input type="text" required="required" name="password" id="password" placeholder="password">
     <br/>
     <button name="connexion_admin_principal" type="submit" type="button" class="btn btn-outline-success btn-lg">connexion</button>
-    </form>
+</form>
 
     <?php
-  
-    ?>
-
-
-
-
-
-    <?php
-    
-
-    /*if(session_status() == PHP_SESSION_NONE) {
-        ?>
-        <div><?php echo $_SESSION['counter'] ?><a href="Pages/page_des_partenaires\View.php"><button type="button" class="btn btn-outline-success btn-lg">Accèder à mon espace</button></a></div>
-        <div><a href="Pages/page_formulaire\View.php"><button type="button" class="btn btn-outline-success btn-lg">Inscrire un partenaire</button></a></div>
-        <div><form><button name="deconnexion" type="submit" onclick='window.location.reload(false)' class="btn btn-outline-success btn-lg">déconnexion</button></form></div>
-<style>
-    .form, .center{
-        display:none;
-    }
-</style>
-
-<!--Deconnexion-->
-<?php
-if(isset($_POST['deconnexion'])){
-  session_destroy();
-};
-
-?>
-
-<?php
-    }
-    */
-
     /*On traite la connexion au compte*/
     if (isset($_POST['connexion_admin_principal'])){
         session_start();
@@ -78,7 +41,6 @@ foreach ($pdo_kinepolise->query('SELECT * FROM `kinepolise_administrateur_passwo
 <!--Vérification d'identité-->
 <?php
 if ($_SESSION['username'] == $dataCompte['username']  && $_SESSION['password'] == $dataCompte['password']) {
-  echo sprintf("<nav class=center><h3>Bonjour %s<h3/></nav>", $_SESSION['username']) . PHP_EOL; 
 ?>
 
 <div><a href="Pages/page_des_partenaires\View.php"><button type="button" class="btn btn-outline-success btn-lg">Accèder à mon espace</button></a></div>

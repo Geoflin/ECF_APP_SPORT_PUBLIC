@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+/*on vérifie l'identité de l'utilisateur*/
+require_once '../../Module\connexion\verification_identite.php';
+if ($isAdmin== 'oui'){
+?>
+  <!DOCTYPE html>
 <html>
 
 <head>
@@ -34,3 +39,9 @@
 </body>
 
 </html>
+
+<?php 
+} else {
+  echo "Accès non autorisé";
+};
+?>
