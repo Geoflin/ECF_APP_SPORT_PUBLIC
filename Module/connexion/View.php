@@ -1,5 +1,4 @@
 <?php 
-session_start();
 /*on masque les erreurs pour raison de sécurité*/
 require_once 'debug.php';
 /*on vérifie l'identité de l'utilisateur*/
@@ -27,7 +26,7 @@ require_once 'verification_identite.php';
 
     <?php
     /*On traite la connexion au compte*/
-    if (isset($_POST['connexion_admin_principal']) || $isAdmin== 'oui' ){
+    if (isset($_POST['connexion_admin_principal'])){
         session_start();
 $_SESSION['username'] = $_POST['username'];
 $_SESSION['password']= $_POST['password'];
@@ -44,7 +43,7 @@ foreach ($pdo_kinepolise->query('SELECT * FROM `kinepolise_administrateur_passwo
 
 <!--Vérification d'identité-->
 <?php
-if ($_SESSION['username'] == $dataCompte['username']  && $_SESSION['password'] == $dataCompte['password'] || $isAdmin== 'oui' ) {
+if ($_SESSION['username'] == $dataCompte['username']  && $_SESSION['password'] == $dataCompte['password']) {
 ?>
 
 <div><a href="Pages/page_des_partenaires\View.php"><button type="button" class="btn btn-outline-success btn-lg">Accèder à mon espace</button></a></div>

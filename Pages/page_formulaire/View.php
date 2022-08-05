@@ -20,7 +20,10 @@ if ($isAdmin== 'oui'){
 </head>
 
 <nav>
-<a href="../../index.php"><button name="accueil" type="button" class="btn btn-outline-success btn-lg">retour</button></a>
+<span>
+<a href="../../index.php"><button name="accueil" type="button" class="btn btn-outline-success btn-lg">Accueil</button></a>
+<a href="../page_des_partenaires\View.php"><button type="button" class="btn btn-outline-success btn-lg">Page des partenaires</button></a>
+</span>
 </nav>
 
 <body>
