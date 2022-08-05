@@ -1,11 +1,16 @@
-nav, h3, h2, form, div{
-    margin: 1vw 1vw 1vw 1vw;
-  }
-  
-  html, body, form{
-    width: max-content;
-    padding-right: 0vw;
-  }
+
+.bouton_liste_partenaire{
+  margin: 0px 0px 20px 0px;
+}
+.ajouter_une_salle{
+  display: flex;
+  width: 1730px;
+  height: max-content;
+  /*border: solid 3px blueviolet;*/
+  flex-wrap: wrap;
+  border: 3px solid green;
+}
+
   
   .informations_client_et_droits_client{
       display: flex;

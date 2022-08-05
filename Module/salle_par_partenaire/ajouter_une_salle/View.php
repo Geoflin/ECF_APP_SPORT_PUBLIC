@@ -1,27 +1,8 @@
-<?php
-/*on masque les erreurs pour raison de sécurité*/
-/*require_once '../../Module\connexion\debug.php';
-/*on vérifie l'identité de l'utilisateur*/
-/*require_once '../../Module\connexion\verification_identite.php';
-if ($isAdmin== 'oui'){
-*/
-?>
-
-<!DOCTYPE html>
-<html>
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Page_formulaire</title>
-  <!--CDN Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-  <!--tyle de l'index -->
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="../../Module\salle_par_partenaire\ajouter_une_salle\style.css" rel="stylesheet" type="text/css" />
 </head>
 
-
-<body>
+<section class="ajouter_une_salle">
 
 <form method="POST" action="">
 
@@ -90,12 +71,4 @@ if(isset($_POST['inscription_partenaire'])){
 }
 ?>
 
-</body>
-
-</html>
-
-<?php 
-/*} else {
-  echo "Accès non autorisé";
-};*/
-?>
+</section>
