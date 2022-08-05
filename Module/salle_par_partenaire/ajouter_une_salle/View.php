@@ -15,8 +15,8 @@
   </span>
 
   <span> 
-  <label for="zone">zone:</label>
-  <input type="text" id="zone" name="zone">
+  <label for="zones">zone:</label>
+  <input type="text" id="zones" name="zones">
   </span>
 
   <span> 
@@ -64,11 +64,11 @@
 
 </form>
 
+</section>
+
 <!--traitement du formulaire inscription_partenaire-->
 <?php
 if(isset($_POST['inscription_partenaire'])){
   require_once 'Back_end.php';
 }
 ?>
-
-</section>
