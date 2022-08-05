@@ -6,9 +6,11 @@
 
   foreach ($pdo->query('SELECT * FROM api_clients', PDO::FETCH_ASSOC) as $api_clients) { ?>
 
-
+<!--lien vers "salle_par_partenaire"-->
+<button name="" type="" class="etiquette_partenaire btn btn-outline-success btn-lg">
+<a class="link_salle_par_partenaire" href="../../Pages\salle_par_partenaire\View.php">
 <!--View etiquette_partenaire-->
-<button name="salle_par_partenaire" onclick="window.location.href='../../Pages/salle_par_partenaire/View.php'" type="" class="etiquette_partenaire btn btn-outline-success btn-lg">
+
 <!--Span reliant image_client_et_information_client-->
 <span class="image_client_et_information_client">
 
@@ -40,8 +42,9 @@
     
 </section>
 
-</button>
 
+</a>
+</button>
     
 <?php } ?>
 
