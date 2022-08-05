@@ -1,9 +1,10 @@
 <?php
 /*on masque les erreurs pour raison de sécurité*/
-require_once '../../Module\connexion\debug.php';
+/*require_once '../../Module\connexion\debug.php';
 /*on vérifie l'identité de l'utilisateur*/
-require_once '../../Module\connexion\verification_identite.php';
+/*require_once '../../Module\connexion\verification_identite.php';
 if ($isAdmin== 'oui'){
+*/
 ?>
 
 <!DOCTYPE html>
@@ -28,29 +29,39 @@ if ($isAdmin== 'oui'){
 
 <body>
 
-<form method="POST" action="api/login">
+<form method="POST" action="">
 
 <section class="informations_client_et_droits_client">
 
 <section class="informations_client">
   <span> 
-  <label for="client_id">client_id: </label>
-  <input type="client_id" id="client_id" name="client_id">
+  <label for="client_name">client_name: </label>
+  <input type="client_name" id="client_name" name="client_name">
   </span> 
 
   <span> 
-  <label for="install_id">install_id: </label>
-  <input type="install_id" id="install_id" name="install_id">
+  <label for="short_description">short_description: </label>
+  <input type="short_description" id="short_description" name="short_description">
   </span> 
 
   <span>
-  <label for="active">active: </label>
-  <input type="active" id="active" name="active">
+  <label for="full_description">full_description: </label>
+  <input type="full_description" id="full_description" name="full_description">
   </span> 
  
   <span>
-  <label for="branch_id">branch_id: </label>
-  <input type="branch_id" id="branch_id" name="branch_id">
+  <label for="urll">url: </label>
+  <input type="urll" id="urll" name="urll">
+  </span> 
+
+  <span>
+  <label for="technical_contact">technical_contact: </label>
+  <input type="technical_contact" id="technical_contact" name="technical_contact">
+  </span> 
+
+  <span>
+  <label for="commercial_contact">commercial_contact: </label>
+  <input type="commercial_contact" id="commercial_contact" name="commercial_contact">
   </span> 
   
 </section>
@@ -63,7 +74,7 @@ if ($isAdmin== 'oui'){
 
 <?php for ($i=0; $i < 11; $i++) { ?>
 
-  <label for="Members_read"><?php echo $permissions[$i]; ?> </label>
+  <label for="<?php echo $permissions[$i]; ?>"><?php echo $permissions[$i]; ?></label>
 
   <?php } ?>
 
@@ -90,16 +101,23 @@ if ($isAdmin== 'oui'){
   </section>
 
   
-  <input class="btn btn-outline-success btn-lg" type="submit" value="Valider">
+  <input name="inscription_partenaire" class="btn btn-outline-success btn-lg" type="submit" value="Valider">
 
 </form>
+
+<!--traitement du formulaire inscription_partenaire-->
+<?php
+if(isset($_POST['inscription_partenaire'])){
+  require_once 'Back_end.php';
+}
+?>
 
 </body>
 
 </html>
 
 <?php 
-} else {
+/*} else {
   echo "Accès non autorisé";
-};
+};*/
 ?>
