@@ -36,32 +36,32 @@ if ($isAdmin== 'oui'){
 <section class="informations_client">
   <span> 
   <label for="client_name">client_name: </label>
-  <input type="client_name" id="client_name" name="client_name">
+  <input type="text" id="client_name" name="client_name">
+  </span> 
+
+  <span> 
+  <label for="password">password: </label>
+  <input type="password" id="password" name="password">
   </span> 
 
   <span> 
   <label for="short_description">short_description: </label>
-  <input type="short_description" id="short_description" name="short_description">
+  <input type="text" id="short_description" name="short_description">
   </span> 
 
   <span>
   <label for="full_description">full_description: </label>
-  <input type="full_description" id="full_description" name="full_description">
+  <input type="text" id="full_description" name="full_description">
   </span> 
  
   <span>
   <label for="urll">url: </label>
-  <input type="urll" id="urll" name="urll">
+  <input type="url" id="urll" name="urll">
   </span> 
 
   <span>
-  <label for="technical_contact">technical_contact: </label>
-  <input type="technical_contact" id="technical_contact" name="technical_contact">
-  </span> 
-
-  <span>
-  <label for="commercial_contact">commercial_contact: </label>
-  <input type="commercial_contact" id="commercial_contact" name="commercial_contact">
+  <label for="mail">mail: </label>
+  <input type="mail" id="mail" name="mail">
   </span> 
   
 </section>

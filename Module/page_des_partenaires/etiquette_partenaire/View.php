@@ -1,7 +1,10 @@
   <!--Style du etiquette_partenaire -->
   <link href="../../Module/page_des_partenaires/etiquette_partenaire/style.css" rel="stylesheet" />
 
-<?php for ($i=0; $i < 6; $i++) { ?>
+  <?php
+  $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
+
+  foreach ($pdo->query('SELECT * FROM api_clients', PDO::FETCH_ASSOC) as $api_clients) { ?>
 
 <!--View etiquette_partenaire-->
 <section class="etiquette_partenaire">
@@ -16,10 +19,10 @@
 
 <!--Section information_client-->
 <section class="information_client">
-    <div>client_id</div>
-    <div>client_name</div>
-    <div>short_description</div>
-    <div>url</div>
+    <div>id: <?php echo $api_clients['client_id'] ?></div>
+    <div><?php echo $api_clients['client_name'] ?></div>
+    <div><?php echo $api_clients['short_description'] ?></div>
+    <div><a href="<?php echo $api_clients['urll'] ?>" target="_blank"><?php echo $api_clients['urll'] ?><a></div>
 </section>
 </span>
 
