@@ -8,8 +8,9 @@
 
 
 <!--View etiquette_partenaire-->
-<form method="POST" action="../../Pages/salle_par_partenaire/View.php">
 
+<!--formulaire indiquant l'id_client à la page suivante-->
+<form method="POST" action="../../Pages/salle_par_partenaire/View.php">
 <button name="salle_par_partenaire" type="submit" class="etiquette_partenaire btn btn-outline-success btn-lg">
 <!--Span reliant image_client_et_information_client-->
 <span class="image_client_et_information_client">

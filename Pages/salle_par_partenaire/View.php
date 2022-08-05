@@ -15,13 +15,13 @@
 
 <nav>
 <a href="../../index.php"><button name="accueil" type="button" class="btn btn-outline-success btn-lg">retour</button></a>
+<a href="../../Pages\page_des_partenaires\View.php"><button type="button" class="btn btn-outline-success btn-lg"> << Liste des partenaires </button></a>
+</span>
 </nav>
 
 <body>
 
     <main>
-    
-    <?php require_once '../../Module/salle_par_partenaire/bouton_liste_partenaire/View.php'  ?>
 
     <?php require_once '../../Module\salle_par_partenaire\etiquette_partenaire\View.php'  ?>
 
@@ -29,11 +29,15 @@
 
     <?php require_once '../../Module\salle_par_partenaire\etiquette_salle_de_sport\View.php'  ?>
 
+    <?php require_once '../../Module\salle_par_partenaire\ajouter_une_salle\View.php'  ?>
+
 </main>
 
 <footer>
      <?php require_once '../../Module\salle_par_partenaire\footer_partenaire\View.php'  ?>
 </footer>
+
+
     
 </body>
 

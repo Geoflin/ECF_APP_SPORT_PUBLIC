@@ -4,6 +4,9 @@ body{
     margin-right: 5vw;
     width: max-content;
 }
+.bouton_liste_partenaire{
+    margin: 0px 0px 20px 0px;
+}
 .wrap{
     display: flex;
     width: 1700px;

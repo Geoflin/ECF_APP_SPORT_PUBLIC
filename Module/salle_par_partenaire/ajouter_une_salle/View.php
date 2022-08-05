@@ -20,12 +20,6 @@ if ($isAdmin== 'oui'){
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
-<nav>
-<span>
-<a href="../../index.php"><button name="accueil" type="button" class="btn btn-outline-success btn-lg">Accueil</button></a>
-<a href="../page_des_partenaires\View.php"><button type="button" class="btn btn-outline-success btn-lg">Voir Partenaire</button></a>
-</span>
-</nav>
 
 <body>
 
@@ -35,35 +29,19 @@ if ($isAdmin== 'oui'){
 
 <section class="informations_client">
   <span> 
-  <label for="client_name">client_name: </label>
-  <input type="text" id="client_name" name="client_name">
-  </span> 
+  <label for="Nom">Nom:</label>
+  <input type="text" id="Nom" name="Nom">
+  </span>
 
   <span> 
-  <label for="password">password: </label>
-  <input type="password" id="password" name="password">
-  </span> 
+  <label for="zone">zone:</label>
+  <input type="text" id="zone" name="zone">
+  </span>
 
   <span> 
-  <label for="short_description">short_description: </label>
-  <input type="text" id="short_description" name="short_description">
-  </span> 
-
-  <span>
-  <label for="full_description">full_description: </label>
-  <input type="text" id="full_description" name="full_description">
-  </span> 
- 
-  <span>
-  <label for="urll">url: </label>
-  <input type="url" id="urll" name="urll">
-  </span> 
-
-  <span>
-  <label for="mail">mail: </label>
-  <input type="mail" id="mail" name="mail">
-  </span> 
-  
+  <label for="branche">branche:</label>
+  <input type="text" id="branche" name="branche">
+  </span>
 </section>
 
 
