@@ -11,5 +11,3 @@
 </section>
 </span>
     <?php } ?>
-
-?>

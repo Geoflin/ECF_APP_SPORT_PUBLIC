@@ -8,7 +8,9 @@
 
 
 <!--View etiquette_partenaire-->
-<button name="salle_par_partenaire" onclick="window.location.href='../../Pages/salle_par_partenaire/View.php'" type="" class="etiquette_partenaire btn btn-outline-success btn-lg">
+<form method="POST" action="../../Pages/salle_par_partenaire/View.php">
+
+<button name="salle_par_partenaire" type="submit" class="etiquette_partenaire btn btn-outline-success btn-lg">
 <!--Span reliant image_client_et_information_client-->
 <span class="image_client_et_information_client">
 
@@ -25,6 +27,10 @@
     <div><a href="<?php echo $api_clients['urll'] ?>" target="_blank"><?php echo $api_clients['urll'] ?><a></div>
 </section>
 </span>
+
+<input type="text" id="client_id" name="client_id" value="<?php echo $api_clients['client_id'] ?>">
+
+</form>
 
 <!--Section bouton_actif_inactif-->
 <section class="bouton_actif_inactif">
