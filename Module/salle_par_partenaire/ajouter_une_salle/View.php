@@ -31,7 +31,7 @@
 
 
 <!--Tableau des permissions-->
-<?php $permissions= array ("Members_read", "Members_write", "Members_payment_schedules_read", "Members_products_read", "Members_schedules_read", "Members_add", "Payment_schedules_read", "Payment_schedules_write", "Members_statistic_read", "Payment_day_read", "members_subscription_read"); ?>
+<?php $permissions= array ("members_read", "members_write", "members_payment_schedules_read", "members_products_read", "members_schedules_read", "members_add", "payment_schedules_read", "payment_schedules_write", "members_statistic_read", "payment_day_read", "members_subscription_read"); ?>
 
 <section class="droits_client">
 
@@ -49,7 +49,7 @@
   <?php for ($ii=0; $ii < 11; $ii++) { ?>
 
   <label class="toggleSwitch_permissions_des_salles nolabel" onclick="">
-       <input type="checkbox" checked />
+       <input type="checkbox" id="<?php echo $permissions[$ii]; ?>" name="<?php echo $permissions[$ii]; ?>" checked />
          <span>
             <span>Inactif</span>
             <span>Actif</span>
