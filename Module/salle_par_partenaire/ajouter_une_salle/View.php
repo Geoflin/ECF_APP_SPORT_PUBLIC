@@ -9,6 +9,10 @@
 <section class="informations_client_et_droits_client">
 
 <section class="informations_client">
+
+
+  <input class="display_none" type="text" id="client_id" name="client_id" value='<?php echo $api_clients['client_id'] ?>'>
+
   <span> 
   <label for="Nom">Nom:</label>
   <input type="text" id="Nom" name="Nom">
