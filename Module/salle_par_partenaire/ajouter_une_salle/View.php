@@ -63,8 +63,7 @@
 
   </section>
 
-  
-  <input name="inscription_partenaire" class="btn btn-outline-success btn-lg" type="submit" value="Valider">
+  <input name="inscription_partenaire" class="btn btn-outline-success btn-lg" type="submit" value="Valider" onclick='window.location.reload(false)'>
 
 </form>
 
@@ -73,6 +72,7 @@
 <!--traitement du formulaire inscription_partenaire-->
 <?php
 if(isset($_POST['inscription_partenaire'])){
-  require_once 'Back_end.php';
+  require_once "Back_end.php";
 }
 ?>
+

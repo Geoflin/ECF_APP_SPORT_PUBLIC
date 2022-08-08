@@ -2,9 +2,13 @@
 <link href="../../Module\salle_par_partenaire\etiquette_salle_de_sport\style.css" rel="stylesheet" />
 
 
+<!--On crée le formulaire de modification du statut de la salle-->
+<form method="POST" action="../../Module\salle_par_partenaire\etiquette_salle_de_sport\Back_end.php">
+
   <?php
   $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
 
+  
   foreach ($pdo->query('SELECT * FROM `salle_de_sport3` WHERE `client_id` LIKE "'.$_POST['client_id'].'" ', PDO::FETCH_ASSOC) as $salle_de_sport3) { ?>
 
 <!--View etiquette_partenaire-->
@@ -42,15 +46,26 @@
 <!--Section bouton_actif_inactif-->
 <section class="bouton_actif_inactif">
 
-<label class="toggleSwitch nolabel" onclick="">
-   <input type="checkbox" <?php echo $checked_Salle_active; ?> />
+<label class="toggleSwitch nolabel">
+<input type="checkbox" id="Salle_active" name="Salle_active" value="1" <?php echo $checked_Salle_active; ?> />
      <span>
         <span>Inactif</span>
         <span>Actif</span>
      </span>
 <a></a>
 </label>
+
+<input name="modification_statut_salle" class="btn btn-outline-success btn-lg" type="submit" value="Valider">
+
+<?php }; ?>
+</form>
     
+<!--on envoie en POST le salle_id pour le formulaire de modification des permissions-->
+<input name="salle_id" id="salle_id" class="display_none" type="text" value="<?php echo $salle_de_sport3['salle_id'] ?>">
+
+<!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
+<input name="client_id" id="client_id" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
+
 </section>
 
 </section>
@@ -68,7 +83,7 @@
 <span>
 
 <!--On crée le formulaire de modification des permissions-->
-<form method="POST" action="">
+<form method="POST" action="../../Module\salle_par_partenaire\etiquette_salle_de_sport\Back_end.php">
 
 <section class="box_bouton_actif_inactif">
 
@@ -93,7 +108,7 @@
     
     <label class="toggleSwitch_permissions_des_salles nolabel" onclick="">
       
-       <input type="checkbox" <?php echo $checked; ?> />
+       <input type="checkbox" id="<?php echo $permissions[$i]; ?>" name="<?php echo $permissions[$i]; ?>" value="1" <?php echo $checked; ?> />
          <span>
             <span>Inactif</span>
             <span>Actif</span>
@@ -109,16 +124,18 @@
 
   <input name="modification_permission" class="btn btn-outline-success btn-lg" type="submit" value="Valider">
 
-</form>
-
 
 
 </section>
 </section>
 
 <?php }; ?>
-<?php }; ?>
 
+<!--on envoie en POST le salle_id pour le formulaire de modification des permissions-->
+<input name="salle_id" id="salle_id" class="display_none" type="text" value="<?php echo $salle_de_sport3['salle_id'] ?>">
+
+<!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
+<input name="client_id" id="client_id" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
 
 <!--traitement du formulaire inscription_partenaire-->
 <?php
@@ -126,3 +143,5 @@ if(isset($_POST['modification_permission'])){
   require_once '../../Module\salle_par_partenaire\etiquette_salle_de_sport\Back_end.php';
 }
 ?>
+
+</form>

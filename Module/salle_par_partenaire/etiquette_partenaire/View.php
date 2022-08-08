@@ -1,6 +1,11 @@
 <!--Style etiquette_partenaire -->
 <link href="../../Module/salle_par_partenaire\etiquette_partenaire/style.css" rel="stylesheet" />
 
+<?php
+  $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
+
+  foreach ($pdo->query('SELECT * FROM `salle_de_sport3` WHERE `client_id` LIKE "'.$_POST['client_id'].'" ', PDO::FETCH_ASSOC) as $salle_de_sport3) { ?>
+
 <!--View etiquette_partenaire-->
 <section class="etiquette_partenaire">
 
@@ -36,24 +41,35 @@
 
 <?php }; ?>
 
+
+<!--on regarde si la salle est actif_inactif-->
+<?php foreach ($pdo->query('SELECT Salle_active FROM `api_install_perm` WHERE `salle_id` LIKE "'.$salle_de_sport3['salle_id'].'"  ', PDO::FETCH_ASSOC) as $Salle_active) { ?>
+
+<?php
+if($Salle_active['Salle_active']==1){
+   $checked_partenaire_actif= "checked";
+} else {
+   $checked_partenaire_actif= "unchecked";
+}
+?>
+
 <!--Section bouton_actif_inactif-->
 <section class="bouton_actif_inactif">
 
 <label class="toggleSwitch nolabel" onclick="">
-   <input type="checkbox" checked />
+<input type="checkbox" id="Salle_active" name="Salle_active" value="1" <?php echo $checked_partenaire_actif; ?> />
      <span>
         <span>Inactif</span>
         <span>Actif</span>
      </span>
 <a></a>
 </label>
+
     
 </section>
-
 </section>
     
 
-
-
-
+<?php }; ?>
+<?php }; ?>
 
