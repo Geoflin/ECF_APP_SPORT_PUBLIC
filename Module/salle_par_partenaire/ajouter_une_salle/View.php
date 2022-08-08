@@ -10,8 +10,8 @@
 
 <section class="informations_client">
 
-
   <input class="display_none" type="text" id="client_id" name="client_id" value='<?php echo $api_clients['client_id'] ?>'>
+  <input class="display_none" type="text" id="salle_id" name="salle_id" value='<?php echo $api_clients['salle_id'] ?>'>
 
   <span> 
   <label for="Nom">Nom:</label>
@@ -31,11 +31,11 @@
 
 
 <!--Tableau des permissions-->
-<?php $permissions= array ("members_read", "members_write", "members_payment_schedules_read", "members_products_read", "members_schedules_read", "members_add", "payment_schedules_read", "payment_schedules_write", "members_statistic_read", "payment_day_read", "members_subscription_read"); ?>
+<?php $permissions= array ("members_read", "members_write", "members_add", "members_products_add", "members_payment_schedules_read", "members_statistiques_read", "members_subscription_read", "payment_schedules_read", "payment_schedules_write", "payment_day_read"); ?>
 
 <section class="droits_client">
 
-<?php for ($i=0; $i < 11; $i++) { ?>
+<?php for ($i=0; $i < 10; $i++) { ?>
 
   <label for="<?php echo $permissions[$i]; ?>"><?php echo $permissions[$i]; ?></label>
 
@@ -46,10 +46,10 @@
 
   <section class="toggle">
 
-  <?php for ($ii=0; $ii < 11; $ii++) { ?>
+  <?php for ($ii=0; $ii < 10; $ii++) { ?>
 
   <label class="toggleSwitch_permissions_des_salles nolabel" onclick="">
-       <input type="checkbox" id="<?php echo $permissions[$ii]; ?>" name="<?php echo $permissions[$ii]; ?>" checked />
+       <input type="checkbox" id="<?php echo $permissions[$ii]; ?>" name="<?php echo $permissions[$ii]; ?>" value="'1'" checked>
          <span>
             <span>Inactif</span>
             <span>Actif</span>
