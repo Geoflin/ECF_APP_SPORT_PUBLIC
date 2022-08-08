@@ -58,27 +58,40 @@
 <section class="box_bouton_actif_inactif">
 
 <!--Tableau des permissions-->
-<?php $permissions= array ("Members_read", "Members_write", "Members_payment_schedules_read", "Members_products_read", "Members_schedules_read", "Members_add", "Payment_schedules_read", "Payment_schedules_write", "Members_statistic_read", "Payment_day_read"); ?>
+<?php $permissions= array ("members_read", "members_write", "members_add", "members_products_add", "members_payment_schedules_read", "members_statistiques_read", "members_subscription_read", "payment_schedules_read", "payment_schedules_write", "payment_day_read"); ?>
 
-<?php for ($ii=0; $ii < 10; $ii++) { ?>
+<?php for ($i=0; $i < 10; $i++) { ?>
+
+<?php foreach ($pdo->query('SELECT * FROM `api_install_perm` WHERE `salle_id` LIKE "'.$salle_de_sport3['salle_id'].'" AND "'.$permissions[$i].'" LIKE "'.$permissions[$i].'"  ', PDO::FETCH_ASSOC) as $api_install_perm) { ?>
+
+   <!--on regarde si la permission est actif_inactif-->
+   <?php
+   if($api_install_perm[$permissions[$i]]==1){
+      $checked= "checked";
+   } else {
+      $checked= "unchecked";
+   }
+   
+   ?>
 
     <!--Section bouton_actif_inactif-->
     <section class="bouton_actif_inactif">
     
     <label class="toggleSwitch_permissions_des_salles nolabel" onclick="">
-       <input type="checkbox" checked />
+      
+       <input type="checkbox" <?php echo $checked; ?> />
          <span>
             <span>Inactif</span>
             <span>Actif</span>
          </span>
     <a></a>
     </label>
-    <?php echo $permissions[$ii]; ?>
+    <?php echo $permissions[$i]; ?>
     
     </section>
 
 <?php }; ?>
-
+<?php }; ?>
 
 </section>
 </section>

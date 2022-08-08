@@ -49,7 +49,7 @@
   <?php for ($ii=0; $ii < 10; $ii++) { ?>
 
   <label class="toggleSwitch_permissions_des_salles nolabel" onclick="">
-       <input type="checkbox" id="<?php echo $permissions[$ii]; ?>" name="<?php echo $permissions[$ii]; ?>" value="'1'" checked>
+       <input type="checkbox" id="<?php echo $permissions[$ii]; ?>" name="<?php echo $permissions[$ii]; ?>" value="1" checked>
          <span>
             <span>Inactif</span>
             <span>Actif</span>
