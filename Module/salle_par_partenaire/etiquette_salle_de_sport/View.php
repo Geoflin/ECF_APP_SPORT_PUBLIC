@@ -1,7 +1,11 @@
 <!--Style du etiquette_salle_de_sport -->
 <link href="../../Module\salle_par_partenaire\etiquette_salle_de_sport\style.css" rel="stylesheet" />
 
-<?php for ($i=0; $i < 2; $i++) { ?>
+
+  <?php
+  $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
+
+  foreach ($pdo->query('SELECT * FROM `salle_de_sport3` WHERE `client_id` LIKE "'.$_POST['client_id'].'" ', PDO::FETCH_ASSOC) as $salle_de_sport3) { ?>
 
 <!--View etiquette_partenaire-->
 <section class="etiquette_salle_de_sport">
@@ -16,9 +20,10 @@
 
 <!--Section information_salle_de_sport-->
 <section class="information_salle_de_sport">
-    <div>client_id</div>
-    <div>install_id</div>
-    <div>branch_id</div>
+    <div>id: <?php echo $salle_de_sport3['salle_id'] ?></div>
+    <div><?php echo $salle_de_sport3['Nom'] ?></div>
+    <div><?php echo $salle_de_sport3['branche'] ?></div>
+    <div><?php echo $salle_de_sport3['zones'] ?></div>
 </section>
 </span>
 
