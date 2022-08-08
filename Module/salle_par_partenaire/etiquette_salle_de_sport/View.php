@@ -67,6 +67,9 @@
    <span class="material-symbols-outlined">do_not_disturb_on</span>
 <span>
 
+<!--On crée le formulaire de modification des permissions-->
+<form method="POST" action="">
+
 <section class="box_bouton_actif_inactif">
 
 <!--Tableau des permissions-->
@@ -83,7 +86,6 @@
    } else {
       $checked= "unchecked";
    }
-   
    ?>
 
     <!--Section bouton_actif_inactif-->
@@ -105,8 +107,22 @@
 <?php }; ?>
 <?php }; ?>
 
+  <input name="modification_permission" class="btn btn-outline-success btn-lg" type="submit" value="Valider">
+
+</form>
+
+
+
 </section>
 </section>
 
 <?php }; ?>
 <?php }; ?>
+
+
+<!--traitement du formulaire inscription_partenaire-->
+<?php
+if(isset($_POST['modification_permission'])){
+  require_once '../../Module\salle_par_partenaire\etiquette_salle_de_sport\Back_end.php';
+}
+?>
