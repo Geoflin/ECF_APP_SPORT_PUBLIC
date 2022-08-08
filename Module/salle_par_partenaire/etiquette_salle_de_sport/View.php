@@ -20,18 +20,30 @@
 
 <!--Section information_salle_de_sport-->
 <section class="information_salle_de_sport">
-    <div>id: <?php echo $salle_de_sport3['salle_id'] ?></div>
+    <div>Salle_id: <?php echo $salle_de_sport3['salle_id'] ?></div>
     <div><?php echo $salle_de_sport3['Nom'] ?></div>
     <div><?php echo $salle_de_sport3['branche'] ?></div>
     <div><?php echo $salle_de_sport3['zones'] ?></div>
 </section>
 </span>
 
+   <!--on regarde si la salle est actif_inactif-->
+
+<?php foreach ($pdo->query('SELECT Salle_active FROM `api_install_perm` WHERE `salle_id` LIKE "'.$salle_de_sport3['salle_id'].'"  ', PDO::FETCH_ASSOC) as $Salle_active) { ?>
+
+   <?php
+   if($Salle_active['Salle_active']==1){
+      $checked_Salle_active= "checked";
+   } else {
+      $checked_Salle_active= "unchecked";
+   }
+   ?>
+
 <!--Section bouton_actif_inactif-->
 <section class="bouton_actif_inactif">
 
 <label class="toggleSwitch nolabel" onclick="">
-   <input type="checkbox" checked />
+   <input type="checkbox" <?php echo $checked_Salle_active; ?> />
      <span>
         <span>Inactif</span>
         <span>Actif</span>
@@ -62,11 +74,11 @@
 
 <?php for ($i=0; $i < 10; $i++) { ?>
 
-<?php foreach ($pdo->query('SELECT * FROM `api_install_perm` WHERE `salle_id` LIKE "'.$salle_de_sport3['salle_id'].'" AND "'.$permissions[$i].'" LIKE "'.$permissions[$i].'"  ', PDO::FETCH_ASSOC) as $api_install_perm) { ?>
+   <?php foreach ($pdo->query('SELECT * FROM `api_install_perm` WHERE `salle_id` LIKE "'.$salle_de_sport3['salle_id'].'" AND "'.$permissions[$i].'" LIKE "'.$permissions[$i].'"  ', PDO::FETCH_ASSOC) as $api_install_perm) { ?>
 
    <!--on regarde si la permission est actif_inactif-->
    <?php
-   if($api_install_perm[$permissions[$i]]==1){
+   if($api_install_perm[$permissions[$i]]==1 && $Salle_active['Salle_active']==1){
       $checked= "checked";
    } else {
       $checked= "unchecked";
@@ -96,5 +108,5 @@
 </section>
 </section>
 
-<?php } ?>
-
+<?php }; ?>
+<?php }; ?>
