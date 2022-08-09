@@ -5,8 +5,15 @@
   $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
 
 
+  if (isset($_POST['Nom'])){
+    $sql = 'SELECT * FROM api_clients WHERE client_name LIKE "'.$_POST['Nom'].'" ';
+  } else {
+    $sql = "SELECT * FROM api_clients";
+  }
 
-  foreach ($pdo->query('SELECT * FROM api_clients WHERE client_name LIKE "'.$_POST['Nom'].'" ', PDO::FETCH_ASSOC) as $api_clients) { ?>
+    foreach ($pdo->query($sql, PDO::FETCH_ASSOC) as $api_clients) { 
+      
+      ?>
 
    <!--on regarde si la permission est actif_inactif-->
    <?php
@@ -61,8 +68,10 @@
 
 </button>
 
-    
+
 <?php } ?>
+
+
 
 
 

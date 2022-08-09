@@ -5,7 +5,6 @@
 <section class="filtre_partenaire">
 
 <row_1>
-
     <button type="button" class="btn btn-outline-success btn-lg">
 
 <!--On permet au client de ce connecter-->
