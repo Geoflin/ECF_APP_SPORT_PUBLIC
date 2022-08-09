@@ -15,6 +15,26 @@
         $sql = 'SELECT * FROM api_clients WHERE client_id LIKE "'.$_POST['id'].'" ';
       } else {
         $sql = "SELECT * FROM api_clients";
+
+      //On vérifie si le filtre 'actif' a été activé
+      if (isset($_POST['actif'])){
+        $sql = 'SELECT * FROM api_clients WHERE actif LIKE 1 ';
+      } else {
+        $sql = "SELECT * FROM api_clients";
+
+      //On vérifie si le filtre 'inactif' a été activé
+      if (isset($_POST['inactif'])){
+        $sql = 'SELECT * FROM api_clients WHERE actif LIKE 0 ';
+      } else {
+        $sql = "SELECT * FROM api_clients";
+      //On vérifie si le filtre 'tout' a été activé
+      if (isset($_POST['tout'])){
+        $sql = "SELECT * FROM api_clients";
+      } else {
+        $sql = "SELECT * FROM api_clients";
+      }
+      }
+      }
       }
   }
 
