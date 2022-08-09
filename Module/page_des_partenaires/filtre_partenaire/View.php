@@ -5,9 +5,29 @@
 <section class="filtre_partenaire">
 
 <row_1>
-    <button type="button" class="btn btn-outline-success btn-lg">client_name</button>
-    <button type="button" class="btn btn-outline-success btn-lg">client_id</button>
+
+    <button type="button" class="btn btn-outline-success btn-lg">
+          <!--On permet au client de ce connecter-->
+<form class="form" method="post" action="">
+<span> 
+  <label for="Nom">client_name:</label>
+  <input type="text" id="Nom" name="Nom">
+  </span>
+</form>
+    </button>
+
+    <button type="button" class="btn btn-outline-success btn-lg">
+                <!--On permet au client de ce connecter-->
+<form class="form" method="post" action="">
+<span> 
+  <label for="Nom">client_id:</label>
+  <input type="text" id="Nom" name="Nom">
+  </span>
+</form>
+    </button>
+
 </row_1>
+
 
 <row_2>
     <button type="button" class="btn btn-outline-success btn-lg">actif</button>
@@ -15,3 +35,5 @@
 </row_2>
 
 </section>
+
+

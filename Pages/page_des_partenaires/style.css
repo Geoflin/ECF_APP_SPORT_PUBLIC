@@ -11,6 +11,11 @@ body{
     flex-wrap: wrap;
 }
 
+#Nom{
+    border: 2px solid black;
+    display: block;
+}
+
 /*style sur petits écrans*/
 @media screen and (max-width: 750px){
     body{
