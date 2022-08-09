@@ -23,10 +23,14 @@
     <button type="button" class="btn btn-outline-success btn-lg">
                 <!--On permet au client de ce connecter-->
 <form class="form" method="post" action="">
+  
 <span> 
-  <label for="Nom">client_id:</label>
-  <input type="text" id="Nom" name="Nom">
+  <label for="id">client_id:</label>
+  <input type="text" id="id" name="id">
   </span>
+
+  <input name="filtre" class="btn btn-outline-success btn-lg" type="submit" value="Chercher">
+
 </form>
     </button>
 
