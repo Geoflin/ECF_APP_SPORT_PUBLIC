@@ -7,6 +7,40 @@
 <?php
   $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
 
+    //On vérifie si le filtre 'client_name' a été activé
+    if (isset($_POST['Nom'])){
+      $sql = 'SELECT * FROM api_clients WHERE client_name LIKE "'.$_POST['Nom'].'" ';
+    } else {
+      $sql = "SELECT * FROM api_clients";
+  
+        //On vérifie si le filtre 'client_id' a été activé
+        if (isset($_POST['id'])){
+          $sql = 'SELECT * FROM api_clients WHERE client_id LIKE "'.$_POST['id'].'" ';
+        } else {
+          $sql = "SELECT * FROM api_clients";
+  
+        //On vérifie si le filtre 'actif' a été activé
+        if (isset($_POST['actif'])){
+          $sql = 'SELECT * FROM api_clients WHERE actif LIKE 1 ';
+        } else {
+          $sql = "SELECT * FROM api_clients";
+  
+        //On vérifie si le filtre 'inactif' a été activé
+        if (isset($_POST['inactif'])){
+          $sql = 'SELECT * FROM api_clients WHERE actif LIKE 0 ';
+        } else {
+          $sql = "SELECT * FROM api_clients";
+        //On vérifie si le filtre 'tout' a été activé
+        if (isset($_POST['tout'])){
+          $sql = "SELECT * FROM api_clients";
+        } else {
+          $sql = "SELECT * FROM api_clients";
+        }
+        }
+        }
+        }
+    }
+
   //foreach ($pdo->query('SELECT * FROM `api_clients` WHERE `client_id` LIKE "'.$_POST['client_id'].'" ', PDO::FETCH_ASSOC) as $api_clients) { ?>
 
 <!--View etiquette_partenaire-->
