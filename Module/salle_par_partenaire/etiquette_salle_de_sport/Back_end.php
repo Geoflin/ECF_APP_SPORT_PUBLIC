@@ -5,6 +5,8 @@
 /*on masque les erreurs pour raison de sécurité*/
 require_once 'debug.php';
 
+
+//On traite le formulaire de modification des permissions
 if(isset($_POST['modification_permission'])){
 
   $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
@@ -18,6 +20,7 @@ if(isset($_POST['modification_permission'])){
   $pdo = null;
 }
 
+//On traite le formulaire de modification du statut des salles
 if(isset($_POST['modification_statut_salle'])){
 
   $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
@@ -31,7 +34,7 @@ if(isset($_POST['modification_statut_salle'])){
   $pdo = null;
 }
 
-
+//On traite le formulaire de modification du statut partenaire
 if(isset($_POST['modification_statut_partenaire'])){
 
   $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
@@ -44,10 +47,7 @@ if(isset($_POST['modification_statut_partenaire'])){
                                  
   $pdo = null;
 }
-
-  ?>
-
-  ?>
+?>
 
 
 

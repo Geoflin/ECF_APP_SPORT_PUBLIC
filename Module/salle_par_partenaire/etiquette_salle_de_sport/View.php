@@ -32,7 +32,6 @@
 </span>
 
    <!--on regarde si la salle est actif_inactif-->
-
 <?php foreach ($pdo->query('SELECT Salle_active FROM `api_install_perm` WHERE `salle_id` LIKE "'.$salle_de_sport3['salle_id'].'"  ', PDO::FETCH_ASSOC) as $Salle_active) { ?>
 
    <?php
@@ -129,7 +128,7 @@
 </section>
 </section>
 
-<?php }; ?>
+
 
 <!--on envoie en POST le salle_id pour le formulaire de modification des permissions-->
 <input name="salle_id" id="salle_id" class="display_none" type="text" value="<?php echo $salle_de_sport3['salle_id'] ?>">
@@ -137,11 +136,15 @@
 <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
 <input name="client_id" id="client_id" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
 
+
+<?php }; ?>
+
+
 <!--traitement du formulaire inscription_partenaire-->
 <?php
-if(isset($_POST['modification_permission'])){
+/*if(isset($_POST['modification_permission'])){
   require_once '../../Module\salle_par_partenaire\etiquette_salle_de_sport\Back_end.php';
-}
+}*/
 ?>
 
 </form>
