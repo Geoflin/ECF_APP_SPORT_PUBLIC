@@ -3,9 +3,18 @@
 
   <?php
   $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
+  
 
   foreach ($pdo->query('SELECT * FROM api_clients', PDO::FETCH_ASSOC) as $api_clients) { ?>
 
+   <!--on regarde si la permission est actif_inactif-->
+   <?php
+   if($api_clients['actif']==1){
+      $checked= "checked";
+   } else {
+      $checked= "unchecked";
+   }
+   ?>
 
 <!--View etiquette_partenaire-->
 
@@ -37,7 +46,8 @@
 <section class="bouton_actif_inactif">
 
 <label class="toggleSwitch nolabel" onclick="">
-   <input type="checkbox" checked />
+  
+    <input type="checkbox" id="<?php echo $api_clients['actif']; ?>" name="<?php echo $api_clients['actif']; ?>" value="1" <?php echo $checked; ?> />
      <span>
         <span>Inactif</span>
         <span>Actif</span>
