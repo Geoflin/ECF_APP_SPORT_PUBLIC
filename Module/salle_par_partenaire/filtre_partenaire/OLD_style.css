@@ -1,33 +1,18 @@
 .filtre_partenaire{
-    display: grid;
-    grid-template-rows: 1fr 1fr;
     border: 3px solid green;
     margin-bottom: 1rem;
-    width: 90vw;
+
 }
 row_1{
     display: flex;
     justify-content: space-between;
     float: none;
-    margin-bottom: -20px;
+    margin-bottom: 10px;
     padding: 1em;
-    height: max-content;
+    height: 100px;
 }
-row_1 button{
-    height: 5rem;
-    width: 10rem; 
-}
-row_2{
-    display: flex;
-    justify-content: space-between;
-    float: none;
-    padding: 1em;
-}
-row_2 :last-child{
-    margin-left: 10px;
-}
-row_2 button{
-    height: 5rem;
+#Nom{
+    width: 100px;
 }
 #toutes{
     width:200px; 

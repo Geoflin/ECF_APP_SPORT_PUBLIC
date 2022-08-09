@@ -1,6 +1,7 @@
 .filtre_partenaire{
     border: 3px solid green;
     margin-bottom: 1rem;
+    width: 90vw;
 }
 row_1{
     display: flex;
@@ -9,7 +10,14 @@ row_1{
     float: none;
     padding: 1em;
 }
+button.aide {
+    width: 500px;
+    height: 100px;
+}
 
+input.aide2{
+    margin: 0px 0px 0px 0px;
+}
 
 /*style sur petits écrans*/
 @media screen and (max-width: 750px){
