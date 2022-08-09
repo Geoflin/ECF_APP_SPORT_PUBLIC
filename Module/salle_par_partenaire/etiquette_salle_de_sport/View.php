@@ -36,7 +36,7 @@
 <?php foreach ($pdo->query('SELECT Salle_active FROM `api_install_perm` WHERE `salle_id` LIKE "'.$salle_de_sport3['salle_id'].'"  ', PDO::FETCH_ASSOC) as $Salle_active) { ?>
 
    <?php
-   if($Salle_active['Salle_active']==1){
+   if($Salle_active['Salle_active']==1 && $api_clients['actif']==1){
       $checked_Salle_active= "checked";
    } else {
       $checked_Salle_active= "unchecked";
@@ -96,7 +96,7 @@
 
    <!--on regarde si la permission est actif_inactif-->
    <?php
-   if($api_install_perm[$permissions[$i]]==1 && $Salle_active['Salle_active']==1){
+   if($api_install_perm[$permissions[$i]]==1 && $Salle_active['Salle_active']==1 && $api_clients['actif']==1){
       $checked= "checked";
    } else {
       $checked= "unchecked";

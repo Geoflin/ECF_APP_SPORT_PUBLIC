@@ -31,7 +31,25 @@ if(isset($_POST['modification_statut_salle'])){
   $pdo = null;
 }
 
+
+if(isset($_POST['modification_statut_partenaire'])){
+
+  $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
+
+  $pdo->exec("SET CHARACTER SET utf8");
+  $sql = "UPDATE `api_clients` SET `actif` = '".$_POST['actif']."' WHERE `api_clients`.`client_id` = '".$_POST['client_id']."' ";
+  $pdo->exec($sql);
+
+  $count = $pdo->exec($sql);
+                                 
+  $pdo = null;
+}
+
   ?>
+
+  ?>
+
+
 
 <!--On crée le formulaire de modification des permissions-->
 <form method="POST" action="../../../Pages\salle_par_partenaire\View.php">

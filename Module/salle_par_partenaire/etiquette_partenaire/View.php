@@ -1,10 +1,13 @@
 <!--Style etiquette_partenaire -->
 <link href="../../Module/salle_par_partenaire\etiquette_partenaire/style.css" rel="stylesheet" />
 
+<!--On crée le formulaire de modification du statut du partenaire-->
+<form method="POST" action="../../Module\salle_par_partenaire\etiquette_salle_de_sport\Back_end.php">
+
 <?php
   $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
 
-  foreach ($pdo->query('SELECT * FROM `salle_de_sport3` WHERE `client_id` LIKE "'.$_POST['client_id'].'" ', PDO::FETCH_ASSOC) as $salle_de_sport3) { ?>
+  //foreach ($pdo->query('SELECT * FROM `api_clients` WHERE `client_id` LIKE "'.$_POST['client_id'].'" ', PDO::FETCH_ASSOC) as $api_clients) { ?>
 
 <!--View etiquette_partenaire-->
 <section class="etiquette_partenaire">
@@ -39,14 +42,8 @@
 </section>
 </span>
 
-<?php }; ?>
-
-
-<!--on regarde si la salle est actif_inactif-->
-<?php foreach ($pdo->query('SELECT Salle_active FROM `api_install_perm` WHERE `salle_id` LIKE "'.$salle_de_sport3['salle_id'].'"  ', PDO::FETCH_ASSOC) as $Salle_active) { ?>
-
-<?php
-if($Salle_active['Salle_active']==1){
+<?php 
+if($api_clients['actif']==1){
    $checked_partenaire_actif= "checked";
 } else {
    $checked_partenaire_actif= "unchecked";
@@ -57,7 +54,7 @@ if($Salle_active['Salle_active']==1){
 <section class="bouton_actif_inactif">
 
 <label class="toggleSwitch nolabel" onclick="">
-<input type="checkbox" id="Salle_active" name="Salle_active" value="1" <?php echo $checked_partenaire_actif; ?> />
+<input type="checkbox" id="actif" name="actif" value="1" <?php echo $checked_partenaire_actif; ?> />
      <span>
         <span>Inactif</span>
         <span>Actif</span>
@@ -65,11 +62,20 @@ if($Salle_active['Salle_active']==1){
 <a></a>
 </label>
 
+<input name="modification_statut_partenaire" class="btn btn-outline-success btn-lg" type="submit" value="Valider">
     
+<?php }; ?>
+</form>
+
+<!--on envoie en POST le salle_id pour le formulaire de modification des permissions-->
+<input name="salle_id" id="salle_id" class="display_none" type="text" value="<?php echo $salle_de_sport3['salle_id'] ?>">
+
+<!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
+<input name="client_id" id="client_id" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
+
 </section>
 </section>
     
 
-<?php }; ?>
-<?php }; ?>
+
 
