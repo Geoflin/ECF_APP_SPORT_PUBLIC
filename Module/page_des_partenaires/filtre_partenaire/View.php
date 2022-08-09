@@ -7,12 +7,17 @@
 <row_1>
 
     <button type="button" class="btn btn-outline-success btn-lg">
-          <!--On permet au client de ce connecter-->
+
+<!--On permet au client de ce connecter-->
 <form class="form" method="post" action="">
+
 <span> 
   <label for="Nom">client_name:</label>
   <input type="text" id="Nom" name="Nom">
   </span>
+
+  <input name="filtre" class="btn btn-outline-success btn-lg" type="submit" value="Chercher">
+
 </form>
     </button>
 

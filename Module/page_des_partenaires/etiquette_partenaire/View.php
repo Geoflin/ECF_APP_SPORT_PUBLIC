@@ -3,9 +3,10 @@
 
   <?php
   $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
-  
 
-  foreach ($pdo->query('SELECT * FROM api_clients', PDO::FETCH_ASSOC) as $api_clients) { ?>
+
+
+  foreach ($pdo->query('SELECT * FROM api_clients WHERE client_name LIKE "'.$_POST['Nom'].'" ', PDO::FETCH_ASSOC) as $api_clients) { ?>
 
    <!--on regarde si la permission est actif_inactif-->
    <?php
@@ -21,6 +22,7 @@
 <!--formulaire indiquant l'id_client à la page suivante-->
 <form method="POST" action="../../Pages/salle_par_partenaire/View.php">
 <button name="salle_par_partenaire" type="submit" class="etiquette_partenaire btn btn-outline-success btn-lg">
+
 <!--Span reliant image_client_et_information_client-->
 <span class="image_client_et_information_client">
 
