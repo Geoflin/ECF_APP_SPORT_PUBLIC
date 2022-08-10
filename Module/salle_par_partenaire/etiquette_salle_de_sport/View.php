@@ -29,7 +29,7 @@
            //On vérifie si le filtre 'actif' a été activé
            if (isset($_POST['actif'])){
              $sql = 'SELECT * FROM api_install_perm WHERE Salle_active LIKE "1" AND `client_id` LIKE "'.$client_id_2.'" ';
-           } else {
+           } else { 
 
            //On vérifie si le filtre 'inactif' a été activé
            if (isset($_POST['inactif'])){
