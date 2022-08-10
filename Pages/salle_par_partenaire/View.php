@@ -21,11 +21,7 @@ if ($isAdmin== 'oui'){
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
-<nav>
-<a href="../../index.php"><button name="accueil" type="button" class="btn btn-outline-success btn-lg">retour</button></a>
-<a href="../../Pages\page_des_partenaires\View.php"><button type="button" class="btn btn-outline-success btn-lg"> << Liste des partenaires </button></a>
-</span>
-</nav>
+
 
 <body>
 

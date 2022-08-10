@@ -1,18 +1,22 @@
 <!--Style etiquette_partenaire -->
 <link href="../../Module/salle_par_partenaire\etiquette_partenaire/style.css" rel="stylesheet" />
 
+<nav>
+<a href="../../index.php"><button name="accueil" type="button" class="btn btn-outline-success btn-lg">Accueil</button></a>
+<a href="../../Pages\page_des_partenaires\View.php"><button type="button" class="btn btn-outline-success btn-lg"> << Liste des partenaires </button></a>
+</span>
+</nav>
+
 <!--On crée le formulaire de modification du statut du partenaire-->
 <form method="POST" action="../../Module\salle_par_partenaire\etiquette_salle_de_sport\Back_end.php">
 
 <?php
   $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
 
-
-
-  //foreach ($pdo->query('SELECT * FROM `api_clients` WHERE `client_id` LIKE "'.$_POST['client_id'].'" ', PDO::FETCH_ASSOC) as $api_clients) { ?>
+//foreach ($pdo->query('SELECT * FROM `api_clients` WHERE `client_id` LIKE "'.$_POST['client_id'].'" ', PDO::FETCH_ASSOC) as $api_clients) { ?>
 
 <!--View etiquette_partenaire-->
-<section class="etiquette_partenaire">
+<section class="etiquette_partenaire <?php echo $_POST['display_none'] ?>">
 
 <!--Span reliant image_client_et_information_client-->
 <span class="image_client_et_information_client">

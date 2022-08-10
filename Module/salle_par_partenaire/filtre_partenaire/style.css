@@ -19,6 +19,10 @@ input.aide2{
     margin: 0px 0px 0px 0px;
 }
 
+.display_none{
+    display: none;
+}
+
 /*style sur petits écrans*/
 @media screen and (max-width: 750px){
     .filtre_partenaire{

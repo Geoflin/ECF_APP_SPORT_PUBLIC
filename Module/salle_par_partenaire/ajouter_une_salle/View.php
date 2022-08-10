@@ -33,7 +33,7 @@
 <!--Tableau des permissions-->
 <?php $permissions= array ("members_read", "members_write", "members_add", "members_products_add", "members_payment_schedules_read", "members_statistiques_read", "members_subscription_read", "payment_schedules_read", "payment_schedules_write", "payment_day_read"); ?>
 
-<section class="droits_client">
+<section class="droits_client ">
 
 <?php for ($i=0; $i < 10; $i++) { ?>
 
@@ -75,4 +75,3 @@ if(isset($_POST['inscription_partenaire'])){
   require_once "Back_end.php";
 }
 ?>
-

@@ -8,6 +8,14 @@
   <?php
   $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
 
+  if(isset($_POST['client_id_2'])){
+   $client_id_2= $_POST['client_id_2'];
+  } else {
+   $client_id_2= $_POST['client_id'];
+  };
+  ?>
+
+<?php
       //On vérifie si le filtre 'client_name' a été activé
       if (isset($_POST['Nom_2'])){
          $sql = 'SELECT * FROM salle_de_sport3 WHERE Nom LIKE "'.$_POST['Nom_2'].'" AND `client_id` LIKE "'.$_POST['client_id_2'].'" ';
@@ -15,12 +23,12 @@
      
            //On vérifie si le filtre 'client_id' a été activé
            if (isset($_POST['id_2'])){
-             $sql = 'SELECT * FROM salle_de_sport3 WHERE salle_id LIKE "'.$_POST['id_2'].'" AND `client_id` LIKE "'.$_POST['client_id_2'].'" ';
+             $sql = 'SELECT * FROM salle_de_sport3 WHERE salle_id LIKE "'.$_POST['id_2'].'" AND `client_id` LIKE "'.$client_id_2.'" ';
            } else {
             
            //On vérifie si le filtre 'actif' a été activé
            if (isset($_POST['actif'])){
-             $sql = 'SELECT * FROM api_install_perm WHERE Salle_active LIKE "1" AND `client_id` LIKE "'.$_POST['client_id_2'].'" ';
+             $sql = 'SELECT * FROM api_install_perm WHERE Salle_active LIKE "1" AND `client_id` LIKE "'.$client_id_2.'" ';
            } else {
 
            //On vérifie si le filtre 'inactif' a été activé
@@ -84,7 +92,7 @@
    }
    ?>
 
-<!--Section bouton_actif_inactif-->
+ <!--Section bouton_actif_inactif-->
 <section class="bouton_actif_inactif">
 
 <label class="toggleSwitch nolabel">
