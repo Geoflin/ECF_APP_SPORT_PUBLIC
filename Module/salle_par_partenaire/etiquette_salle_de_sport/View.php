@@ -106,7 +106,7 @@
 </label>
 
 <!--on envoie en POST le salle_id pour le formulaire de modification des permissions-->
-<input name="salle_id" id="salle_id" class="display_none" type="text" value="<?php echo $salle_de_sport3['salle_id'] ?>">
+<input name="salle_id_1" id="salle_id" class="display_none" type="text" value="<?php echo $salle_de_sport3['salle_id'] ?>">
 
 <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
 <input name="client_id" id="client_id" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">

@@ -26,7 +26,7 @@ if(isset($_POST['modification_statut_salle'])){
   $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
 
   $pdo->exec("SET CHARACTER SET utf8");
-  $sql = "UPDATE `api_install_perm` SET `Salle_active` = '".$_POST['Salle_active']."' WHERE `api_install_perm`.`salle_id` = '".$_POST['salle_id']."' ";
+  $sql = "UPDATE `api_install_perm` SET `Salle_active` = '".$_POST['Salle_active']."' WHERE `api_install_perm`.`salle_id` = '".$_POST['salle_id_1']."' ";
   $pdo->exec($sql);
 
   $count = $pdo->exec($sql);
