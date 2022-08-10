@@ -6,7 +6,7 @@
 
 <row_1>
 
-<!--Filtre client_id-->
+<!--Filtre client_name-->
 <button type="button" class="aide btn btn-outline-success btn-lg">
 <form class="form" method="post" action="">
 <span class="aide"> 
@@ -14,6 +14,7 @@
   <input class="aide2" type="text" name="Nom_2">
 </span>
   <!--On transmet des informations au module etiquette_salle_de_sport de la page pour ne pas perturber son fonctionnement-->
+  <input name="client_actif" class="display_none" type="text" value="<?php echo $api_clients['actif'] ?>">
   <input name="client_id_2" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
   <input name="filtre" class="aide2 btn btn-outline-success btn-lg" type="submit" value="Chercher">
 
