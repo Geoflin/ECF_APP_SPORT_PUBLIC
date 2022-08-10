@@ -8,8 +8,41 @@
   <?php
   $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
 
+      //On vérifie si le filtre 'client_name' a été activé
+      if (isset($_POST['Nom_2'])){
+         $sql = 'SELECT * FROM salle_de_sport3 WHERE Nom LIKE "'.$_POST['Nom_2'].'" AND `client_id` LIKE "'.$_POST['client_id_2'].'" ';
+       } else {
+     
+           //On vérifie si le filtre 'client_id' a été activé
+           if (isset($_POST['id_2'])){
+             $sql = 'SELECT * FROM salle_de_sport3 WHERE salle_id LIKE "'.$_POST['id_2'].'" AND `client_id` LIKE "'.$_POST['client_id_2'].'" ';
+           } else {
+            
+           //On vérifie si le filtre 'actif' a été activé
+           if (isset($_POST['actif'])){
+             $sql = 'SELECT * FROM api_install_perm WHERE Salle_active LIKE "1" AND `client_id` LIKE "'.$_POST['client_id_2'].'" ';
+           } else {
+
+           //On vérifie si le filtre 'inactif' a été activé
+           if (isset($_POST['inactif'])){
+             $sql = 'SELECT * FROM api_install_perm WHERE Salle_active LIKE "0" AND `client_id` LIKE "'.$_POST['client_id_2'].'" ';
+           } else {
+
+           //On vérifie si le filtre 'tout' a été activé
+           if (isset($_POST['tout'])){
+            $sql = 'SELECT * FROM `salle_de_sport3` WHERE `client_id` LIKE "'.$_POST['client_id_2'].'" ';
+           } else {
+
+            $sql = 'SELECT * FROM `salle_de_sport3` WHERE `client_id` LIKE "'.$_POST['client_id'].'" ';
+           }
+           }
+           }
+           }
+       }
+
+       
   
-  foreach ($pdo->query('SELECT * FROM `salle_de_sport3` WHERE `client_id` LIKE "'.$_POST['client_id'].'" ', PDO::FETCH_ASSOC) as $salle_de_sport3) { ?>
+  foreach ($pdo->query($sql, PDO::FETCH_ASSOC) as $salle_de_sport3) { ?>
 
 <!--View etiquette_partenaire-->
 <section class="etiquette_salle_de_sport">
@@ -34,8 +67,17 @@
    <!--on regarde si la salle est actif_inactif-->
 <?php foreach ($pdo->query('SELECT Salle_active FROM `api_install_perm` WHERE `salle_id` LIKE "'.$salle_de_sport3['salle_id'].'"  ', PDO::FETCH_ASSOC) as $Salle_active) { ?>
 
+   <!--on regarde si les filtres ont été activé pour savoir quel 'client_actif on prend'--
    <?php
-   if($Salle_active['Salle_active']==1 && $api_clients['actif']==1){
+   if(isset($_POST['client_actif'])){
+      $client_actif= $_POST['client_actif'];
+   } else {
+      $client_actif= $api_clients['actif'];
+   }
+   ?>
+
+   <?php
+   if($Salle_active['Salle_active']==1 && $client_actif==1){
       $checked_Salle_active= "checked";
    } else {
       $checked_Salle_active= "unchecked";
@@ -95,7 +137,7 @@
 
    <!--on regarde si la permission est actif_inactif-->
    <?php
-   if($api_install_perm[$permissions[$i]]==1 && $Salle_active['Salle_active']==1 && $api_clients['actif']==1){
+   if($api_install_perm[$permissions[$i]]==1 && $Salle_active['Salle_active']==1 && $client_actif==1){
       $checked= "checked";
    } else {
       $checked= "unchecked";

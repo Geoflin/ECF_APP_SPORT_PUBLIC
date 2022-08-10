@@ -11,8 +11,10 @@
 <form class="form" method="post" action="">
 <span class="aide"> 
   <label id="Nom" for="Nom">client_name:</label>
-  <input class="aide2" type="text" name="Nom">
+  <input class="aide2" type="text" name="Nom_2">
 </span>
+  <!--On transmet des informations au module etiquette_salle_de_sport de la page pour ne pas perturber son fonctionnement-->
+  <input name="client_id_2" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
   <input name="filtre" class="aide2 btn btn-outline-success btn-lg" type="submit" value="Chercher">
 </form>
     </button>
@@ -20,18 +22,27 @@
 
 <!--Filtre client_actif-->
 <form class="form" method="post" action="">
+  <!--On transmet des informations au module etiquette_salle_de_sport de la page pour ne pas perturber son fonctionnement-->
+  <input name="client_actif" class="display_none" type="text" value="<?php echo $api_clients['actif'] ?>">
+  <input name="client_id_2" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
   <button type="submit" class="btn btn-outline-success btn-lg" name="actif">actif</button>
 </form>
 
 
 <!--Filtre client_tout-->
 <form class="form" method="post" action="">
+  <!--On transmet des informations au module etiquette_salle_de_sport de la page pour ne pas perturber son fonctionnement-->
+  <input name="client_actif" class="display_none" type="text" value="<?php echo $api_clients['actif'] ?>">
+  <input name="client_id_2" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
   <button type="submit" class="btn btn-outline-success btn-lg" name="tout">tout</button>
 </form>
 
 
 <!--Filtre client_inactif-->
 <form class="form" method="post" action="">
+  <!--On transmet des informations au module etiquette_salle_de_sport de la page pour ne pas perturber son fonctionnement-->
+  <input name="client_actif" class="display_none" type="text" value="<?php echo $api_clients['actif'] ?>">
+  <input name="client_id_2" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
   <button type="submit" class="btn btn-outline-success btn-lg" name="inactif">inactif</button>
 </form>
 
@@ -41,8 +52,11 @@
 <form class="form" method="post" action="">
 <span class="aide"> 
   <label for="id">client_id:</label>
-  <input class="aide2" type="text" name="id">
+  <input class="aide2" type="text" name="id_2">
 </span>
+  <!--On transmet des informations au module etiquette_salle_de_sport de la page pour ne pas perturber son fonctionnement-->
+  <input name="client_actif" class="display_none" type="text" value="<?php echo $api_clients['actif'] ?>">
+  <input name="client_id_2" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
   <input name="filtre" class="aide2 btn btn-outline-success btn-lg" type="submit" value="Chercher">
 </form>
     </button>
