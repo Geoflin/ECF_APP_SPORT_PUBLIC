@@ -1,18 +1,26 @@
 <?php
 
+
+
+//Par défaut la barre de défilement des étiquettes ce situe à la page 1 sinon on va à la page $_POST['plus']
 if(isset($_POST['plus'])){
   $plus= $_POST['plus'];
+  if($plus<'1'){$plus='1';};
 } else {
   $plus= '1';
 };
-              
+
+//Si on appuie sur les flèches vers la gauche on va à la page n-1 de la barre de défilement des étiquettes
 $moins= ($plus-'1')*'6';
+//On divise le nombre total de partenaire par 6 et on arrondi le résultat et on ajoute +1 pour obtenir le nombre de page d'étiquette
 $nb_ID= round('26'/'6')+'1';
 
+//Par défaut le offset de la requête se situe à 0 sinon on le offset est égal à $super_plus= ($plus*'6')-'6'; (-6 car on enlève la première page 0 constistué de 6 étiquettes)
 if($plus== '1'){
   $super_plus= '0';
 } else {
   $super_plus= ($plus*'6')-'6';
+  if($super_plus<'0'){$super_plus='0';};
 };
 
 ?>
