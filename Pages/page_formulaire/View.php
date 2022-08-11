@@ -63,6 +63,10 @@ if ($isAdmin== 'oui'){
   <label for="mail">mail: </label>
   <input type="mail" id="mail" name="mail">
   </span> 
+
+  <span>
+  <input class="display_none" type="text" name="actif" value="1">
+  </span> 
   
 </section>
 
