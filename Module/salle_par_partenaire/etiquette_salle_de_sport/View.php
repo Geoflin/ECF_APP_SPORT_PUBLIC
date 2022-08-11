@@ -2,6 +2,51 @@
 <link href="../../Module\salle_par_partenaire\etiquette_salle_de_sport\style.css" rel="stylesheet" />
 
 
+<?php
+
+//si un bouton de la barre de défilement est activé on va à la page $_POST['plus']
+if(isset($_POST['plus'])){
+  $plus= $_POST['plus'];
+  if($plus<'1'){$plus='1';};
+  if($plus>'5'){$plus='5';};
+} else {
+//si un bouton de la barre de défilement est activé on va à la page $_POST['plus2']
+  if(isset($_POST['plus2'])){
+    $plus= $_POST['plus2'];
+    if($plus<'1'){$plus='1';};
+    if($plus>'5'){$plus='5';};
+  }else{
+//Par défaut la barre de défilement des étiquettes ce situe à la page 1 sinon on va à la page $_POST['plus']
+    $plus= '1';
+  };
+};
+
+//on calcule le nombre total de partenaire
+$pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
+    //nb_de_ligne_database
+    foreach ($pdo->query('SELECT salle_id FROM salle_de_sport3', PDO::FETCH_ASSOC) as $Id){ 
+      $ID[]= $Id['client_id'];
+      $nb_ID= round((count($ID)), 0, PHP_ROUND_HALF_DOWN);
+  }
+
+//Si on appuie sur les flèches vers la gauche on va à la page n-1 de la barre de défilement des étiquettes
+$moins= ($plus-'1')*'1';
+
+      //On divise le nombre total de partenaire par 6 et on arrondi le résultat et on ajoute +1 pour obtenir le nombre de page d'étiquette
+      $nb_ID= round($nb_ID/'2')+'1';
+
+
+//Par défaut le offset de la requête se situe à 0 sinon on le offset est égal à $super_plus= ($plus*'6')-'6'; (-6 car on enlève la première page 0 constistué de 6 étiquettes)
+if($plus== '1'){
+  $super_plus= '0';
+} else {
+  $super_plus= ($plus*'2')-'2';
+  if($super_plus<'0'){$super_plus='0';};
+};
+
+?>
+
+
 <!--On crée le formulaire de modification du statut de la salle-->
 <form method="POST" action="../../Module\salle_par_partenaire\etiquette_salle_de_sport\Back_end.php">
 
@@ -18,12 +63,12 @@
 <?php
       //On vérifie si le filtre 'client_name' a été activé
       if (isset($_POST['Nom_2'])){
-         $sql = 'SELECT * FROM salle_de_sport3 WHERE Nom LIKE "'.$_POST['Nom_2'].'" AND `client_id` LIKE "'.$client_id_2.'" ';
+         $sql = 'SELECT * FROM salle_de_sport3 WHERE Nom LIKE "'.$_POST['Nom_2'].'" AND `client_id` LIKE "'.$client_id_2.'" LIMIT 1 OFFSET '.$super_plus.' ';
        } else {
      
            //On vérifie si le filtre 'client_id' a été activé
            if (isset($_POST['id_2'])){
-             $sql = 'SELECT * FROM salle_de_sport3 WHERE salle_id LIKE "'.$_POST['id_2'].'" AND `client_id` LIKE "'.$client_id_2.'" ';
+             $sql = 'SELECT * FROM salle_de_sport3 WHERE salle_id LIKE "'.$_POST['id_2'].'" AND `client_id` LIKE "'.$client_id_2.'" LIMIT 1 OFFSET '.$super_plus.' ';
            } else {
             
            //On vérifie si le filtre 'actif' a été activé
@@ -41,7 +86,7 @@
             $sql = 'SELECT * FROM `salle_de_sport3` WHERE `client_id` LIKE "'.$client_id_2.'" ';
            } else {
 
-            $sql = 'SELECT * FROM `salle_de_sport3` WHERE `client_id` LIKE "'.$_POST['client_id'].'" ';
+            $sql = 'SELECT * FROM `salle_de_sport3` WHERE `client_id` LIKE "'.$_POST['client_id'].'"  ';
            }
            }
            }
