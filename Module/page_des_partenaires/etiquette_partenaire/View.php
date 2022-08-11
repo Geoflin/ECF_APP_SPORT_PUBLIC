@@ -8,7 +8,13 @@ if(isset($_POST['plus'])){
               
 $moins= ($plus-'1')*'6';
 $nb_ID= round('26'/'6')+'1';
-$super_plus= $plus*'6';
+
+if($plus== '1'){
+  $super_plus= '0';
+} else {
+  $super_plus= ($plus*'6')-'6';
+};
+
 ?>
 
 <!--Style du etiquette_partenaire -->
