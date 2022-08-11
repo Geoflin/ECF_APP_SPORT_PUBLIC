@@ -1,7 +1,6 @@
 <!--Style du etiquette_salle_de_sport -->
 <link href="../../Module\salle_par_partenaire\etiquette_salle_de_sport\style.css" rel="stylesheet" />
 
-
 <?php
 
 //si un bouton de la barre de défilement est activé on va à la page $_POST['plus']
@@ -173,7 +172,7 @@ if($plus== '1'){
 <section class="permissions_des_salles">
 
 <span id="permission_moins">
-   Permission    
+   <button id="permission_moins_js">Permission</button> 
    <span class="material-symbols-outlined">do_not_disturb_on</span>
 <span>
 
@@ -244,3 +243,4 @@ if(isset($_POST['modification_permission'])){
   require_once '../../Module\salle_par_partenaire\etiquette_salle_de_sport\Back_end.php';
 }
 ?>
+

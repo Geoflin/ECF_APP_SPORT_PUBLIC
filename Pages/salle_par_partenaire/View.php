@@ -21,17 +21,19 @@ if ($isAdmin== 'oui'){
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
-
+<button type="button" id="permission_moins_js">test</button>
 
 <body>
 
-    <main>
+    <main id="main">
 
+    <div>
     <?php require_once '../../Module\salle_par_partenaire\etiquette_partenaire\View.php'  ?>
-
+    </div>
     <?php require_once '../../Module\salle_par_partenaire\filtre_partenaire\View.php'  ?>
-
+    
     <?php require_once '../../Module\salle_par_partenaire\etiquette_salle_de_sport\View.php'  ?>
+    
 
     <?php require_once '../../Module\salle_par_partenaire\ajouter_une_salle\View.php'  ?>
 
@@ -45,6 +47,8 @@ if ($isAdmin== 'oui'){
     
 </body>
 
+<script src="script.js"></script>
+
 </html>
 
 <?php 
@@ -52,3 +56,4 @@ if ($isAdmin== 'oui'){
   echo "Accès non autorisé";
 };
 ?>
+
