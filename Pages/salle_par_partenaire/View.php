@@ -22,10 +22,11 @@ if ($isAdmin== 'oui'){
 </head>
 
 <button id="permission_moins_js">button</button>
-<script src="script.js"></script>
+
 <body>
 
     <main id="main">
+    <script src="script.js"></script>
 
     <?php require_once '../../Module\salle_par_partenaire\etiquette_partenaire\View.php'  ?>
 
