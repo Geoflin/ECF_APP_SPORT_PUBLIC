@@ -1,13 +1,12 @@
 .footer_partenaire{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
     margin-top: 30px;
-
+    margin-bottom: 30px;
 }
 
 /*button_bar*/
-.btn-group button, .btn-group div{
+.btn-group button {
     background-color: #04AA6D; /* Green background */
     border: 1px solid green; /* Green border */
     color: white; /* White text */
@@ -31,11 +30,3 @@
   .btn-group button:hover {
     background-color: #3e8e41;
   }
-
-  input{
-    margin-left: 0px;
-  }
- 
-.flex_start{
-  margin-left: 10px;
-}
