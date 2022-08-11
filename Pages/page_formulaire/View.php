@@ -29,7 +29,7 @@ if ($isAdmin== 'oui'){
 
 <body>
 
-<form method="POST" action="">
+<form method="POST" action="Back_end.php">
 
 <section class="informations_client_et_droits_client">
 
