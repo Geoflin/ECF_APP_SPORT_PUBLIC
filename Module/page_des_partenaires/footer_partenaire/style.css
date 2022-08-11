@@ -1,8 +1,9 @@
 .footer_partenaire{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 30px;
-    margin-bottom: 30px;
+
 }
 
 /*button_bar*/
@@ -30,3 +31,8 @@
   .btn-group button:hover {
     background-color: #3e8e41;
   }
+
+  .flex_end{
+    margin-left: 950px;
+  }
+ 
