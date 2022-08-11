@@ -1,10 +1,23 @@
-  <!--Style du etiquette_partenaire -->
+<?php
+
+if(isset($_POST['plus'])){
+  $plus= $_POST['plus'];
+} else {
+  $plus= '1';
+};
+              
+$moins= ($plus-'1')*'6';
+$nb_ID= round('26'/'6')+'1';
+$super_plus= $plus*'6';
+?>
+
+<!--Style du etiquette_partenaire -->
   <link href="../../Module/page_des_partenaires/etiquette_partenaire/style.css" rel="stylesheet" />
 
   <?php
 
 
-
+$super_plus_1=6;
 
   $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
 
@@ -35,7 +48,7 @@
       if (isset($_POST['tout'])){
         $sql = "SELECT * FROM api_clients LIMIT 6 OFFSET 0";
       } else {
-        $sql = 'SELECT * FROM api_clients LIMIT 6 OFFSET 0';
+        $sql = 'SELECT * FROM api_clients LIMIT 6 OFFSET '.$super_plus.' ';
       }
       }
       }
