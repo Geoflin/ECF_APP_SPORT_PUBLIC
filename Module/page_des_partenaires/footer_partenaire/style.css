@@ -7,7 +7,7 @@
 }
 
 /*button_bar*/
-.btn-group button {
+.btn-group button, .btn-group div{
     background-color: #04AA6D; /* Green background */
     border: 1px solid green; /* Green border */
     color: white; /* White text */
@@ -33,6 +33,9 @@
   }
 
   .flex_end{
-    margin-left: 950px;
+    margin-right: 60px;
   }
  
+.flex_start{
+  margin-left: 10px;
+}
