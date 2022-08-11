@@ -2,6 +2,10 @@
   <link href="../../Module/page_des_partenaires/etiquette_partenaire/style.css" rel="stylesheet" />
 
   <?php
+
+
+
+
   $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
 
   //On vérifie si le filtre 'client_name' a été activé
@@ -29,15 +33,14 @@
         $sql = "SELECT * FROM api_clients";
       //On vérifie si le filtre 'tout' a été activé
       if (isset($_POST['tout'])){
-        $sql = "SELECT * FROM api_clients";
+        $sql = "SELECT * FROM api_clients LIMIT 6 OFFSET 0";
       } else {
-        $sql = "SELECT * FROM api_clients";
+        $sql = 'SELECT * FROM api_clients LIMIT 6 OFFSET 0';
       }
       }
       }
       }
   }
-
 
 
     foreach ($pdo->query($sql, PDO::FETCH_ASSOC) as $api_clients) { ?>
