@@ -6,6 +6,48 @@
 
 if ($pdo->exec('INSERT INTO api_clients (actif, client_name, password, active, short_description, full_description, urll, mail) VALUES ("'. $_POST['actif'] . '", "'. $_POST['client_name'] . '", "'. $_POST['password'] . '", "On", "'. $_POST['short_description'] . '", "'. $_POST['full_description'] . '", "'. $_POST['urll'] . '", "'. $_POST['mail'] . '");') !== false){};
 
+//Envoie du mail
+define('MAIL_DESTINATAIRE','geoffrey.marhoffer@gmail.com'); // remplacer par votre email
+define('MAIL_SUJET','Message du formulaire de example.com');
+
+// vérification des champs
+if (empty($_POST['client_name']))
+$message .= "Votre client_name<br/>";
+if (empty($_POST['password']))
+$message .= "Votre password<br/>";
+if (empty($_POST['short_description']))
+$message .= "Votre short_description<br/>";
+if (empty($_POST['full_description']))
+$message .= "Votre full_description<br/>";
+if (empty($_POST['urll']))
+$message .= "Votre url<br/>";
+if (empty($_POST['mail']))
+$message .= "Votre adresse mail<br/>";
+
+//Préparation de l'entête du mail:
+$mail_entete  = "MIME-Version: 1.0\r\n";
+$mail_entete .= "From: {$_POST['client_name']} "
+             ."<{$_POST['mail']}>\r\n";
+$mail_entete .= 'Reply-To: '.$_POST['mail']."\r\n";
+$mail_entete .= 'Content-Type: text/plain; charset="iso-8859-1"';
+$mail_entete .= "\r\nContent-Transfer-Encoding: 8bit\r\n";
+$mail_entete .= 'X-Mailer:PHP/' . phpversion()."\r\n";
+
+// préparation du corps du mail
+$mail_corps  = "Message de : ".$_POST['client_name'];
+$mail_corps .= "short_description :".$_POST['short_description'];
+$mail_corps .= "full_description :".$_POST['full_description'];
+
+// envoi du mail
+if (mail(MAIL_DESTINATAIRE,MAIL_SUJET,$mail_corps,$mail_entete)) {
+  //Le mail est bien expédié
+  echo $msg_ok;
+} else {
+  //Le mail n'a pas été expédié
+  echo "Une erreur est survenue lors de l'envoi du formulaire par email";
+}
+
+
 ?>
 
 <form method="POST" action="../page_des_partenaires\View.php">

@@ -21,13 +21,12 @@ if ($isAdmin== 'oui'){
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
-<button id="permission_moins_js">button</button>
+
 
 <body>
 
-    <main id="main">
-    <script src="script.js"></script>
-
+    <main>
+    
     <?php require_once '../../Module\salle_par_partenaire\etiquette_partenaire\View.php'  ?>
 
     <?php require_once '../../Module\salle_par_partenaire\filtre_partenaire\View.php'  ?>

@@ -47,6 +47,11 @@
     </section>
 
 <?php }; ?>
+<?php }; ?>
+
+  <input name="modification_permission" class="btn btn-outline-success btn-lg" type="submit" value="Valider">
+
+
 
 </section>
 </section>
@@ -61,3 +66,13 @@
 
 
 <?php }; ?>
+
+
+</form>
+
+<!--traitement du formulaire inscription_partenaire-->
+<?php
+if(isset($_POST['modification_permission'])){
+  require_once '../../Module\salle_par_partenaire\etiquette_salle_de_sport\Back_end.php';
+}
+?>

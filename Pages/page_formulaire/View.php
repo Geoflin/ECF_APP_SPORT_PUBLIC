@@ -109,13 +109,6 @@ if ($isAdmin== 'oui'){
 
 </form>
 
-<!--traitement du formulaire inscription_partenaire-->
-<?php
-if(isset($_POST['inscription_partenaire'])){
-  require_once 'Back_end.php';
-}
-?>
-
 </body>
 
 </html>

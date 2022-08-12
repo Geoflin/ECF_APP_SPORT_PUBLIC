@@ -169,12 +169,13 @@ if($plus== '1'){
 <link href="../../Module\salle_par_partenaire\permissions_des_salles\style.css" rel="stylesheet" />
 
 <!--View permissions_des_salles-->
-<section class="permissions_des_salles">
+<section id="permissions_des_salles" class="permissions_des_salles">
 
-<span id="permission_moins">
-   <button id="permission_moins_js">Permission</button> 
+<span>
+   <span>Permission</span> 
    <span class="material-symbols-outlined">do_not_disturb_on</span>
 <span>
+
 
 <!--On crée le formulaire de modification des permissions-->
 <form method="POST" action="../../Module\salle_par_partenaire\etiquette_salle_de_sport\Back_end.php">
@@ -186,6 +187,7 @@ if($plus== '1'){
 
 <?php for ($i=0; $i < 10; $i++) { ?>
 
+  <div>
    <?php foreach ($pdo->query('SELECT * FROM `api_install_perm` WHERE `salle_id` LIKE "'.$salle_de_sport3['salle_id'].'" AND "'.$permissions[$i].'" LIKE "'.$permissions[$i].'"  ', PDO::FETCH_ASSOC) as $api_install_perm) { ?>
 
    <!--on regarde si la permission est actif_inactif-->
@@ -214,6 +216,7 @@ if($plus== '1'){
     </section>
 
 <?php }; ?>
+  </div>
 <?php }; ?>
 
   <input name="modification_permission" class="btn btn-outline-success btn-lg" type="submit" value="Valider">
