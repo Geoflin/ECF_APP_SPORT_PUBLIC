@@ -14,7 +14,7 @@
 
   <img src="test.jpg"/>
 
-  <?php require_once 'Module\connexion\View.php' ?>
+  <?php require_once 'connexion\View.php' ?>
 
 </body>
 
