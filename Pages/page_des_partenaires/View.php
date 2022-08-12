@@ -1,8 +1,8 @@
 <?php
 /*on masque les erreurs pour raison de sécurité*/
-require_once '../../Module\connexion\debug.php';
+require_once '../../Module/connexion/debug.php';
 /*on vérifie l'identité de l'utilisateur*/
-require_once '../../Module\connexion\verification_identite.php';
+require_once '../../Module/connexion/verification_identite.php';
 if ($isAdmin== 'oui'){
 ?>
 
@@ -23,7 +23,7 @@ if ($isAdmin== 'oui'){
 
 <span>
 <a href="../../index.php"><button name="accueil" type="button" class="btn btn-outline-success btn-lg">Accueil</button></a>
-<a href="../page_formulaire\View.php"><button type="button" class="btn btn-outline-success btn-lg">Ajouter partenaire</button></a>
+<a href="../page_formulaire/View.php"><button type="button" class="btn btn-outline-success btn-lg">Ajouter partenaire</button></a>
 </span>
 
 </nav>
