@@ -51,7 +51,7 @@ if(isset($_POST['modification_statut_partenaire'])){
 
 
 
-<form method="POST" action="../../../Pages\salle_par_partenaire\View.php">
+<form method="POST" action="../../../Pages/salle_par_partenaire/View.php">
 
   <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
 <input name="client_id" id="client_id" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">

@@ -1,5 +1,5 @@
 <head>
-  <link href="../../Module\salle_par_partenaire\ajouter_une_salle\style.css" rel="stylesheet" type="text/css" />
+  <link href="../../Module/salle_par_partenaire/ajouter_une_salle/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <section class="ajouter_une_salle">

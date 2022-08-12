@@ -25,13 +25,13 @@ if (empty($_POST['mail']))
 $message .= "Votre adresse mail<br/>";
 
 //Préparation de l'entête du mail:
-$mail_entete  = "MIME-Version: 1.0\r\n";
+$mail_entete  = "MIME-Version: 1.0/r/n";
 $mail_entete .= "From: {$_POST['client_name']} "
-             ."<{$_POST['mail']}>\r\n";
-$mail_entete .= 'Reply-To: '.$_POST['mail']."\r\n";
+             ."<{$_POST['mail']}>/r/n";
+$mail_entete .= 'Reply-To: '.$_POST['mail']."/r/n";
 $mail_entete .= 'Content-Type: text/plain; charset="iso-8859-1"';
-$mail_entete .= "\r\nContent-Transfer-Encoding: 8bit\r\n";
-$mail_entete .= 'X-Mailer:PHP/' . phpversion()."\r\n";
+$mail_entete .= "/r/nContent-Transfer-Encoding: 8bit/r/n";
+$mail_entete .= 'X-Mailer:PHP/' . phpversion()."/r/n";
 
 // préparation du corps du mail
 $mail_corps  = "Message de : ".$_POST['client_name'];
@@ -50,7 +50,7 @@ if (mail(MAIL_DESTINATAIRE,MAIL_SUJET,$mail_corps,$mail_entete)) {
 
 ?>
 
-<form method="POST" action="../page_des_partenaires\View.php">
+<form method="POST" action="../page_des_partenaires/View.php">
 <h3>Le partenaire "<?php echo $_POST['client_name'] ?>" a été ajouté</h3>
 <button name="accueil" type="submit" class="btn btn-outline-success btn-lg">Retourner voir les partenaires</button>
 

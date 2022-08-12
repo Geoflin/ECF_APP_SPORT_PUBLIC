@@ -1,14 +1,14 @@
 <!--Style etiquette_partenaire -->
-<link href="../../Module/salle_par_partenaire\etiquette_partenaire/style.css" rel="stylesheet" />
+<link href="../../Module/salle_par_partenaire/etiquette_partenaire/style.css" rel="stylesheet" />
 
 <nav>
 <a href="../../index.php"><button name="accueil" type="button" class="btn btn-outline-success btn-lg">Accueil</button></a>
-<a href="../../Pages\page_des_partenaires\View.php"><button type="button" class="btn btn-outline-success btn-lg"> << Liste des partenaires </button></a>
+<a href="../../Pages/page_des_partenaires/View.php"><button type="button" class="btn btn-outline-success btn-lg"> << Liste des partenaires </button></a>
 </span>
 </nav>
 
 <!--On crée le formulaire de modification du statut du partenaire-->
-<form method="POST" action="../../Module\salle_par_partenaire\etiquette_salle_de_sport\Back_end.php">
+<form method="POST" action="../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php">
 
 <?php
   $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
@@ -23,7 +23,7 @@
 
 <!--Section image_client-->
 <section class="image_client">
-<img src="../../Module\page_des_partenaires\etiquette_partenaire\test.jpg" width="200" height="170">
+<img src="../../Module/page_des_partenaires/etiquette_partenaire/test.jpg" width="200" height="170">
 </section>
 
 

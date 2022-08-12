@@ -1,8 +1,8 @@
 <?php
 /*on masque les erreurs pour raison de sécurité*/
-require_once '../../Module\connexion\debug.php';
+require_once '../../Module/connexion/debug.php';
 /*on vérifie l'identité de l'utilisateur*/
-require_once '../../Module\connexion\verification_identite.php';
+require_once '../../Module/connexion/verification_identite.php';
 if ($isAdmin== 'oui'){
 ?>
 
@@ -27,18 +27,18 @@ if ($isAdmin== 'oui'){
 
     <main>
     
-    <?php require_once '../../Module\salle_par_partenaire\etiquette_partenaire\View.php'  ?>
+    <?php require_once '../../Module/salle_par_partenaire/etiquette_partenaire/View.php'  ?>
 
-    <?php require_once '../../Module\salle_par_partenaire\filtre_partenaire\View.php'  ?>
+    <?php require_once '../../Module/salle_par_partenaire/filtre_partenaire/View.php'  ?>
 
-    <?php require_once '../../Module\salle_par_partenaire\etiquette_salle_de_sport\View.php'  ?>
+    <?php require_once '../../Module/salle_par_partenaire/etiquette_salle_de_sport/View.php'  ?>
 
-    <?php require_once '../../Module\salle_par_partenaire\ajouter_une_salle\View.php'  ?>
+    <?php require_once '../../Module/salle_par_partenaire/ajouter_une_salle/View.php'  ?>
 
 </main>
 
 <footer>
-     <?php require_once '../../Module\salle_par_partenaire\footer_partenaire\View.php'  ?>
+     <?php require_once '../../Module/salle_par_partenaire/footer_partenaire/View.php'  ?>
 </footer>
 
 

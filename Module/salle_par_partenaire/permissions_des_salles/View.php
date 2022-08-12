@@ -1,5 +1,5 @@
 <!--Style du permissions_des_salles -->
-<link href="../../Module\salle_par_partenaire\permissions_des_salles\style.css" rel="stylesheet" />
+<link href="../../Module/salle_par_partenaire/permissions_des_salles/style.css" rel="stylesheet" />
 
 <!--View permissions_des_salles-->
 <section class="permissions_des_salles">
@@ -10,7 +10,7 @@
 <span>
 
 <!--On crée le formulaire de modification des permissions-->
-<form method="POST" action="../../Module\salle_par_partenaire\etiquette_salle_de_sport\Back_end.php">
+<form method="POST" action="../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php">
 
 <section class="box_bouton_actif_inactif">
 
@@ -73,6 +73,6 @@
 <!--traitement du formulaire inscription_partenaire-->
 <?php
 if(isset($_POST['modification_permission'])){
-  require_once '../../Module\salle_par_partenaire\etiquette_salle_de_sport\Back_end.php';
+  require_once '../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php';
 }
 ?>

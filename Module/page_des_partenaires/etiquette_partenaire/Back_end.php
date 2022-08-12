@@ -22,7 +22,7 @@
 
 <!--Section image_client-->
 <section class="image_client">
-<img src="../../Module\page_des_partenaires\etiquette_partenaire\test.jpg" width="200" height="170">
+<img src="../../Module/page_des_partenaires/etiquette_partenaire/test.jpg" width="200" height="170">
 </section>
 
 <!--Section information_client-->

@@ -1,5 +1,5 @@
 <!--Style du etiquette_salle_de_sport -->
-<link href="../../Module\salle_par_partenaire\etiquette_salle_de_sport\style.css" rel="stylesheet" />
+<link href="../../Module/salle_par_partenaire/etiquette_salle_de_sport/style.css" rel="stylesheet" />
 
 <?php
 
@@ -47,7 +47,7 @@ if($plus== '1'){
 
 
 <!--On crée le formulaire de modification du statut de la salle-->
-<form method="POST" action="../../Module\salle_par_partenaire\etiquette_salle_de_sport\Back_end.php">
+<form method="POST" action="../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php">
 
   <?php
   $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
@@ -104,7 +104,7 @@ if($plus== '1'){
 
 <!--Section image_salle_de_sport-->
 <section class="image_salle_de_sport">
-<img src="../../Module\page_des_partenaires\etiquette_partenaire\test.jpg" width="200" height="170">
+<img src="../../Module/page_des_partenaires/etiquette_partenaire/test.jpg" width="200" height="170">
 </section>
 
 <!--Section information_salle_de_sport-->
@@ -166,7 +166,7 @@ if($plus== '1'){
 
 
 <!--Style du permissions_des_salles -->
-<link href="../../Module\salle_par_partenaire\permissions_des_salles\style.css" rel="stylesheet" />
+<link href="../../Module/salle_par_partenaire/permissions_des_salles/style.css" rel="stylesheet" />
 
 <!--View permissions_des_salles-->
 <section id="permissions_des_salles" class="permissions_des_salles">
@@ -178,7 +178,7 @@ if($plus== '1'){
 
 
 <!--On crée le formulaire de modification des permissions-->
-<form method="POST" action="../../Module\salle_par_partenaire\etiquette_salle_de_sport\Back_end.php">
+<form method="POST" action="../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php">
 
 <section class="box_bouton_actif_inactif">
 
@@ -243,7 +243,7 @@ if($plus== '1'){
 <!--traitement du formulaire inscription_partenaire-->
 <?php
 if(isset($_POST['modification_permission'])){
-  require_once '../../Module\salle_par_partenaire\etiquette_salle_de_sport\Back_end.php';
+  require_once '../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php';
 }
 ?>
 
