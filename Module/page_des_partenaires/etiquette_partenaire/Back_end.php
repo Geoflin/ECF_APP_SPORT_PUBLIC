@@ -1,5 +1,5 @@
 <?php
-  $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
+  $pdo = new PDO('mysql:host=eu-cdbr-west-03.cleardb.net;dbname=heroku_cb119347919fa64', 'b17b85233573cc', '95de3bee');
 
   foreach ($pdo->query('SELECT * FROM api_clients', PDO::FETCH_ASSOC) as $api_clients) { ?>
     <?php echo $api_clients['client_id'].'<br>'; ?>

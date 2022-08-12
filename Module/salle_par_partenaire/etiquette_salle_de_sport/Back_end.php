@@ -9,7 +9,7 @@ require_once 'debug.php';
 //On traite le formulaire de modification des permissions
 if(isset($_POST['modification_permission'])){
 
-  $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
+  $pdo = new PDO('mysql:host=eu-cdbr-west-03.cleardb.net;dbname=heroku_cb119347919fa64', 'b17b85233573cc', '95de3bee');
 
   $pdo->exec("SET CHARACTER SET utf8");
   $sql = "UPDATE `api_install_perm` SET `members_read` = '".$_POST['members_read']."', `members_write` = '".$_POST['members_write']."', `members_add` = '".$_POST['members_add']."', `members_products_add` = '".$_POST['members_products_add']."', `members_payment_schedules_read` = '".$_POST['members_payment_schedules_read']."', `members_statistiques_read` = '".$_POST['members_statistiques_read']."', `members_subscription_read` = '".$_POST['members_subscription_read']."', `payment_schedules_read` = '".$_POST['payment_schedules_read']."', `payment_schedules_write` = '".$_POST['payment_schedules_write']."', `payment_day_read` = '".$_POST['payment_day_read']."' WHERE `salle_id` = '".$_POST['salle_id']."' ";
@@ -23,7 +23,7 @@ if(isset($_POST['modification_permission'])){
 //On traite le formulaire de modification du statut des salles
 if(isset($_POST['modification_statut_salle'])){
 
-  $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
+  $pdo = new PDO('mysql:host=eu-cdbr-west-03.cleardb.net;dbname=heroku_cb119347919fa64', 'b17b85233573cc', '95de3bee');
 
   $pdo->exec("SET CHARACTER SET utf8");
   $sql = "UPDATE `api_install_perm` SET `Salle_active` = '".$_POST['Salle_active']."' WHERE `api_install_perm`.`salle_id` = '".$_POST['salle_id_1']."' ";
@@ -37,7 +37,7 @@ if(isset($_POST['modification_statut_salle'])){
 //On traite le formulaire de modification du statut partenaire
 if(isset($_POST['modification_statut_partenaire'])){
 
-  $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
+  $pdo = new PDO('mysql:host=eu-cdbr-west-03.cleardb.net;dbname=heroku_cb119347919fa64', 'b17b85233573cc', '95de3bee');
 
   $pdo->exec("SET CHARACTER SET utf8");
   $sql = "UPDATE `api_clients` SET `actif` = '".$_POST['actif']."' WHERE `api_clients`.`client_id` = '".$_POST['client_id']."' ";

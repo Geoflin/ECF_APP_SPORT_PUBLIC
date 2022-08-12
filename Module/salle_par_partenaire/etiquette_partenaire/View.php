@@ -11,7 +11,7 @@
 <form method="POST" action="../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php">
 
 <?php
-  $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
+  $pdo = new PDO('mysql:host=eu-cdbr-west-03.cleardb.net;dbname=heroku_cb119347919fa64', 'b17b85233573cc', '95de3bee');
 
 //foreach ($pdo->query('SELECT * FROM `api_clients` WHERE `client_id` LIKE "'.$_POST['client_id'].'" ', PDO::FETCH_ASSOC) as $api_clients) { ?>
 

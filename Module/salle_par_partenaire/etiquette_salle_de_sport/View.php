@@ -21,7 +21,7 @@ if(isset($_POST['plus'])){
 };
 
 //on calcule le nombre total de partenaire
-$pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
+$pdo = new PDO('mysql:host=eu-cdbr-west-03.cleardb.net;dbname=heroku_cb119347919fa64', 'b17b85233573cc', '95de3bee');
     //nb_de_ligne_database
     foreach ($pdo->query('SELECT salle_id FROM salle_de_sport3', PDO::FETCH_ASSOC) as $Id){ 
       $ID[]= $Id['client_id'];
@@ -50,7 +50,7 @@ if($plus== '1'){
 <form method="POST" action="../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php">
 
   <?php
-  $pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
+  $pdo = new PDO('mysql:host=eu-cdbr-west-03.cleardb.net;dbname=heroku_cb119347919fa64', 'b17b85233573cc', '95de3bee');
 
   if(isset($_POST['client_id_2'])){
    $client_id_2= $_POST['client_id_2'];
