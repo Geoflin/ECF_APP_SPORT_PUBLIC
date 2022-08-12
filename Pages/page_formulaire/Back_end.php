@@ -6,6 +6,8 @@
 
 if ($pdo->exec('INSERT INTO api_clients (actif, client_name, password, active, short_description, full_description, urll, mail) VALUES ("'. $_POST['actif'] . '", "'. $_POST['client_name'] . '", "'. $_POST['password'] . '", "On", "'. $_POST['short_description'] . '", "'. $_POST['full_description'] . '", "'. $_POST['urll'] . '", "'. $_POST['mail'] . '");') !== false){};
 
+
+/*
 //Envoie du mail
 define('MAIL_DESTINATAIRE','geoffrey.marhoffer@gmail.com'); // remplacer par votre email
 define('MAIL_SUJET','Message du formulaire de example.com');
@@ -46,7 +48,7 @@ if (mail(MAIL_DESTINATAIRE,MAIL_SUJET,$mail_corps,$mail_entete)) {
   //Le mail n'a pas été expédié
   echo "Une erreur est survenue lors de l'envoi du formulaire par email";
 }
-
+*/
 
 ?>
 
@@ -69,31 +71,38 @@ if (mail(MAIL_DESTINATAIRE,MAIL_SUJET,$mail_corps,$mail_entete)) {
 </style>
 
 <?php 
+
+
 //test sendinBlue
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once '../../vendor/autoload.php';
 
 // Configure API key authorization: api-key
-$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', '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');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// Configure API key authorization: partner-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', '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');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
-// Uncomment below line to configure authorization using: partner-key
-// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
-
-$apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
+$apiInstance = new SendinBlue\Client\Api\AccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$sendSmtpEmail = new \SendinBlue\Client\Model\SendSmtpEmail(); // \SendinBlue\Client\Model\SendSmtpEmail | Values to send a transactional email
-$sendSmtpEmail['to'] = array(array('email'=>'testmail@example.com', 'name'=>'John Doe'));
-$sendSmtpEmail['templateId'] = 59;
-$sendSmtpEmail['params'] = array('name'=>'John', 'surname'=>'Doe');
-$sendSmtpEmail['headers'] = array('X-Mailin-custom'=>'custom_header_1:custom_value_1|custom_header_2:custom_value_2');
 
 try {
-    $result = $apiInstance->sendTransacEmail($sendSmtpEmail);
+    $result = $apiInstance->getAccount();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionalEmailsApi->sendTransacEmail: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountApi->getAccount: ', $e->getMessage(), PHP_EOL;
 }
+
+
 ?>
+
+
+
+
+
