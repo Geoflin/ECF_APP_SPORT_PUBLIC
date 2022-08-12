@@ -46,8 +46,8 @@ foreach ($pdo->query('SELECT * FROM `password` WHERE username= "'.$_SESSION['use
 if ($_SESSION['username'] == $dataCompte['username']  && $_SESSION['password'] == $dataCompte['password']) {
 ?>
 
-<div><a href="Pages/page_des_partenaires\View.php"><button type="button" class="btn btn-outline-success btn-lg">Accèder à mon espace</button></a></div>
-<div><a href="Pages/page_formulaire\View.php"><button type="button" class="btn btn-outline-success btn-lg">Inscrire un partenaire</button></a></div>
+<div><a href="Pages/page_des_partenaires/View.php"><button type="button" class="btn btn-outline-success btn-lg">Accèder à mon espace</button></a></div>
+<div><a href="Pages/page_formulaire/View.php"><button type="button" class="btn btn-outline-success btn-lg">Inscrire un partenaire</button></a></div>
 <div><form><button name="deconnexion" type="submit" onclick='window.location.reload(false)' class="btn btn-outline-success btn-lg">déconnexion</button></form></div>
 <style>
     .form, .center{
