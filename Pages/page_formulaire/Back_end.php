@@ -4,8 +4,9 @@
 <?php
   $pdo = new PDO('mysql:host=eu-cdbr-west-03.cleardb.net;dbname=heroku_cb119347919fa64', 'b17b85233573cc', '95de3bee');
 
+/*
 if ($pdo->exec('INSERT INTO api_clients (actif, client_name, password, active, short_description, full_description, urll, mail) VALUES ("'. $_POST['actif'] . '", "'. $_POST['client_name'] . '", "'. $_POST['password'] . '", "On", "'. $_POST['short_description'] . '", "'. $_POST['full_description'] . '", "'. $_POST['urll'] . '", "'. $_POST['mail'] . '");') !== false){};
-
+*/
 
 /*
 //Envoie du mail
@@ -81,7 +82,7 @@ $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey(
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: partner-key
-$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY'); 
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('n2', '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'); 
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
