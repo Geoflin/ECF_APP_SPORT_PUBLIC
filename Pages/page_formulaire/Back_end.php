@@ -77,7 +77,7 @@ if (mail(MAIL_DESTINATAIRE,MAIL_SUJET,$mail_corps,$mail_entete)) {
 require_once '../../vendor/autoload.php';
 
 // Configure API key authorization: api-key
-$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', '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');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('n3', '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');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: partner-key
