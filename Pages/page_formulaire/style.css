@@ -13,7 +13,7 @@ html, body, form{
 
 .informations_client_et_droits_client{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 5vw;
     margin-right: 0vw;
     margin-left: 1vw;
@@ -29,7 +29,7 @@ html, body, form{
 }
 
 section.informations_client > span *{
-    margin-left: 50px;
+    margin-left: 10px;
     margin-bottom: -10vh;
     width: max-content;
 }
@@ -47,7 +47,7 @@ section.informations_client > span *{
 
 input{
     margin-top: 3vh;
-    margin-left: 54vw;
+    margin-left: 10vw;
     width: max-content;
 }
 
