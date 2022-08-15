@@ -11,7 +11,6 @@
 <form method="POST" action="../page_des_partenaires/View.php">
 <h3>Le partenaire "<?php echo $_POST['client_name'] ?>" a été ajouté</h3>
 <button name="accueil" type="submit" class="btn btn-outline-success btn-lg">Retourner voir les partenaires</button>
-<h4><?php echo $api; ?></h4>
 </form>
 
 <style>

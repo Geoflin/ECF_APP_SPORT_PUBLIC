@@ -67,27 +67,6 @@ if ($isAdmin== 'oui'){
   <span>
   <input class="display_none" type="text" name="actif" value="1">
   </span> 
-
-  <?php
-$pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
-//On recupère les informations grâce à l'ID du partenaire sur lesquel nous avons cliqué
-foreach ($pdo->query('SELECT secret_1 FROM securite WHERE securite_id LIKE "1" ', PDO::FETCH_ASSOC) as $secret_1) {
-  $password= $secret_1['secret_1'];
-}
- 
-//Le mot de passe hasher
-$passwordHash = password_hash($password, PASSWORD_DEFAULT);
-
-echo $passwordHash.'<br/><br/>';
- 
-//Verification du mot de passe
-$passordVerify = password_verify($password, $passwordHash);
-if ($passordVerify) {
-    echo 'clès reconnue<br/><br/>';
-    echo $passordVerify;
-    echo $password;
-}
- ?>
   
 </section>
 

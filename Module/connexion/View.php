@@ -14,6 +14,16 @@ require_once 'verification_identite.php';
 </head>
 <body>
 
+    <!--Actualisation de la session administrateur-->
+    <?php
+$pdo = new PDO('mysql:host=eu-cdbr-west-03.cleardb.net;dbname=heroku_cb119347919fa64', 'b17b85233573cc', '95de3bee');
+//$pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
+foreach ($pdo->query('SELECT * FROM `password` WHERE id="1" ', PDO::FETCH_ASSOC) as $dataCompte) {
+  $username = $dataCompte['username'];
+  $password = $dataCompte['password'];
+  };
+?>
+
 <!--On permet au client de ce connecter-->
 <form class="form" method="post" action="">
     <label for="username">utilisateur</label>
@@ -29,23 +39,15 @@ require_once 'verification_identite.php';
     if (isset($_POST['connexion_admin_principal'])){
         session_start();
 $_SESSION['username'] = $_POST['username'];
-$_SESSION['password']= $_POST['password'];
+$_SESSION['password'] = MD5($_POST['password']);
 ?>
 
-    <!--Actualisation de la session administrateur-->
-    <?php
-$pdo = new PDO('mysql:host=eu-cdbr-west-03.cleardb.net;dbname=heroku_cb119347919fa64', 'b17b85233573cc', '95de3bee');
-foreach ($pdo->query('SELECT * FROM `password` WHERE username= "'.$_SESSION['username'].'" AND password="'.$_SESSION['password'].'" ', PDO::FETCH_ASSOC) as $dataCompte) {
-  $username = $dataCompte['username'];
-  $password = $dataCompte['password'];
-  };
-?>
+
 
 <!--Vérification d'identité-->
 <?php
-if ($_SESSION['username'] == $dataCompte['username']  && $_SESSION['password'] == $dataCompte['password']) {
+if ($_SESSION['username'] == $dataCompte['username']  && MD5($_SESSION['password']) == MD5($password)) {
 ?>
-
 <div><a href="Pages/page_des_partenaires/View.php"><button type="button" class="btn btn-outline-success btn-lg">Accèder à mon espace</button></a></div>
 <div><a href="Pages/page_formulaire/View.php"><button type="button" class="btn btn-outline-success btn-lg">Inscrire un partenaire</button></a></div>
 <div><form><button name="deconnexion" type="submit" onclick='window.location.reload(false)' class="btn btn-outline-success btn-lg">déconnexion</button></form></div>
