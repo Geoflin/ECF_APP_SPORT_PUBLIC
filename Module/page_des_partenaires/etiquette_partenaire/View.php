@@ -22,7 +22,6 @@ if(isset($_POST['plus'])){
 };
 
 //on calcule le nombre total de partenaire
-$pdo = new PDO('mysql:host=eu-cdbr-west-03.cleardb.net;dbname=heroku_cb119347919fa64', 'b17b85233573cc', '95de3bee');
     //nb_de_ligne_database
     foreach ($pdo->query('SELECT client_id FROM api_clients', PDO::FETCH_ASSOC) as $Id){ 
       $ID[]= $Id['client_id'];

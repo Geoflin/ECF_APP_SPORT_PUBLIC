@@ -1,4 +1,5 @@
 <?php 
+require_once "env/secret2.php";
 /*on masque les erreurs pour raison de sécurité*/
 require_once 'debug.php';
 /*on vérifie l'identité de l'utilisateur*/
@@ -16,8 +17,6 @@ require_once 'verification_identite.php';
 
     <!--Actualisation de la session administrateur-->
     <?php
-$pdo = new PDO('mysql:host=eu-cdbr-west-03.cleardb.net;dbname=heroku_cb119347919fa64', 'b17b85233573cc', '95de3bee');
-//$pdo = new PDO('mysql:host=localhost;dbname=sport', 'root', '');
 foreach ($pdo->query('SELECT * FROM `password` WHERE id="1" ', PDO::FETCH_ASSOC) as $dataCompte) {
   $username = $dataCompte['username'];
   $password = $dataCompte['password'];

@@ -1,4 +1,5 @@
 <?php
+require_once "../../env/secret2.php";
 /*on masque les erreurs pour raison de sécurité*/
 require_once '../../Module/connexion/debug.php';
 /*on vérifie l'identité de l'utilisateur*/
