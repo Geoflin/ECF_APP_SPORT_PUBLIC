@@ -49,7 +49,7 @@
 <?php }; ?>
 <?php }; ?>
 
-  <input name="modification_permission" class="btn btn-outline-success btn-lg" type="submit" value="Valider">
+  <input id="<?php $lecture_seule ?>" name="modification_permission" class="btn btn-outline-success btn-lg" type="submit" value="Valider">
 
 
 
@@ -76,3 +76,5 @@ if(isset($_POST['modification_permission'])){
   require_once '../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php';
 }
 ?>
+
+

@@ -1,4 +1,4 @@
-    <!--Actualisation de la session administrateur-->
+<!--Actualisation de la session administrateur-->
     <?php
     session_start();
 foreach ($pdo->query('SELECT * FROM `password` WHERE username= "'.$_SESSION['username'].'" AND password="'.$_SESSION['password'].'" ', PDO::FETCH_ASSOC) as $dataCompte) {
@@ -15,3 +15,21 @@ if ($_SESSION['username'] !== $dataCompte['username']  && $_SESSION['password'] 
 }
 ?>
 
+<!--Actualisation de la session partenaire lecture seule-->
+<?php
+if($isAdmin=='non'){
+    session_start();
+    foreach ($pdo->query('SELECT * FROM `api_clients` WHERE client_name= "'.$_SESSION['username'].'" AND password="'.$_SESSION['password'].'" ', PDO::FETCH_ASSOC) as $dataCompte) {
+      $username = $dataCompte['client_name'];
+      $password = $dataCompte['password'];
+      };
+    
+    /*Vérification d'identité*/
+    
+    if ($_SESSION['username'] !== $dataCompte['client_name']  && $_SESSION['password'] !== $dataCompte['password'] || !isset($_SESSION['username']) ) {
+        $lecture_seule= 'non';
+    }else {
+        $lecture_seule= 'oui';
+    }
+}
+?>

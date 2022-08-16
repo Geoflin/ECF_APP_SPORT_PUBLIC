@@ -2,11 +2,15 @@
 require_once "../../env/secret2.php";
 require_once "../../env/secret.php";
 /*on masque les erreurs pour raison de sécurité*/
-//require_once '../../Module/connexion/debug.php';
+require_once '../../Module/connexion/debug.php';
 /*on vérifie l'identité de l'utilisateur*/
 require_once '../../Module/connexion/verification_identite.php';
 if ($isAdmin== 'oui'){
 ?>
+
+<script>
+document.getElementById("reset").setAttribute('disabled','disabled');
+</script>
 
 <!DOCTYPE html>
 <html>
@@ -42,8 +46,6 @@ if ($isAdmin== 'oui'){
 <footer>
      <?php //require_once '../../Module/salle_par_partenaire/footer_partenaire/View.php'  ?>
 </footer>
-
-
     
 </body>
 
@@ -54,3 +56,4 @@ if ($isAdmin== 'oui'){
   echo "Accès non autorisé";
 };
 ?>
+

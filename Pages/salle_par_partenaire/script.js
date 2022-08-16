@@ -1,3 +1,15 @@
+
+
+
+
+
+
+
+
+
+
+
+
 //affichage Front-End
 
 const permission_moins_js = document.getElementById('permission_moins_js')

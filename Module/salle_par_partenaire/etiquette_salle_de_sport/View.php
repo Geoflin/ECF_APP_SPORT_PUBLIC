@@ -1,3 +1,4 @@
+
 <!--Style du etiquette_salle_de_sport -->
 <link href="../../Module/salle_par_partenaire/etiquette_salle_de_sport/style.css" rel="stylesheet" />
 
@@ -155,7 +156,8 @@ if($plus== '1'){
 <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
 <input name="client_id" id="client_id" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
 
-<input name="modification_statut_salle" class="btn btn-outline-success btn-lg" type="submit" value="Valider">
+<input id="<?php $lecture_seule ?>" name="modification_statut_salle" class="btn btn-outline-success btn-lg reset" type="submit" value="Valider">
+
 
 <?php }; ?>
 
@@ -219,7 +221,7 @@ if($plus== '1'){
   </div>
 <?php }; ?>
 
-  <input name="modification_permission" class="btn btn-outline-success btn-lg" type="submit" value="Valider">
+  <input id="<?php $lecture_seule ?>" name="modification_permission" class="btn btn-outline-success btn-lg reset" type="submit" value="Valider">
 
 
 
