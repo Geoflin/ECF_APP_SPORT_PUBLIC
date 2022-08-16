@@ -52,7 +52,7 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
 ?>
 
 <!--On crée le formulaire de modification du statut de la salle-->
-<form method="POST" action="../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php">
+<form class="pointer_events_none" method="POST" action="../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php">
 
 
 <?php
@@ -140,10 +140,10 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
 
  <!-Section bouton_actif_inactif-->
 
-<section class="bouton_actif_inactif">
+<section class="bouton_actif_inactif disabled">
 
 <label class="toggleSwitch nolabel">
-<input type="checkbox" id="Salle_active" name="Salle_active" value="1" <?php echo $checked_Salle_active; ?> />
+<input class="" type="checkbox" id="Salle_active" name="Salle_active" value="1" <?php echo $checked_Salle_active; ?> />
      <span>
         <span>Inactif</span>
         <span>Actif</span>
@@ -181,9 +181,9 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
 
 
 <!--On crée le formulaire de modification des permissions-->
-<form method="POST" action="../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php">
+<form class="" method="POST" action="../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php">
 
-<section class="box_bouton_actif_inactif">
+<section class="box_bouton_actif_inactif disabled">
 
 <!--Tableau des permissions-->
 <?php $permissions= array ("members_read", "members_write", "members_add", "members_products_add", "members_payment_schedules_read", "members_statistiques_read", "members_subscription_read", "payment_schedules_read", "payment_schedules_write", "payment_day_read"); ?>
@@ -203,11 +203,12 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
    ?>
 
     <!--Section bouton_actif_inactif-->
-    <section class="bouton_actif_inactif">
+    <section class="bouton_actif_inactif disabled">
     
-    <label class="toggleSwitch_permissions_des_salles nolabel" onclick="">
-      
-       <input type="checkbox" id="<?php echo $permissions[$i]; ?>" name="<?php echo $permissions[$i]; ?>" value="1" <?php echo $checked; ?> />
+    <label class="toggleSwitch_permissions_des_salles nolabel disabled" onclick="">
+
+       <input class="disabled" type="checkbox" id="<?php echo $permissions[$i]; ?>" name="<?php echo $permissions[$i]; ?>" value="1" <?php echo $checked; ?> />
+
          <span>
             <span>Inactif</span>
             <span>Actif</span>
@@ -246,4 +247,3 @@ if(isset($_POST['modification_permission'])){
   require_once '../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php';
 }
 ?>
-

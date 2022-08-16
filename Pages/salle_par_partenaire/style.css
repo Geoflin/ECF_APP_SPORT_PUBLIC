@@ -15,6 +15,10 @@ body{
     flex-wrap: wrap;
 }
 
+.pointer_events_none, .disabled {
+    pointer-events: none;
+  }
+
 /*style sur petits écrans*/
 @media screen and (max-width: 1270px){
     body{

@@ -60,10 +60,10 @@ if($api_clients['actif']==1){
 ?>
 
 <!--Section bouton_actif_inactif-->
-<section class="bouton_actif_inactif">
+<section class="bouton_actif_inactif disabled">
 
 <label class="toggleSwitch nolabel" onclick="">
-<input type="checkbox" id="actif" name="actif" value="1" <?php echo $checked_partenaire_actif; ?> />
+<input class="" type="checkbox" id="actif" name="actif" value="1" <?php echo $checked_partenaire_actif; ?> />
      <span>
         <span>Inactif</span>
         <span>Actif</span>

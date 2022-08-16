@@ -63,6 +63,8 @@ if($lecture_seule== 'oui'){
 };
 ?>
 
+
+
 </html>
 
 <?php 
@@ -71,4 +73,3 @@ if($lecture_seule== 'oui'){
 }
   ?>
 
-</body>

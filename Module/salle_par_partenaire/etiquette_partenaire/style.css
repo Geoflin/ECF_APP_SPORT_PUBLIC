@@ -1,3 +1,7 @@
+.pointer_events_none, .disabled {
+  pointer-events: none;
+}
+
 .etiquette_partenaire{
     height: max-content;
     width: 90vw;
