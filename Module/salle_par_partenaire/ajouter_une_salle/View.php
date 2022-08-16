@@ -65,7 +65,7 @@
 
   </section>
 
-  <input name="inscription_partenaire" class="btn btn-outline-success btn-lg display_none" type="submit" value="Valider" onclick='window.location.reload(false)'>
+  <input name="inscription_partenaire" class="btn btn-outline-success btn-lg lecture_seul" type="submit" value="Valider" onclick='window.location.reload(false)'>
 
 </form>
 
