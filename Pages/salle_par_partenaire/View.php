@@ -58,6 +58,9 @@ if($lecture_seule== 'oui'){
   .lecture_admin{
     display: flex;
   }
+  .bouton_actif_inactif{
+    pointer-events: none;
+  }
 </style>
 <?php
 };
