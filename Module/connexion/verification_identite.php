@@ -27,9 +27,9 @@ if($isAdmin=='non'){
     /*Vérification d'identité*/
     
     if ($_SESSION['username'] !== $dataCompte['client_name']  && $_SESSION['password'] !== $dataCompte['password']) {
-        $lecture_seule= 'non';
-    }else {
         $lecture_seule= 'oui';
+    }else {
+        $lecture_seule= 'non';
     }
 }
 ?>

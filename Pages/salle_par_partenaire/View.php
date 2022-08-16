@@ -35,6 +35,7 @@ if ($_SESSION['username'] == $dataCompte['username']  && MD5($_SESSION['password
 <body>
 
     <main>
+
     
     <?php require_once '../../Module/salle_par_partenaire/etiquette_partenaire/View.php'  ?>
 
@@ -45,18 +46,20 @@ if ($_SESSION['username'] == $dataCompte['username']  && MD5($_SESSION['password
     <?php require_once '../../Module/salle_par_partenaire/ajouter_une_salle/View.php'  ?>
 
     </main>
-
-<footer>
-     <?php //require_once '../../Module/salle_par_partenaire/footer_partenaire/View.php'  ?>
-</footer>
     
 </body>
 
-<style>
-    .display_none, .center{
-        display:none;
-    }
+<?php
+if($lecture_seule== 'oui'){
+?>
+  <style>
+  .lecture_seule{
+      display:none;
+  }
 </style>
+<?php
+};
+?>
 
 </html>
 

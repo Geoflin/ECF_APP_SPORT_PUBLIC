@@ -2,8 +2,9 @@
 <link href="../../Module/salle_par_partenaire/etiquette_partenaire/style.css" rel="stylesheet" />
 
 <nav>
-<a href="../../index.php"><button name="accueil" type="button" class="btn btn-outline-success btn-lg">Accueil</button></a>
-<a href="../../Pages/page_des_partenaires/View.php"><button type="button" class="btn btn-outline-success btn-lg"> << Liste des partenaires </button></a>
+<a href="../../index.php"><button name="accueil" type="button" class="btn btn-outline-success btn-lg display_none">Accueil</button></a>
+<a href="../../Pages/page_des_partenaires/View.php"><button type="button" class="btn btn-outline-success btn-lg display_none"> << Liste des partenaires </button></a>
+<div><form><button name="deconnexion" type="submit" onclick='window.location.reload(false)' class="btn btn-outline-success btn-lg">déconnexion</button></form></div>
 </span>
 </nav>
 
@@ -16,7 +17,7 @@
 //foreach ($pdo->query('SELECT * FROM `api_clients` WHERE `client_id` LIKE "'.$_POST['client_id'].'" ', PDO::FETCH_ASSOC) as $api_clients) { ?>
 
 <!--View etiquette_partenaire-->
-<section class="etiquette_partenaire <?php echo $_POST['display_none'] ?>">
+<section class="etiquette_partenaire <?php echo $_POST['lecture_seule'] ?>">
 
 <!--Span reliant image_client_et_information_client-->
 <span class="image_client_et_information_client">
@@ -26,12 +27,14 @@
 <img src="../../Module/page_des_partenaires/etiquette_partenaire/test.jpg" width="200" height="170">
 </section>
 
-
-
+<?php
+//on recupère l'id du partenaire
+require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
+?>
 
 <?php
   //On recupère les informations grâce à l'ID du partenaire sur lesquel nous avons cliqué
-  foreach ($pdo->query('SELECT * FROM api_clients WHERE client_id LIKE "'.$_POST['client_id'].'" ', PDO::FETCH_ASSOC) as $api_clients) { 
+  foreach ($pdo->query('SELECT * FROM api_clients WHERE client_id LIKE "'.$client_id.'" ', PDO::FETCH_ASSOC) as $api_clients) { 
 ?>
 
     <!--Section information_client-->
@@ -68,10 +71,12 @@ if($api_clients['actif']==1){
 <a></a>
 </label>
 
-<input name="modification_statut_partenaire" class="btn btn-outline-success btn-lg" type="submit" value="Valider">
+<input name="modification_statut_partenaire" class="btn btn-outline-success btn-lg lecture_seule" type="submit" value="Valider">
     
 <?php }; ?>
 </form>
+
+
 
 <!--on envoie en POST le salle_id pour le formulaire de modification des permissions-->
 <input name="salle_id" id="salle_id" class="display_none" type="text" value="<?php echo $salle_de_sport3['salle_id'] ?>">
@@ -83,5 +88,12 @@ if($api_clients['actif']==1){
 </section>
     
 
-
+<!--Deconnexion-->
+<?php
+if(isset($_POST['deconnexion'])){
+  session_destroy();
+  session_unset();
+  setcookie('PHPSESSID');
+};
+?>
 

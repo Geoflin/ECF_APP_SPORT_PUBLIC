@@ -47,20 +47,21 @@ if($plus== '1'){
 ?>
 
 
+
 <!--On crée le formulaire de modification du statut de la salle-->
 <form method="POST" action="../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php">
 
-  <?php
-  
 
+<?php
   if(isset($_POST['client_id_2'])){
    $client_id_2= $_POST['client_id_2'];
   } else {
-   $client_id_2= $_POST['client_id'];
+   $client_id_2= $client_id;
   };
   ?>
 
 <?php
+        $sql = 'SELECT * FROM `salle_de_sport3` WHERE `client_id` LIKE "'.$client_id.'"  ';
       //On vérifie si le filtre 'client_name' a été activé
       if (isset($_POST['Nom_2'])){
          $sql = 'SELECT * FROM salle_de_sport3 WHERE Nom LIKE "'.$_POST['Nom_2'].'" AND `client_id` LIKE "'.$client_id_2.'" LIMIT 1 OFFSET '.$super_plus.' ';
@@ -84,14 +85,11 @@ if($plus== '1'){
            //On vérifie si le filtre 'tout' a été activé
            if (isset($_POST['tout'])){
             $sql = 'SELECT * FROM `salle_de_sport3` WHERE `client_id` LIKE "'.$client_id_2.'" ';
-           } else {
-
-            $sql = 'SELECT * FROM `salle_de_sport3` WHERE `client_id` LIKE "'.$_POST['client_id'].'"  ';
            }
            }
            }
            }
-       }
+           }
 
        
   
@@ -156,7 +154,7 @@ if($plus== '1'){
 <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
 <input name="client_id" id="client_id" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
 
-<input id="<?php $lecture_seule ?>" name="modification_statut_salle" class="btn btn-outline-success btn-lg reset" type="submit" value="Valider">
+<input id="<?php $lecture_seule ?>" name="modification_statut_salle" class="btn btn-outline-success btn-lg reset lecture_seule" type="submit" value="Valider">
 
 
 <?php }; ?>
@@ -221,7 +219,7 @@ if($plus== '1'){
   </div>
 <?php }; ?>
 
-  <input id="<?php $lecture_seule ?>" name="modification_permission" class="btn btn-outline-success btn-lg reset" type="submit" value="Valider">
+  <input id="<?php $lecture_seule ?>" name="modification_permission" class="btn btn-outline-success btn-lg reset lecture_seule" type="submit" value="Valider">
 
 
 
