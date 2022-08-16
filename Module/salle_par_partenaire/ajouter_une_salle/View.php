@@ -4,7 +4,7 @@
   <link href="../../Module/salle_par_partenaire/ajouter_une_salle/style.css" rel="stylesheet" type="text/css" />
 </head>
 
-<section class="ajouter_une_salle display_none">
+<section class="ajouter_une_salle lecture_seule">
 
 <form method="POST" action="">
 

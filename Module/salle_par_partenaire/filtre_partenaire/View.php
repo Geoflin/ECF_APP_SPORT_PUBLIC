@@ -2,7 +2,7 @@
   <link href="../../Module/salle_par_partenaire/filtre_partenaire/style.css" rel="stylesheet" />
 
 <!--View filtre partenaire-->
-<section class="filtre_partenaire <?php echo $_POST['display_none'] ?>">
+<section class="filtre_partenaire">
 
 <row_1>
 

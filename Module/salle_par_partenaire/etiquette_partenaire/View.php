@@ -2,9 +2,9 @@
 <link href="../../Module/salle_par_partenaire/etiquette_partenaire/style.css" rel="stylesheet" />
 
 <nav>
-<a href="../../index.php"><button name="accueil" type="button" class="btn btn-outline-success btn-lg display_none">Accueil</button></a>
-<a href="../../Pages/page_des_partenaires/View.php"><button type="button" class="btn btn-outline-success btn-lg display_none"> << Liste des partenaires </button></a>
-<div><form><button name="deconnexion" type="submit" onclick='window.location.reload(false)' class="btn btn-outline-success btn-lg">déconnexion</button></form></div>
+<a href="../../index.php"><button name="accueil" type="button" class="btn btn-outline-success btn-lg lecture_seule">Accueil</button></a>
+<a href="../../Pages/page_des_partenaires/View.php"><button type="button" class="btn btn-outline-success btn-lg lecture_seule"> << Liste des partenaires </button></a>
+<div class=""><form class=""><button name="deconnexion" type="submit" onclick='window.location.reload(false)' class="btn btn-outline-success btn-lg display_none lecture_admin">déconnexion</button></form></div>
 </span>
 </nav>
 

@@ -46,7 +46,10 @@ if($plus== '1'){
 
 ?>
 
-
+<?php
+//on recupère l'id du partenaire
+require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
+?>
 
 <!--On crée le formulaire de modification du statut de la salle-->
 <form method="POST" action="../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php">
@@ -61,7 +64,7 @@ if($plus== '1'){
   ?>
 
 <?php
-        $sql = 'SELECT * FROM `salle_de_sport3` WHERE `client_id` LIKE "'.$client_id.'"  ';
+        $sql = 'SELECT * FROM `salle_de_sport3` WHERE `client_id` LIKE "'.$client_id_2.'"  ';
       //On vérifie si le filtre 'client_name' a été activé
       if (isset($_POST['Nom_2'])){
          $sql = 'SELECT * FROM salle_de_sport3 WHERE Nom LIKE "'.$_POST['Nom_2'].'" AND `client_id` LIKE "'.$client_id_2.'" LIMIT 1 OFFSET '.$super_plus.' ';
@@ -221,11 +224,8 @@ if($plus== '1'){
 
   <input id="<?php $lecture_seule ?>" name="modification_permission" class="btn btn-outline-success btn-lg reset lecture_seule" type="submit" value="Valider">
 
-
-
 </section>
 </section>
-
 
 
 <!--on envoie en POST le salle_id pour le formulaire de modification des permissions-->
