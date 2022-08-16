@@ -203,11 +203,11 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
    ?>
 
     <!--Section bouton_actif_inactif-->
-    <section class="bouton_actif_inactif disabled">
+    <section class="bouton_actif_inactif">
     
-    <label class="toggleSwitch_permissions_des_salles nolabel disabled" onclick="">
+    <label class="toggleSwitch_permissions_des_salles nolabel" onclick="">
 
-       <input class="disabled" type="checkbox" id="<?php echo $permissions[$i]; ?>" name="<?php echo $permissions[$i]; ?>" value="1" <?php echo $checked; ?> />
+       <input class="" type="checkbox" id="<?php echo $permissions[$i]; ?>" name="<?php echo $permissions[$i]; ?>" value="1" <?php echo $checked; ?> />
 
          <span>
             <span>Inactif</span>
