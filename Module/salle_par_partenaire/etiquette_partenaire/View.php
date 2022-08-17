@@ -76,24 +76,15 @@ if($api_clients['actif']==1){
 <?php }; ?>
 </form>
 
-
-
 <!--on envoie en POST le salle_id pour le formulaire de modification des permissions-->
 <input name="salle_id" id="salle_id" class="display_none" type="text" value="<?php echo $salle_de_sport3['salle_id'] ?>">
+
+<!--on envoie en POST le mail et le client_name pour le mail de modification-->
+<input name="mail" id="mail" class="display_none" type="mail" value="geoffrey.marhoffer@gmail.com">
+<input name="client_name" id="client_name" class="display_none" type="text" value="<?php echo $api_clients['client_name'] ?>">
 
 <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
 <input name="client_id" id="client_id" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
 
 </section>
 </section>
-    
-
-<!--Deconnexion-->
-<?php
-if(isset($_POST['deconnexion'])){
-  session_destroy();
-  session_unset();
-  setcookie('PHPSESSID');
-};
-?>
-

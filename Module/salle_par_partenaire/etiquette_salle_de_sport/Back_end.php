@@ -1,4 +1,5 @@
 <?php require_once '../../../env/secret2.php' ?>
+<?php require_once '../../../env/secret.php' ?>
   <!--CDN Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
@@ -34,7 +35,11 @@ if(isset($_POST['modification_statut_salle'])){
                                  
   $pdo = null;
 }
+?>
 
+
+
+<?php
 //On traite le formulaire de modification du statut partenaire
 if(isset($_POST['modification_statut_partenaire'])){
 
@@ -48,6 +53,42 @@ if(isset($_POST['modification_statut_partenaire'])){
                                  
   $pdo = null;
 }
+?>
+
+
+
+<?php
+
+//On envoie un mail pour informer le partenaire de la modification du statut de sa salle
+
+//envoie de mail avec sendinblue
+require_once('../../../vendor/autoload.php');
+
+// Configure API key authorization: api-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', $api);
+
+// Uncomment below line to configure authorization using: partner-key
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
+
+$apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$sendSmtpEmail = new \SendinBlue\Client\Model\SendSmtpEmail(); // \SendinBlue\Client\Model\SendSmtpEmail | Values to send a transactional email
+$sendSmtpEmail['to'] = array(array('email'=>$_POST['mail'], 'name'=>$_POST['client_name']));
+$sendSmtpEmail['templateId'] = 7;
+$sendSmtpEmail['params'] = array('nom'=>$_POST['client_name']);
+$sendSmtpEmail['headers'] = array('X-Mailin-custom'=>'custom_header_1:custom_value_1|custom_header_2:custom_value_2');
+
+try {
+    $result = $apiInstance->sendTransacEmail($sendSmtpEmail);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TransactionalEmailsApi->sendTransacEmail: ', $e->getMessage(), PHP_EOL;
+}
+
 ?>
 
 
