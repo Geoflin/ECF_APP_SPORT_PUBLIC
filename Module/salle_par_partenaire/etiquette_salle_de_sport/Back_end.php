@@ -29,11 +29,11 @@ if(isset($_POST['modification_statut_salle'])){
 
   $pdo->exec("SET CHARACTER SET utf8");
   $sql = "UPDATE `api_install_perm` SET `Salle_active` = '".$_POST['Salle_active']."' WHERE `api_install_perm`.`salle_id` = '".$_POST['salle_id_1']."' ";
-  $pdo->exec($sql);
+  $sql2 = "UPDATE `salle_de_sport3` SET `Salle_active` = '".$_POST['Salle_active']."' WHERE `salle_de_sport3`.`salle_id` = '".$_POST['salle_id_1']."' ";
 
-  $count = $pdo->exec($sql);
-                                 
-  $pdo = null;
+  $pdo->exec($sql);
+  $pdo->exec($sql2);
+
 
   require_once '../../mail/modification_statut_salle_de_sport.php';
 }

@@ -24,18 +24,30 @@
 <!--Filtre client_actif-->
 <form class="form" method="post" action="">
   <!--On transmet des informations au module etiquette_salle_de_sport de la page pour ne pas perturber son fonctionnement-->
+  <?php
+  if($isAdmin== 'oui'){
+  ?>
   <input name="client_actif" class="display_none" type="text" value="<?php echo $api_clients['actif'] ?>">
   <input name="client_id" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
   <input name="salle_id" id="salle_id" class="display_none" type="text" value="<?php echo $_POST['salle_id'] ?>">
+  <?php
+  }
+  ?>
   <button name="actif" type="submit" class="btn btn-outline-success btn-lg" >actif</button>
 </form>
 
 
 <!--Filtre client_tout-->
 <form class="form" method="post" action="">
+<?php
+  if($isAdmin== 'oui'){
+  ?>
   <!--On transmet des informations au module etiquette_salle_de_sport de la page pour ne pas perturber son fonctionnement-->
   <input name="client_actif" class="display_none" type="text" value="<?php echo $api_clients['actif'] ?>">
   <input name="client_id" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
+  <?php
+  }
+  ?>
   <button type="submit" class="btn btn-outline-success btn-lg" name="tout">tout</button>
 
 </form>
