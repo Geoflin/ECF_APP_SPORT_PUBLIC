@@ -1,12 +1,25 @@
 <?php
-require_once "../../env/secret2.php";
 require_once "../../env/secret.php";
+require_once "../../env/secret2.php";
+
 /*on masque les erreurs pour raison de sécurité*/
 require_once '../../Module/connexion/debug.php';
 /*on vérifie l'identité de l'utilisateur*/
 require_once '../../Module/connexion/verification_identite.php';
-/*formulaire de connexion*/ 
-require_once 'connexion.php';
+
+//require_once '../../Module/connexion/View.php';
+
+/*
+require_once "../../env/secret2.php";
+require_once "../../env/secret.php";
+on masque les erreurs pour raison de sécurité
+require_once '../../Module/connexion/debug.php';
+on vérifie l'identité de l'utilisateur
+require_once '../../Module/connexion/verification_identite.php';
+formulaire de connexion
+//require_once 'connexion.php';
+*/
+
 if ($isAdmin== 'oui' || $lecture_seule== 'oui'){
 
 ?>

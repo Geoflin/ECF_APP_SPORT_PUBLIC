@@ -27,8 +27,7 @@
   <input name="client_actif" class="display_none" type="text" value="<?php echo $api_clients['actif'] ?>">
   <input name="client_id" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
   <input name="salle_id" id="salle_id" class="display_none" type="text" value="<?php echo $_POST['salle_id'] ?>">
-  <button type="submit" class="btn btn-outline-success btn-lg" name="actif">actif</button>
-
+  <button name="actif" type="submit" class="btn btn-outline-success btn-lg" >actif</button>
 </form>
 
 

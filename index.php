@@ -14,7 +14,15 @@
 
   <img src="test.jpg"/>
 
-  <?php require_once 'Module/connexion/View.php' ?>
+  <?php 
+  /*on masque les erreurs pour raison de sécurité*/
+  require_once 'Module/connexion/debug.php';
+  require_once "env/secret.php";
+  require_once "env/secret2.php";
+  require_once 'Module/connexion/View.php';
+  /*on vérifie l'identité de l'utilisateur*/
+  require_once 'Module/connexion/verification_identite.php';
+  ?>
 
 </body>
 

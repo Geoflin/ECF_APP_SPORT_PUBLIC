@@ -1,10 +1,4 @@
-<?php 
-require_once "env/secret2.php";
-/*on masque les erreurs pour raison de sécurité*/
-require_once 'debug.php';
-/*on vérifie l'identité de l'utilisateur*/
-require_once 'verification_identite.php';
-?>
+
 
 <html lang="fr">
 <head>
@@ -48,6 +42,7 @@ foreach ($pdo->query('SELECT * FROM `api_clients` WHERE client_name= "'.$_POST['
 $_SESSION['username'] = $_POST['username'];
 $_SESSION['password'] = MD5($_POST['password']);
 $_SESSION['password2'] = $_POST['password'];
+$_SESSION['client_id'] = $dataCompte2['client_id'];
 ?>
 
 
@@ -64,8 +59,23 @@ if ($_SESSION['username'] == $dataCompte['username']  && MD5($_SESSION['password
         display:none;
     }
 </style>
+    <?php 
+    } else { 
+        if($_SESSION['username'] == $dataCompte2['client_name']  && $_SESSION['password2'] == $dataCompte2['password']){
+            ?>
+            <div><a href="Pages/salle_par_partenaire/View.php"><button type="button" class="btn btn-outline-success btn-lg">Accèder à mon espace</button></a></div>
+            <div><form><button name="deconnexion" type="submit" onclick='window.location.reload(false)' class="btn btn-outline-success btn-lg">déconnexion</button></form></div>
+            <style>
+    .form, .center{
+        display:none;
+    }
+</style>
+            <?php
+        }
+    }; 
+    } ?>
 
-    <?php }; } ?>
+<!--Vérification d'identité-->
 
 </body>
 

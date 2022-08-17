@@ -250,12 +250,6 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
 <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
 <input name="client_id" id="client_id" class="display_none" type="text" value="<?php echo $salle_de_sport3['client_id'] ?>">
 
-<?php
-  //On recupère les informations grâce à l'ID du partenaire sur lesquel nous avons cliqué
-  foreach ($pdo->query('SELECT * FROM api_clients WHERE client_id LIKE "'.$Salle_active['client_id'].'" ', PDO::FETCH_ASSOC) as $api_clients) { ?>
-    <input name="client_name" id="client_name" class="display_none" type="text" value="<?php echo $api_clients['client_name'] ?>">
-    <?php } ?>
-
 <input id="<?php $lecture_seule ?>" name="modification_permission" class="btn btn-outline-success btn-lg reset lecture_seule" type="submit" value="Valider">
 
 </section>
