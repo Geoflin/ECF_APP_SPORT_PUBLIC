@@ -119,7 +119,7 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
 </span>
 
    <!--on regarde si la salle est actif_inactif-->
-<?php foreach ($pdo->query('SELECT Salle_active FROM `api_install_perm` WHERE `salle_id` LIKE "'.$salle_de_sport3['salle_id'].'"  ', PDO::FETCH_ASSOC) as $Salle_active) { ?>
+<?php foreach ($pdo->query('SELECT * FROM `api_install_perm` WHERE `salle_id` LIKE "'.$salle_de_sport3['salle_id'].'"  ', PDO::FETCH_ASSOC) as $Salle_active) { ?>
 
    <!--on regarde si les filtres ont été activé pour savoir quel 'client_actif on prend'--
    <?php
@@ -157,13 +157,31 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
 <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
 <input name="client_id" id="client_id" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
 
+<!--on envoie en POST le mail et le client_name pour le mail de modification-->
+<input name="mail" id="mail" class="display_none" type="mail" value="geoffrey.marhoffer@gmail.com">
+
+<!--on envoie en POST le salle_id pour le formulaire de modification des permissions-->
+<input name="salle_id" id="salle_id" class="display_none" type="text" value="<?php echo $salle_de_sport3['salle_id'] ?>">
+
+<!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
+<input name="client_id" id="client_id" class="display_none" type="text" value="<?php echo $salle_de_sport3['client_id'] ?>">
+
+<?php
+  //On recupère les informations grâce à l'ID du partenaire sur lesquel nous avons cliqué
+  foreach ($pdo->query('SELECT * FROM api_clients WHERE client_id LIKE "'.$Salle_active['client_id'].'" ', PDO::FETCH_ASSOC) as $api_clients) { ?>
+    <input name="client_name" id="client_name" class="display_none" type="text" value="<?php echo $api_clients['client_name'] ?>">
+    <?php } ?>
+
 <input id="<?php $lecture_seule ?>" name="modification_statut_salle" class="btn btn-outline-success btn-lg reset lecture_seule" type="submit" value="Valider">
+
 
 
 <?php }; ?>
 
 </section>
 </section>
+
+
 
 </form>
 
@@ -223,11 +241,8 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
   </div>
 <?php }; ?>
 
-  <input id="<?php $lecture_seule ?>" name="modification_permission" class="btn btn-outline-success btn-lg reset lecture_seule" type="submit" value="Valider">
-
-</section>
-</section>
-
+<!--on envoie en POST le mail et le client_name pour le mail de modification-->
+<input name="mail2" id="mail" class="display_none" type="mail" value="geoffrey.marhoffer@gmail.com">
 
 <!--on envoie en POST le salle_id pour le formulaire de modification des permissions-->
 <input name="salle_id" id="salle_id" class="display_none" type="text" value="<?php echo $salle_de_sport3['salle_id'] ?>">
@@ -235,15 +250,18 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
 <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
 <input name="client_id" id="client_id" class="display_none" type="text" value="<?php echo $salle_de_sport3['client_id'] ?>">
 
+<?php
+  //On recupère les informations grâce à l'ID du partenaire sur lesquel nous avons cliqué
+  foreach ($pdo->query('SELECT * FROM api_clients WHERE client_id LIKE "'.$Salle_active['client_id'].'" ', PDO::FETCH_ASSOC) as $api_clients) { ?>
+    <input name="client_name" id="client_name" class="display_none" type="text" value="<?php echo $api_clients['client_name'] ?>">
+    <?php } ?>
+
+<input id="<?php $lecture_seule ?>" name="modification_permission" class="btn btn-outline-success btn-lg reset lecture_seule" type="submit" value="Valider">
+
+</section>
+</section>
+
 
 <?php }; ?>
 
-
 </form>
-
-<!--traitement du formulaire inscription_partenaire-->
-<?php
-if(isset($_POST['modification_permission'])){
-  require_once '../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php';
-}
-?>
