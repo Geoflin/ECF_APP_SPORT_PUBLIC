@@ -7,6 +7,8 @@ require_once '../../Module/connexion/debug.php';
 require_once '../../Module/connexion/verification_identite.php';
 /*formulaire de connexion*/ 
 require_once 'connexion.php';
+if ($isAdmin== 'oui' || $lecture_seule== 'oui'){
+
 ?>
 
 
@@ -38,7 +40,7 @@ if ($_SESSION['username'] == $dataCompte['username']  && MD5($_SESSION['password
     
     <?php require_once '../../Module/salle_par_partenaire/etiquette_partenaire/View.php'  ?>
 
-    <?php //require_once '../../Module/salle_par_partenaire/filtre_partenaire/View.php'  ?>
+    <?php require_once '../../Module/salle_par_partenaire/filtre_partenaire/View.php'  ?>
 
     <?php require_once '../../Module/salle_par_partenaire/etiquette_salle_de_sport/View.php'  ?>
 
@@ -71,8 +73,7 @@ if($lecture_seule== 'oui'){
 </html>
 
 <?php 
-} else {
-  echo "tech";
+}
 }
   ?>
 

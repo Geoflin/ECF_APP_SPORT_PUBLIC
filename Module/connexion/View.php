@@ -54,7 +54,7 @@ $_SESSION['password2'] = $_POST['password'];
 
 <!--Vérification d'identité-->
 <?php
-if ($_SESSION['username'] == $dataCompte['username']  && MD5($_SESSION['password']) == MD5($password) || $_SESSION['username'] == $dataCompte2['client_name']  && $_SESSION['password2'] == $dataCompte2['password']) {
+if ($_SESSION['username'] == $dataCompte['username']  && MD5($_SESSION['password']) == MD5($password)) {
 ?>
 <div><a href="Pages/page_des_partenaires/View.php"><button type="button" class="btn btn-outline-success btn-lg">Accèder à mon espace</button></a></div>
 <div><a href="Pages/page_formulaire/View.php"><button type="button" class="btn btn-outline-success btn-lg">Inscrire un partenaire</button></a></div>
@@ -75,5 +75,6 @@ if(isset($_POST['deconnexion'])){
   session_destroy();
   session_unset();
   setcookie('PHPSESSID');
+  $_SESSION['username']=='fds';
 };
 ?>

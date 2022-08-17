@@ -33,13 +33,4 @@ foreach ($pdo->query('SELECT * FROM `api_clients` WHERE client_name= "'.$_POST['
   };
 ?>
 
-    <?php
-    /*On traite la connexion au compte*/
-    if (isset($_POST['connexion_admin_principal'])){
-        session_start();
-$_SESSION['username'] = $_POST['username'];
-$_SESSION['password'] = MD5($_POST['password']);
-$_SESSION['password2'] = $_POST['password'];
-};  
-?>
 

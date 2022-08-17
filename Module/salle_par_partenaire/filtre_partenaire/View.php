@@ -15,11 +15,8 @@
 </span>
   <!--On transmet des informations au module etiquette_salle_de_sport de la page pour ne pas perturber son fonctionnement-->
   <input name="client_actif" class="display_none" type="text" value="<?php echo $api_clients['actif'] ?>">
-  <input name="client_id_2" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
+  <input name="client_id" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
   <input name="filtre" class="aide2 btn btn-outline-success btn-lg" type="submit" value="Chercher">
-
-  <!--On masque les boutons de tri-->
-  <input name="display_none" class="display_none" type="text" value="display_none">
 </form>
 </button>
 
@@ -31,8 +28,7 @@
   <input name="client_id" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
   <input name="salle_id" id="salle_id" class="display_none" type="text" value="<?php echo $_POST['salle_id'] ?>">
   <button type="submit" class="btn btn-outline-success btn-lg" name="actif">actif</button>
-  <!--On masque les boutons de tri-->
-  <input name="display_none" class="display_none" type="text" value="display_none">
+
 </form>
 
 
@@ -40,10 +36,9 @@
 <form class="form" method="post" action="">
   <!--On transmet des informations au module etiquette_salle_de_sport de la page pour ne pas perturber son fonctionnement-->
   <input name="client_actif" class="display_none" type="text" value="<?php echo $api_clients['actif'] ?>">
-  <input name="client_id_2" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
+  <input name="client_id" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
   <button type="submit" class="btn btn-outline-success btn-lg" name="tout">tout</button>
-    <!--On masque les boutons de tri-->
-    <input name="display_none" class="display_none" type="text" value="display_none">
+
 </form>
 
 
@@ -51,10 +46,9 @@
 <form class="form" method="post" action="">
   <!--On transmet des informations au module etiquette_salle_de_sport de la page pour ne pas perturber son fonctionnement-->
   <input name="client_actif" class="display_none" type="text" value="<?php echo $api_clients['actif'] ?>">
-  <input name="client_id_2" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
+  <input name="client_id" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
   <button type="submit" class="btn btn-outline-success btn-lg" name="inactif">inactif</button>
-    <!--On masque les boutons de tri-->
-    <input name="display_none" class="display_none" type="text" value="display_none">
+
 </form>
 
 
@@ -67,10 +61,9 @@
 </span>
   <!--On transmet des informations au module etiquette_salle_de_sport de la page pour ne pas perturber son fonctionnement-->
   <input name="client_actif" class="display_none" type="text" value="<?php echo $api_clients['actif'] ?>">
-  <input name="client_id_2" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
+  <input name="client_id" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
   <input name="filtre" class="aide2 btn btn-outline-success btn-lg" type="submit" value="Chercher">
-    <!--On masque les boutons de tri-->
-    <input name="display_none" class="display_none" type="text" value="display_none">
+
 </form>
     </button>
 
