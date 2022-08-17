@@ -77,12 +77,12 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
             
            //On vérifie si le filtre 'actif' a été activé
            if (isset($_POST['actif'])){
-             $sql = 'SELECT * FROM api_install_perm WHERE Salle_active LIKE "1" AND `client_id` LIKE "'.$client_id_2.'" ';
+             $sql = 'SELECT * FROM salle_de_sport3 WHERE Salle_active LIKE "1" AND `client_id` LIKE "'.$client_id_2.'" ';
            } else { 
 
            //On vérifie si le filtre 'inactif' a été activé
            if (isset($_POST['inactif'])){
-             $sql = 'SELECT * FROM api_install_perm WHERE Salle_active LIKE "0" AND `client_id` LIKE "'.$client_id_2.'" ';
+             $sql = 'SELECT * FROM salle_de_sport3 WHERE Salle_active LIKE "0" AND `client_id` LIKE "'.$client_id_2.'" ';
            } else {
 
            //On vérifie si le filtre 'tout' a été activé
