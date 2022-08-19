@@ -93,6 +93,7 @@ if($plus== '1'){
       $checked= "unchecked";
    }
    ?>
+   
 
 <!--View etiquette_partenaire-->
 

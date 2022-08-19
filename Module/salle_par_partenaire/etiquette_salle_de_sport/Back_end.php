@@ -35,7 +35,7 @@ if(isset($_POST['modification_statut_salle'])){
   $pdo->exec($sql2);
 
 
-  require_once '../../mail/modification_statut_salle_de_sport.php';
+  require_once '../../mail/salle_de_sport_activee_desactivee.php';
 }
 ?>
 
@@ -55,7 +55,7 @@ if(isset($_POST['modification_statut_partenaire'])){
                                  
   $pdo = null;
 
-  require_once '../../mail/modification_statut_partenaire.php';
+  require_once '../../mail/marque_de_sport_activee_desactivee.php';
 }
 ?>
 

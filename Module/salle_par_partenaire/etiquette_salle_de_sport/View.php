@@ -138,6 +138,15 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
    }
    ?>
 
+  <!--on regarde pour les mails si la salle a été activée ou désactivée-->
+         <?php
+   if($checked_Salle_active== "checked"){
+      $salle_active_ou_desactivee= "désactivée";
+   } else {
+    $salle_active_ou_desactivee= "activée";
+   }
+   ?>
+
  <!-Section bouton_actif_inactif-->
 
 <section class="bouton_actif_inactif disabled">
@@ -160,11 +169,11 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
 <!--on envoie en POST le mail et le client_name pour le mail de modification-->
 <input name="mail" id="mail" class="display_none" type="mail" value="geoffrey.marhoffer@gmail.com">
 
-<!--on envoie en POST le salle_id pour le formulaire de modification des permissions-->
-<input name="salle_id" id="salle_id" class="display_none" type="text" value="<?php echo $salle_de_sport3['salle_id'] ?>">
+<!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
+<input name="nom_salle" id="nom_salle" class="display_none" type="text" value="<?php echo $salle_de_sport3['Nom'] ?>">
 
 <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
-<input name="client_id" id="client_id" class="display_none" type="text" value="<?php echo $salle_de_sport3['client_id'] ?>">
+<input name="salle_active_ou_desactivee" id="salle_active_ou_desactivee" class="display_none" type="text" value="<?php echo $salle_active_ou_desactivee ?>">
 
 <?php
   //On recupère les informations grâce à l'ID du partenaire sur lesquel nous avons cliqué
@@ -249,6 +258,9 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
 
 <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
 <input name="client_id" id="client_id" class="display_none" type="text" value="<?php echo $salle_de_sport3['client_id'] ?>">
+
+<!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
+<input name="nom_salle" id="nom_salle" class="display_none" type="text" value="<?php echo $salle_de_sport3['Nom'] ?>">
 
 <input id="<?php $lecture_seule ?>" name="modification_permission" class="btn btn-outline-success btn-lg reset lecture_seule" type="submit" value="Valider">
 

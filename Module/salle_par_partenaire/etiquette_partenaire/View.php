@@ -60,6 +60,15 @@ if($api_clients['actif']==1){
 }
 ?>
 
+   <!--on regarde si la permission est actif_inactif-->
+   <?php
+   if($checked== "checked"){
+      $marque_active_ou_desactive= "désactivée";
+   } else {
+      $marque_active_ou_desactive= "activée";
+   }
+   ?>
+
 <!--Section bouton_actif_inactif-->
 <section class="bouton_actif_inactif disabled">
 
@@ -86,6 +95,9 @@ if($api_clients['actif']==1){
 
 <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
 <input name="client_id" id="client_id" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
+
+
+<input type="text" id="marque_active_ou_desactive" class="display_none" name="marque_active_ou_desactive" value="<?php echo $marque_active_ou_desactive ?>">
 
 </section>
 </section>

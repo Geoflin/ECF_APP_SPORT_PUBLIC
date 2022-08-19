@@ -1,9 +1,9 @@
 <?php
 
-//On envoie un mail pour informer le partenaire de la modification du statut de la salle de sport
+//Envoie du mail de confimation d'inscription au partenaire
 
 //envoie de mail avec sendinblue
-require_once('../../../vendor/autoload.php');
+require_once('../../vendor/autoload.php');
 
 // Configure API key authorization: api-key
 $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', $api);
@@ -17,10 +17,10 @@ $apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$sendSmtpEmail = new \SendinBlue\Client\Model\SendSmtpEmail();
+$sendSmtpEmail = new \SendinBlue\Client\Model\SendSmtpEmail(); // \SendinBlue\Client\Model\SendSmtpEmail | Values to send a transactional email
 $sendSmtpEmail['to'] = array(array('email'=>$_POST['mail'], 'name'=>$_POST['client_name']));
-$sendSmtpEmail['templateId'] = 8;
-$sendSmtpEmail['params'] = array('nom'=>$_POST['client_name']);
+$sendSmtpEmail['templateId'] = 12;
+$sendSmtpEmail['params'] = array('client_name'=>$_POST['client_name'], 'password'=>$_POST['password']);
 $sendSmtpEmail['headers'] = array('X-Mailin-custom'=>'custom_header_1:custom_value_1|custom_header_2:custom_value_2');
 
 try {

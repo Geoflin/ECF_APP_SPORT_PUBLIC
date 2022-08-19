@@ -1,5 +1,4 @@
 
-
 <head>
   <link href="../../Module/salle_par_partenaire/ajouter_une_salle/style.css" rel="stylesheet" type="text/css" />
 </head>
@@ -16,6 +15,19 @@
   <input class="display_none" type="text" id="salle_id" name="salle_id" value='<?php echo $api_clients['salle_id'] ?>'>
 
   <span> 
+
+  <?php
+  //On recupère les informations grâce à l'ID du partenaire sur lesquel nous avons cliqué
+  foreach ($pdo->query('SELECT * FROM api_clients WHERE client_id LIKE "'.$Salle_active['client_id'].'" ', PDO::FETCH_ASSOC) as $api_clients) { ?>
+    <input name="client_name" id="client_name" class="display_none" type="text" value="<?php echo $api_clients['client_name'] ?>">
+    <?php } ?>
+
+
+  <label for="client_name"><?php echo $api_clients['client_name'] ?></label>
+  
+  </span>
+
+  <span> 
   <label for="Nom">Nom:</label>
   <input type="text" id="Nom" name="Nom">
   </span>
@@ -29,6 +41,10 @@
   <label for="branche">branche:</label>
   <input type="text" id="branche" name="branche">
   </span>
+
+  <!--on envoie en POST le mail et le client_name pour le mail de modification-->
+<input name="mail" id="mail" class="display_none" type="mail" value="geoffrey.marhoffer@gmail.com">
+<input name="client_name" id="client_name" class="display_none" type="text" value="<?php echo $api_clients['client_name'] ?>">
 </section>
 
 
