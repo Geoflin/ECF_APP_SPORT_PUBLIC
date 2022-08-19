@@ -7,12 +7,13 @@
 
 <?php
   
-  if ($pdo->exec('INSERT INTO api_clients (actif, client_name, password, active, short_description, full_description, urll, mail) VALUES ("'. $_POST['actif'] . '", "'. $_POST['client_name'] . '", "'. $_POST['password'] . '", "On", "'. $_POST['short_description'] . '", "'. $_POST['full_description'] . '", "'. $_POST['urll'] . '", "'. $_POST['mail'] . '");') !== false){};
+  //if ($pdo->exec('INSERT INTO api_clients (actif, client_name, password, active, short_description, full_description, urll, mail) VALUES ("'. $_POST['actif'] . '", "'. $_POST['client_name'] . '", "'. $_POST['password'] . '", "On", "'. $_POST['short_description'] . '", "'. $_POST['full_description'] . '", "'. $_POST['urll'] . '", "'. $_POST['mail'] . '");') !== false){};
 ?>
 
 <form method="POST" action="../page_des_partenaires/View.php">
     <h3>Le partenaire "<?php echo $_POST['client_name'] ?>" a été ajouté</h3>
     <button name="accueil" type="submit" class="btn btn-outline-success btn-lg">Retourner voir les partenaires</button>
+    <button name="accueil" type="submit" class="btn btn-outline-success btn-lg"><a href="mail_confirmation.php">Voir mail confirmation</a></button>
 </form>
 
 <style>
