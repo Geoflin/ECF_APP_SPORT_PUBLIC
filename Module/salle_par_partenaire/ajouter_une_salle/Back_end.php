@@ -4,38 +4,3 @@ if ($pdo->exec('INSERT INTO api_install_perm (client_id, members_read, members_w
 ?>
 
 <?php require_once '../../Module/mail/Ajout_salle_de_sport.php' ?>
-
-<?php
-/*
-//création du contact du partenaire dans le compte sendinblue de notre entreprise 
-require_once('../../vendor/autoload.php');
-
-// Configure API key authorization: api-key
-$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',$api);
-
-// Uncomment below line to configure authorization using: partner-key
-// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
-
-$apiInstance = new SendinBlue\Client\Api\ContactsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$createContact = new \SendinBlue\Client\Model\CreateContact(); // \SendinBlue\Client\Model\CreateContact | Values to create a contact
-
-
-$createContact['attributes'] = array('nom'=>$_POST['Nom']);
-$createContact['listIds'] = array(11);
-$createContact['emailBlacklisted'] = false;
-$createContact['smsBlacklisted'] = false;
-$createContact['updateEnabled'] = false;
-
-try {
-    $result = $apiInstance->createContact($createContact);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ContactsApi->createContact: ', $e->getMessage(), PHP_EOL;
-}
-*/
-?>

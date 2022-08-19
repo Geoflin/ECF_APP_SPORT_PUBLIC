@@ -1,14 +1,9 @@
 <?php
-//Envoie du mail de confimation d'inscription au partenaire
-
-//envoie de mail avec sendinblue
+//Envoie du mail de confimation d'inscription au partenaire avec sendinblue
 require_once('../../vendor/autoload.php');
 
 // Configure API key authorization: api-key
 $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', $api);
-
-// Uncomment below line to configure authorization using: partner-key
-// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
 
 $apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.

@@ -1,5 +1,5 @@
 <!--Actualisation de la session administrateur-->
-    <?php
+<?php
     session_start();
 foreach ($pdo->query('SELECT * FROM `password` WHERE username= "'.$_SESSION['username'].'" AND password="'.$_SESSION['password'].'" ', PDO::FETCH_ASSOC) as $dataCompte) {
   $username = $dataCompte['username'];
@@ -7,7 +7,6 @@ foreach ($pdo->query('SELECT * FROM `password` WHERE username= "'.$_SESSION['use
   };
 
 /*Vérification d'identité*/
-
 if ($_SESSION['username'] !== $dataCompte['username']  && $_SESSION['password'] !== $dataCompte['password'] || !isset($_SESSION['username']) ) {
     $isAdmin= 'non';
 }else {
@@ -24,7 +23,6 @@ if($isAdmin== 'non'){
         };
       
       /*Vérification d'identité*/
-      
       if ($_SESSION['username'] !== $dataCompte2['client_name']  && $_SESSION['password2'] !== $dataCompte2['password'] || !isset($_SESSION['username'])) {
           $lecture_seule= 'non';
       }else {

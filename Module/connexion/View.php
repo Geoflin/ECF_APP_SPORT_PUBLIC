@@ -1,12 +1,13 @@
-
-
 <html lang="fr">
+
 <head>
-<TITLE>connexion_admin_principal</TITLE>
+    <TITLE>connexion_admin_principal</TITLE>
     <!--CDN Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-<link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
     <!--Actualisation de la session administrateur-->
@@ -17,15 +18,16 @@ foreach ($pdo->query('SELECT * FROM `password` WHERE id="1" ', PDO::FETCH_ASSOC)
   };
 ?>
 
-<!--On permet au client de ce connecter-->
-<form class="form" method="post" action="">
-    <label for="username">utilisateur</label>
-    <input type="text" required="required" name="username" id="username" placeholder="username">
-    <label for="password">mot de passe</label>
-    <input type="text" required="required" name="password" id="password" placeholder="password">
-    <br/>
-    <button name="connexion_admin_principal" type="submit" type="button" class="btn btn-outline-success btn-lg">connexion</button>
-</form>
+    <!--On permet au client de ce connecter-->
+    <form class="form" method="post" action="">
+        <label for="username">utilisateur</label>
+        <input type="text" required="required" name="username" id="username" placeholder="username">
+        <label for="password">mot de passe</label>
+        <input type="text" required="required" name="password" id="password" placeholder="password">
+        <br />
+        <button name="connexion_admin_principal" type="submit" type="button"
+            class="btn btn-outline-success btn-lg">connexion</button>
+    </form>
 
     <!--Actualisation de la session partenaire lecture seule-->
     <?php
@@ -47,35 +49,46 @@ $_SESSION['client_id'] = $dataCompte2['client_id'];
 
 
 
-<!--Vérification d'identité-->
-<?php
+    <!--Vérification d'identité-->
+    <?php
 if ($_SESSION['username'] == $dataCompte['username']  && MD5($_SESSION['password']) == MD5($password)) {
 ?>
-<div><a href="Pages/page_des_partenaires/View.php"><button type="button" class="btn btn-outline-success btn-lg">Accèder à mon espace</button></a></div>
-<div><a href="Pages/page_formulaire/View.php"><button type="button" class="btn btn-outline-success btn-lg">Inscrire un partenaire</button></a></div>
-<div><form><button name="deconnexion" type="submit" onclick='window.location.reload(false)' class="btn btn-outline-success btn-lg">déconnexion</button></form></div>
-<style>
-    .form, .center{
-        display:none;
+    <div><a href="Pages/page_des_partenaires/View.php"><button type="button"
+                class="btn btn-outline-success btn-lg">Accèder à mon espace</button></a></div>
+    <div><a href="Pages/page_formulaire/View.php"><button type="button" class="btn btn-outline-success btn-lg">Inscrire
+                un partenaire</button></a></div>
+    <div>
+        <form><button name="deconnexion" type="submit" onclick='window.location.reload(false)'
+                class="btn btn-outline-success btn-lg">déconnexion</button></form>
+    </div>
+    <style>
+    .form,
+    .center {
+        display: none;
     }
-</style>
+    </style>
     <?php 
     } else { 
         if($_SESSION['username'] == $dataCompte2['client_name']  && $_SESSION['password2'] == $dataCompte2['password']){
             ?>
-            <div><a href="Pages/salle_par_partenaire/View.php"><button type="button" class="btn btn-outline-success btn-lg">Accèder à mon espace</button></a></div>
-            <div><form><button name="deconnexion" type="submit" onclick='window.location.reload(false)' class="btn btn-outline-success btn-lg">déconnexion</button></form></div>
-            <style>
-    .form, .center{
-        display:none;
+    <div><a href="Pages/salle_par_partenaire/View.php"><button type="button"
+                class="btn btn-outline-success btn-lg">Accèder à mon espace</button></a></div>
+    <div>
+        <form><button name="deconnexion" type="submit" onclick='window.location.reload(false)'
+                class="btn btn-outline-success btn-lg">déconnexion</button></form>
+    </div>
+    <style>
+    .form,
+    .center {
+        display: none;
     }
-</style>
-            <?php
+    </style>
+    <?php
         }
     }; 
     } ?>
 
-<!--Vérification d'identité-->
+    <!--Vérification d'identité-->
 
 </body>
 

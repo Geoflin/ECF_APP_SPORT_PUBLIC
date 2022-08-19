@@ -1,8 +1,6 @@
 <?php
 
-//On envoie un mail pour informer le partenaire de la modification du statut de la salle de sport
-
-//envoie de mail avec sendinblue
+//On envoie un mail pour informer le partenaire de la modification du statut de la salle de sport avec sendinblue
 require_once('../../../vendor/autoload.php');
 
 // Configure API key authorization: api-key
