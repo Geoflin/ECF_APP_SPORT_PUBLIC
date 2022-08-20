@@ -13,7 +13,7 @@
 <form method="POST" action="../page_des_partenaires/View.php">
     <h3>Le partenaire "<?php echo $_POST['client_name'] ?>" a été ajouté</h3>
     <button name="accueil" type="submit" class="btn btn-outline-success btn-lg">Retourner voir les partenaires</button>
-    <button name="accueil" type="submit" class="btn btn-outline-success btn-lg"><a href="mail_confirmation.php">Voir mail confirmation</a></button>
+    <button name="accueil" type="submit" class="btn btn-outline-success btn-lg"><a href="../../Module/twig/index.php">Voir mail confirmation</a></button>
 </form>
 
 <style>
