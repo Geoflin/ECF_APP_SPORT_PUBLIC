@@ -11,9 +11,9 @@
 ?>
 
 <form method="POST" action="../page_des_partenaires/View.php">
-    <h3>Le partenaire "<?php echo $_POST['client_name'] ?>" a été ajouté</h3>
     <button name="accueil" type="submit" class="btn btn-outline-success btn-lg">Retourner voir les partenaires</button>
-    <button name="accueil" type="submit" class="btn btn-outline-success btn-lg"><a href="../../Module/twig/index.php">Voir mail confirmation</a></button>
+    <h3>Le partenaire "<?php echo $_POST['client_name'] ?>" a été ajouté</h3>
+    <!-- <button name="accueil" type="submit" class="btn btn-outline-success btn-lg" value="<?php echo $_POST['client_name'] ?>"><a href="../../Module/twig/index.php">Voir mail confirmation</a></button> -->
 </form>
 
 <style>
@@ -31,3 +31,4 @@ h3 {
 
 
 <?php require_once '../../Module/mail/Ajout partenaire.php' ?>
+<?php require_once '../../Module/twig/index.php' ?>
