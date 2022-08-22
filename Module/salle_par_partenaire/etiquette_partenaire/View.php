@@ -31,11 +31,9 @@
             </section>
 
 
-            <?php
-            if(!isset($_POST['client_id'])){
+            <?php   
 //on recupère l'id du partenaire
 require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
-};
 ?>
 
 

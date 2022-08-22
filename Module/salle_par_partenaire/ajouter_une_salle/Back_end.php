@@ -1,3 +1,8 @@
+<?php
+require_once "../../../env/secret.php";
+require_once "../../../env/secret2.php";
+?>
+
 <!--CDN Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
 integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -12,11 +17,19 @@ if ($pdo->exec('INSERT INTO api_install_perm (client_id, members_read, members_w
 <form method="POST" action="../../../Pages/salle_par_partenaire/View.php">
     <button name="accueil" type="submit" class="btn btn-outline-success btn-lg">Retourner voir les salles de sport</button>
     <h3>La salle de sport "<?php echo $_POST['Nom'] ?>" a été ajouté</h3>
-    <!-- On indique le client_id -->
-    <input class="display_none" type="text" id="client_id" name="client_id" value="<?php $_POST['client_id'] ?>">
+    <?php   
+    require_once "../../../env/secret2.php";
+//on recupère l'id du partenaire
+// require_once '../recuperer_id_partenaire.php';
+?>
+                <!-- On indique le client_id -->
+                <input class="display_none" type="text" id="client_id" name="client_id" value="<?php echo $_POST['client_id'] ?>">
 </form>
 
 <style>
+.display_none{
+    display: none;
+}
 button {
     margin: 5% 10% 10% 40%;
 }

@@ -61,6 +61,7 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
   } else {
    $client_id_2= $client_id;
   };
+  
   ?>
 
     <?php

@@ -19,6 +19,7 @@
                 <span>
 
                     <?php
+                    
   //On recupère les informations grâce à l'ID du partenaire sur lesquel nous avons cliqué
   foreach ($pdo->query('SELECT * FROM api_clients WHERE client_id LIKE "'.$Salle_active['client_id'].'" ', PDO::FETCH_ASSOC) as $api_clients) { ?>
                     <input name="client_name" id="client_name" class="display_none" type="text"
@@ -92,6 +93,9 @@
             </section>
 
         </section>
+
+                        <!-- On indique le client_id -->
+                        <input class="display_none" type="text" id="client_id" name="client_id" value="<?php echo $client_id ?>">
 
         <input name="inscription_partenaire" class="btn btn-outline-success btn-lg lecture_seul" type="submit"
             value="Valider" onclick='window.location.reload(false)'>
