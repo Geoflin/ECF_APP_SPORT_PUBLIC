@@ -6,7 +6,7 @@
 
 <?php
 /*on masque les erreurs pour raison de sécurité*/
-require_once 'debug.php';
+// require_once 'debug.php';
 
 
 //On traite le formulaire de modification des permissions

@@ -122,8 +122,8 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
         <!--on regarde si la salle est actif_inactif-->
         <?php foreach ($pdo->query('SELECT * FROM `api_install_perm` WHERE `salle_id` LIKE "'.$salle_de_sport3['salle_id'].'"  ', PDO::FETCH_ASSOC) as $Salle_active) { ?>
 
-        <!--on regarde si les filtres ont été activé pour savoir quel 'client_actif on prend'--
-   <?php
+        <!--on regarde si les filtres ont été activé pour savoir quel 'client_actif on prend'-->
+        <?php
    if(isset($_POST['client_actif'])){
       $client_actif= $_POST['client_actif'];
    } else {
@@ -131,7 +131,7 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
    }
    ?>
 
-   <?php
+        <?php
    if($Salle_active['Salle_active']==1 && $client_actif==1){
       $checked_Salle_active= "checked";
    } else {
@@ -139,7 +139,7 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
    }
    ?>
 
-  <!--on regarde pour les mails si la salle a été activée ou désactivée-->
+        <!--on regarde pour les mails si la salle a été activée ou désactivée-->
         <?php
    if($checked_Salle_active== "checked"){
       $salle_active_ou_desactivee= "désactivée";
@@ -148,54 +148,58 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
    }
    ?>
 
-        <!-Section bouton_actif_inactif-->
+        <!-- Section bouton_actif_inactif-->
+        <section class="bouton_actif_inactif disabled">
 
-            <section class="bouton_actif_inactif disabled">
+            <label class="toggleSwitch nolabel">
+                <input class="" type="checkbox" id="Salle_active" name="Salle_active" value="1"
+                    <?php echo $checked_Salle_active; ?> />
+                <span>
+                    <span>Inactif</span>
+                    <span>Actif</span>
+                </span>
+                <a></a>
+            </label>
 
-                <label class="toggleSwitch nolabel">
-                    <input class="" type="checkbox" id="Salle_active" name="Salle_active" value="1"
-                        <?php echo $checked_Salle_active; ?> />
-                    <span>
-                        <span>Inactif</span>
-                        <span>Actif</span>
-                    </span>
-                    <a></a>
-                </label>
+            <!--on envoie en POST le salle_id pour le formulaire de modification des permissions-->
+            <input name="salle_id_1" id="salle_id" class="display_none" type="text"
+                value="<?php echo $salle_de_sport3['salle_id'] ?>">
 
-                <!--on envoie en POST le salle_id pour le formulaire de modification des permissions-->
-                <input name="salle_id_1" id="salle_id" class="display_none" type="text"
-                    value="<?php echo $salle_de_sport3['salle_id'] ?>">
+            <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
+            <input name="client_id" id="client_id" class="display_none" type="text"
+                value="<?php echo $_POST['client_id'] ?>">
 
-                <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
-                <input name="client_id" id="client_id" class="display_none" type="text"
-                    value="<?php echo $_POST['client_id'] ?>">
+            <!--on envoie en POST le mail et le client_name pour le mail de modification-->
+            <input name="mail" id="mail" class="display_none" type="mail" value="geoffrey.marhoffer@gmail.com">
 
-                <!--on envoie en POST le mail et le client_name pour le mail de modification-->
-                <input name="mail" id="mail" class="display_none" type="mail" value="geoffrey.marhoffer@gmail.com">
+            <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
+            <input name="nom_salle" id="nom_salle" class="display_none" type="text"
+                value="<?php echo $salle_de_sport3['Nom'] ?>">
 
-                <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
-                <input name="nom_salle" id="nom_salle" class="display_none" type="text"
-                    value="<?php echo $salle_de_sport3['Nom'] ?>">
 
-                <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
-                <input name="salle_active_ou_desactivee" id="salle_active_ou_desactivee" class="display_none"
-                    type="text" value="<?php echo $salle_active_ou_desactivee ?>">
 
-                <?php
+            <?php
   //On recupère les informations grâce à l'ID du partenaire sur lesquel nous avons cliqué
   foreach ($pdo->query('SELECT * FROM api_clients WHERE client_id LIKE "'.$Salle_active['client_id'].'" ', PDO::FETCH_ASSOC) as $api_clients) { ?>
-                <input name="client_name" id="client_name" class="display_none" type="text"
-                    value="<?php echo $api_clients['client_name'] ?>">
-                <?php } ?>
+            <input name="client_name" id="client_name" class="display_none" type="text"
+                value="<?php echo $api_clients['client_name'] ?>">
+            <?php } ?>
 
-                <input id="<?php $lecture_seule ?>" name="modification_statut_salle"
-                    class="btn btn-outline-success btn-lg reset lecture_seule" type="submit" value="Valider">
+            <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
+            <input name="template" id="template" class="display_none" type="text" value="salle_active_ou_desactivee">
+
+            <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
+            <input name="salle_active_ou_desactivee_2" id="salle_active_ou_desactivee_2" class="display_none"
+                type="text" value="<?php echo $salle_active_ou_desactivee ?>">
+
+            <input id="<?php $lecture_seule ?>" name="modification_statut_salle"
+                class="btn btn-outline-success btn-lg reset lecture_seule" type="submit" value="Valider">
 
 
 
-                <?php }; ?>
+            <?php }; ?>
 
-            </section>
+        </section>
     </section>
 
 
