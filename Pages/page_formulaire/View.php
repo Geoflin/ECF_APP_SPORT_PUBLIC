@@ -34,28 +34,28 @@ if ($isAdmin== 'oui'){
 
 <body>
 
-    <form method="POST" action="Back_end.php">
+    <form name="inscription_partenaire_1" method="POST" action="Back_end.php" onsubmit="return myFunction()">
 
         <section class="informations_client_et_droits_client">
 
             <section class="informations_client">
                 <span>
-                    <label for="client_name">client_name: </label>
+                    <label for="client_name">Nom de la marque de sport: </label>
                     <input type="text" id="client_name" name="client_name">
                 </span>
 
                 <span>
-                    <label for="password">password: </label>
+                    <label for="password">Mot de passe: </label>
                     <input type="password" id="password" name="password">
                 </span>
 
                 <span>
-                    <label for="short_description">short_description: </label>
+                    <label for="short_description">description courte: </label>
                     <input type="text" id="short_description" name="short_description">
                 </span>
 
                 <span>
-                    <label for="full_description">full_description: </label>
+                    <label for="full_description">description longue: </label>
                     <input type="text" id="full_description" name="full_description">
                 </span>
 
@@ -81,8 +81,9 @@ if ($isAdmin== 'oui'){
             <input name="inscription_partenaire" class="btn btn-outline-success btn-lg" type="submit" value="Valider">
 
     </form>
-
+    <script src="script.js"></script>
 </body>
+
 
 </html>
 
