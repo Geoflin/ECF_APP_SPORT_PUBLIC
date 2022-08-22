@@ -106,7 +106,7 @@ if($plus== '1'){
 
             <!--Section image_client-->
             <section class="image_client">
-                <img src="../../Module/page_des_partenaires/etiquette_partenaire/test.jpg" width="200" height="170">
+                <img src="../../Img/marque_de_sport.png" width="200" height="170">
             </section>
 
             <!--Section information_client-->

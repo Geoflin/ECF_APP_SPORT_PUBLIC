@@ -13,7 +13,7 @@
 
     <h1>Gestionnaire salle de sport</h1>
 
-    <img src="test.jpg" />
+    <img src="Img/marque_de_sport.png" />
 
     <?php 
   /*on masque les erreurs pour raison de sécurité*/

@@ -107,7 +107,7 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
 
             <!--Section image_salle_de_sport-->
             <section class="image_salle_de_sport">
-                <img src="../../Module/page_des_partenaires/etiquette_partenaire/test.jpg" width="200" height="170">
+                <img src="../../Img/salle_de_sport.jpg" width="200" height="170">
             </section>
 
             <!--Section information_salle_de_sport-->
