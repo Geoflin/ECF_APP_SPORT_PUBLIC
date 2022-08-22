@@ -12,9 +12,9 @@
            <div class="btn-group">
 
                <button name="plus" type="submit" class="flex_start" id="small_width" value="<?php echo $plus-'5' ?>">
-                   <<< /button>
+                   <<</button>
                        <button name="plus" type="submit" id="small_width" value="<?php echo $plus-'1' ?>">
-                           << /button>
+                           < </button>
 
                                <div><?php echo $plus."/".$nb_ID ?></div>
 
@@ -22,7 +22,6 @@
                                    value="<?php echo '1'+$plus ?>">></button>
                                <button name="plus" type="submit" id="small_width"
                                    value="<?php echo '5'+$plus ?>">>></button>
-
            </div>
 
        </form>

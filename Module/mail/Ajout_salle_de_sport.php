@@ -1,6 +1,9 @@
 <?php
 //Envoie du mail de confimation d'inscription au partenaire avec sendinblue
-require_once('../../vendor/autoload.php');
+require_once('../../../vendor/autoload.php');
+
+require_once "../../../env/secret.php";
+require_once "../../../env/secret2.php";
 
 // Configure API key authorization: api-key
 $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', $api);
@@ -23,5 +26,4 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TransactionalEmailsApi->sendTransacEmail: ', $e->getMessage(), PHP_EOL;
 }
-
 ?>

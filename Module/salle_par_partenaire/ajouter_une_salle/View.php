@@ -4,7 +4,7 @@
 
 <section class="ajouter_une_salle lecture_seule">
 
-    <form method="POST" action="">
+    <form method="POST" action="../../Module/salle_par_partenaire/ajouter_une_salle/Back_end.php">
 
         <section class="informations_client_et_droits_client">
 
@@ -43,6 +43,10 @@
                     <label for="branche">branche:</label>
                     <input type="text" id="branche" name="branche">
                 </span>
+
+                <!-- On indique la page de template de mail à ouvrir -->
+                <input class="display_none" type="text" id="template" name="template" value="Ajout_salle_de_sport">
+               
 
                 <!--on envoie en POST le mail et le client_name pour le mail de modification-->
                 <input name="mail" id="mail" class="display_none" type="mail" value="geoffrey.marhoffer@gmail.com">
@@ -91,10 +95,3 @@
     </form>
 
 </section>
-
-<!--traitement du formulaire inscription_partenaire-->
-<?php
-if(isset($_POST['inscription_partenaire'])){
-  require_once "Back_end.php";
-}
-?>
