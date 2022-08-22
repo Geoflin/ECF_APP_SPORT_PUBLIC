@@ -1,3 +1,4 @@
+
 <head>
     <link href="../../Module/salle_par_partenaire/ajouter_une_salle/style.css" rel="stylesheet" type="text/css" />
 </head>
@@ -46,6 +47,9 @@
 
                 <!-- On indique la page de template de mail à ouvrir -->
                 <input class="display_none" type="text" id="template" name="template" value="Ajout_salle_de_sport">
+
+                <!-- On indique le client_id -->
+                <input class="display_none" type="text" id="client_id" name="client_id" value="<?php $api_clients['client_id'] ?>">
                
 
                 <!--on envoie en POST le mail et le client_name pour le mail de modification-->

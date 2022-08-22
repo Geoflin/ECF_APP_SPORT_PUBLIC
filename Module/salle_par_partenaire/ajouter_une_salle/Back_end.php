@@ -9,9 +9,11 @@ if ($pdo->exec('INSERT INTO api_install_perm (client_id, members_read, members_w
 */
 ?>
 
-<form method="POST" action="../page_des_partenaires/View.php">
-    <button name="accueil" type="submit" class="btn btn-outline-success btn-lg">Retourner voir les partenaires</button>
+<form method="POST" action="../../../Pages/salle_par_partenaire/View.php">
+    <button name="accueil" type="submit" class="btn btn-outline-success btn-lg">Retourner voir les salles de sport</button>
     <h3>La salle de sport "<?php echo $_POST['Nom'] ?>" a été ajouté</h3>
+    <!-- On indique le client_id -->
+    <input class="display_none" type="text" id="client_id" name="client_id" value="<?php $_POST['client_id'] ?>">
 </form>
 
 <style>
@@ -27,5 +29,5 @@ h3 {
 }
 </style>
 
-<?php require_once '../../mail/Ajout_salle_de_sport.php' ?>
+<!-- <?php require_once '../../mail/Ajout_salle_de_sport.php' ?> -->
 <?php require_once '../../twig/index.php' ?>

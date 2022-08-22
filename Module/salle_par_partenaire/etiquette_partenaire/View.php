@@ -32,9 +32,12 @@
 
 
             <?php
+            if(!isset($_POST['client_id'])){
 //on recupère l'id du partenaire
 require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
+};
 ?>
+
 
             <?php
   //On recupère les informations grâce à l'ID du partenaire sur lesquel nous avons cliqué
