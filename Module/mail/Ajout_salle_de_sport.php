@@ -1,5 +1,4 @@
 <?php
-/*
 //Envoie du mail de confimation d'inscription au partenaire avec sendinblue
 require_once('../../../vendor/autoload.php');
 
@@ -27,5 +26,4 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TransactionalEmailsApi->sendTransacEmail: ', $e->getMessage(), PHP_EOL;
 }
-*/
 ?>

@@ -57,10 +57,10 @@ if(isset($_POST['modification_statut_partenaire'])){
   $pdo = null;
 
   require_once '../../mail/marque_de_sport_activee_desactivee.php';
+
+  
 }
 ?>
-
-
 
 <form method="POST" action="../../../Pages/salle_par_partenaire/View.php">
 
@@ -69,18 +69,26 @@ if(isset($_POST['modification_statut_partenaire'])){
     <!--on envoie en POST le $_POST['Nom_2'] pour ne pas perturber le code précèdent-->
     <input name="salle_id" id="salle_id" class="display_none" type="text" value="<?php echo $_POST['salle_id'] ?>">
 
-    <h3>Les modifications ont été effectuée</h3>
     <button name="accueil" type="submit" class="btn btn-outline-success btn-lg">Retourner à la liste des salles</button>
+    <h3>Les modifications ont été effectuée</h3>
 
 </form>
 
-
 <style>
-form {
-    margin: 10% 10% 10% 40%;
-}
-
 .display_none {
     display: none;
 }
+
+button {
+    margin: 5% 10% 10% 40%;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10% 10% 0% 10%;
+}
 </style>
+
+<?php require_once '../../twig/index.php' ?>

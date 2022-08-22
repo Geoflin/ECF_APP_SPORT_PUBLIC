@@ -108,5 +108,8 @@ if($api_clients['actif']==1){
 <input type="text" id="marque_active_ou_desactive" class="display_none" name="marque_active_ou_desactive"
     value="<?php echo $marque_active_ou_desactive ?>">
 
+<!-- On indique la page de template de mail à ouvrir -->
+<input class="display_none" type="text" id="template" name="template" value="marque_de_sport_activee_desactivee">
+
 </section>
 </section>
