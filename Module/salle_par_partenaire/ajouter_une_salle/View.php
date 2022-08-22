@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 
 <head>
     <link href="../../Module/salle_par_partenaire/ajouter_une_salle/style.css" rel="stylesheet" type="text/css" />
@@ -5,7 +7,7 @@
 
 <section class="ajouter_une_salle lecture_seule">
 
-    <form method="POST" action="../../Module/salle_par_partenaire/ajouter_une_salle/Back_end.php">
+    <form name="ajouter_une_salle" method="POST" action="../../Module/salle_par_partenaire/ajouter_une_salle/Back_end.php" onsubmit="return myFunction()">
 
         <section class="informations_client_et_droits_client">
 
@@ -37,12 +39,12 @@
                 </span>
 
                 <span>
-                    <label for="zones">zone:</label>
+                    <label for="zones">adresse:</label>
                     <input type="text" id="zones" name="zones">
                 </span>
 
                 <span>
-                    <label for="branche">branche:</label>
+                    <label for="branche">description:</label>
                     <input type="text" id="branche" name="branche">
                 </span>
 
@@ -98,8 +100,12 @@
                         <input class="display_none" type="text" id="client_id" name="client_id" value="<?php echo $client_id ?>">
 
         <input name="inscription_partenaire" class="btn btn-outline-success btn-lg lecture_seul" type="submit"
-            value="Valider" onclick='window.location.reload(false)'>
+            value="Valider">
 
     </form>
 
 </section>
+<script src="../../Module/salle_par_partenaire/ajouter_une_salle/script_ajouter_une_salle.js"></script>
+</body>
+
+</html>

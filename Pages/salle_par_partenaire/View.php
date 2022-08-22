@@ -65,6 +65,9 @@ if ($_SESSION['username'] == $dataCompte['username']  && MD5($_SESSION['password
 
 </body>
 
+</html>
+
+
 <?php
 if($lecture_seule== 'oui'){
 ?>
@@ -84,11 +87,6 @@ if($lecture_seule== 'oui'){
 <?php
 };
 ?>
-
-
-
-</html>
-
 <?php 
 }
 }
