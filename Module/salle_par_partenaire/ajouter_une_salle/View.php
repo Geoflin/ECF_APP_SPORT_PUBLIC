@@ -48,6 +48,16 @@
                     <input type="text" id="branche" name="branche">
                 </span>
 
+                <span>
+                    <label for="password_salle">mot de passe:</label>
+                    <input type="password" id="password_salle" name="password_salle">
+                </span>
+
+                <span>
+                    <label for="mail_salle">mail:</label>
+                    <input type="mail" id="mail_salle" name="mail_salle">
+                </span>
+
                 <!-- On indique la page de template de mail à ouvrir -->
                 <input class="display_none" type="text" id="template" name="template" value="Ajout_salle_de_sport">
 
