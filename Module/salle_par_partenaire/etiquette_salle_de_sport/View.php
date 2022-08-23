@@ -134,17 +134,10 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
         <?php
    if($Salle_active['Salle_active']==1 && $client_actif==1){
       $checked_Salle_active= "checked";
-   } else {
-      $checked_Salle_active= "unchecked";
-   }
-   ?>
-
-        <!--on regarde pour les mails si la salle a été activée ou désactivée-->
-        <?php
-   if($checked_Salle_active== "checked"){
       $salle_active_ou_desactivee= "désactivée";
    } else {
-    $salle_active_ou_desactivee= "activée";
+      $checked_Salle_active= "unchecked";
+      $salle_active_ou_desactivee= "activée";
    }
    ?>
 
@@ -194,8 +187,6 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
 
             <input id="<?php $lecture_seule ?>" name="modification_statut_salle"
                 class="btn btn-outline-success btn-lg reset lecture_seule" type="submit" value="Valider">
-
-
 
             <?php }; ?>
 
