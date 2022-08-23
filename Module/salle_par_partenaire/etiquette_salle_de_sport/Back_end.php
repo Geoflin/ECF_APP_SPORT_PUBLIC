@@ -35,6 +35,12 @@ if(isset($_POST['modification_statut_salle'])){
   $pdo->exec($sql);
   $pdo->exec($sql2);
 
+//on détermine si la marque de sport est activée ou désactivée
+          if($_POST['Salle_active']=='1'){
+            $salle_active_ou_desactivee= "activée";
+         } else {
+            $salle_active_ou_desactivee= "désactivée";
+         }
 
   require_once '../../mail/salle_de_sport_activee_desactivee.php';
 }
@@ -55,6 +61,14 @@ if(isset($_POST['modification_statut_partenaire'])){
                                  
   $pdo = null;
   
+
+//on détermine si la marque de sport est activée ou désactivée
+        if($_POST['actif']=='1'){
+            $marque_active_ou_desactive= "activée";
+         } else {
+            $marque_active_ou_desactive= "désactivée";
+         }
+
 
   require_once '../../mail/marque_de_sport_activee_desactivee.php';
 

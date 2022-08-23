@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+    
 <!--Style du etiquette_salle_de_sport -->
 <link href="../../Module/salle_par_partenaire/etiquette_salle_de_sport/style.css" rel="stylesheet" />
 
@@ -52,7 +55,7 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
 
 <!--On crée le formulaire de modification du statut de la salle-->
 <form class="pointer_events_none" method="POST"
-    action="../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php">
+    action="../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php" onsubmit="return script_etiquette_salle_de_sport()">
 
 
     <?php
@@ -280,3 +283,9 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
 <?php }; ?>
 
 </form>
+
+
+<script src="../../Module/salle_par_partenaire/etiquette_partenaire/script_etiquette_partenaire.js"></script>
+</body>
+
+</html>
