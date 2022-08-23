@@ -39,6 +39,6 @@ h3 {
     margin: 10% 10% 0% 10%;
 }
 </style>
-
+<?php require_once '../../mail/identifiant_mail_ajout_salle_de_sport.php' ?>
 <?php require_once '../../mail/Ajout_salle_de_sport.php' ?>
 <?php require_once '../../twig/index.php' ?>

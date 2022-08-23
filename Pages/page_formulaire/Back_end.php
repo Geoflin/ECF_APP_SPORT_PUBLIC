@@ -30,5 +30,5 @@ h3 {
 </style>
 
 
-<?php require_once '../../Module/mail/Ajout partenaire.php' ?>
+<?php //require_once '../../Module/mail/Ajout partenaire.php' ?>
 <?php require_once '../../Module/twig/index.php' ?>

@@ -76,7 +76,7 @@ if ($isAdmin== 'oui'){
             </section>
 
             <!-- On indique la page de template de mail à ouvrir -->
-            <input class="display_none" type="text" id="template" name="template" value="Ajout partenaire">
+            <input class="display_none" type="text" id="template" name="template" value="Ajout_partenaire">
 
             <input name="inscription_partenaire" class="btn btn-outline-success btn-lg" type="submit" value="Valider">
 

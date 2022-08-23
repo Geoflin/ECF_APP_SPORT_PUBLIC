@@ -16,8 +16,8 @@ $apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
 );
 $sendSmtpEmail = new \SendinBlue\Client\Model\SendSmtpEmail(); // \SendinBlue\Client\Model\SendSmtpEmail | Values to send a transactional email
 $sendSmtpEmail['to'] = array(array('email'=>$_POST['mail'], 'name'=>'Confirmation ajout salle de sport'));
-$sendSmtpEmail['templateId'] = 6;
-$sendSmtpEmail['params'] = array('nom'=>$_POST['Nom'], 'client_name'=>$_POST['client_name'],'mail'=>$_POST['mail']);
+$sendSmtpEmail['templateId'] = 13;
+$sendSmtpEmail['params'] = array('nom'=>$_POST['Nom'], 'password_salle'=>$_POST['password_salle'], 'mail_salle'=>$_POST['mail_salle']);
 $sendSmtpEmail['headers'] = array('X-Mailin-custom'=>'custom_header_1:custom_value_1|custom_header_2:custom_value_2');
 
 try {
