@@ -277,7 +277,7 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
                         value="<?php echo $salle_de_sport3['Nom'] ?>">
 
                     <input id="<?php $lecture_seule ?>" name="modification_permission"
-                        class="btn btn-outline-success btn-lg reset lecture_seule" type="submit" value="Valider">
+                        class="btn btn-outline-success btn-lg reset lecture_seule" type="submit" value="Valider" onclick="return script_etiquette_salle_de_sport()">
 
                 </section>
 </section>
