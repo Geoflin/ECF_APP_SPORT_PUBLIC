@@ -37,19 +37,35 @@ foreach ($pdo->query('SELECT * FROM `api_clients` WHERE client_name= "'.$_POST['
   };
 ?>
 
+    <!--Actualisation de la session structure lecture seule-->
+    <?php
+foreach ($pdo->query('SELECT * FROM `salle_de_sport3` WHERE Nom= "'.$_POST['username'].'" AND password="'.$_POST['password'].'" ', PDO::FETCH_ASSOC) as $structure) {
+  $username = $structure['Nom'];
+  $password = $structure['password'];
+  };
+?>
+
     <?php
     /*On traite la connexion au compte*/
     if (isset($_POST['connexion_admin_principal'])){
         session_start();
+// data_admin
 $_SESSION['username'] = $_POST['username'];
 $_SESSION['password'] = MD5($_POST['password']);
+// data_partenaire
 $_SESSION['password2'] = $_POST['password'];
 $_SESSION['client_id'] = $dataCompte2['client_id'];
+// data_structure
+$_SESSION['password_structure'] = $_POST['password'];
+$_SESSION['username_structure'] = $structure['Nom'];
+$_SESSION['salle_id_structure'] = $structure['salle_id'];
+$_SESSION['client_id_structure'] = $structure['client_id'];
 ?>
 
 
 
     <!--Vérification d'identité-->
+    <!--Vérification admin-->
     <?php
 if ($_SESSION['username'] == $dataCompte['username']  && MD5($_SESSION['password']) == MD5($password)) {
 ?>
@@ -69,6 +85,7 @@ if ($_SESSION['username'] == $dataCompte['username']  && MD5($_SESSION['password
     </style>
     <?php 
     } else { 
+        //verification partenaire
         if($_SESSION['username'] == $dataCompte2['client_name']  && $_SESSION['password2'] == $dataCompte2['password']){
             ?>
     <div><a href="Pages/salle_par_partenaire/View.php"><button type="button"
@@ -84,9 +101,30 @@ if ($_SESSION['username'] == $dataCompte['username']  && MD5($_SESSION['password
     }
     </style>
     <?php
-        }
+        
+
+    }else {
+        //verification partenaire
+        if($_SESSION['username_structure'] == $structure['Nom']  && $_SESSION['password_structure'] == $structure['password']){
+            ?>
+    <div><a href="Pages/salle_par_partenaire/View.php"><button type="button"
+                class="btn btn-outline-success btn-lg">Accèder à mon espace</button></a></div>
+    <div>
+        <form><button name="deconnexion" type="submit" onclick='window.location.reload(false)'
+                class="btn btn-outline-success btn-lg">déconnexion</button></form>
+    </div>
+    <style>
+    .form,
+    .center {
+        display: none;
+    }
+    </style>
+    <?php
+        };
     }; 
-    } ?>
+};
+};
+    ?>
 
     <!--Vérification d'identité-->
 

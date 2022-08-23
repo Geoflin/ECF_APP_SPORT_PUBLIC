@@ -30,3 +30,20 @@ if($isAdmin== 'non'){
       }
 }
 ?>
+
+<!--Actualisation de la session structure lecture seule-->
+<?php
+if($isAdmin== 'non' && $lecture_seule== 'non'){
+    foreach ($pdo->query('SELECT * FROM `salle_de_sport3` WHERE Nom= "'.$_SESSION['username_structure'].'" AND password="'.$_SESSION['password_structure'].'" ', PDO::FETCH_ASSOC) as $structure) {
+        $username = $structure['Nom'];
+        $password = $structure['password'];
+        };
+      
+      /*Vérification d'identité*/
+      if ($_SESSION['username_structure'] !== $structure['Nom']  && $_SESSION['password_structure'] !== $structure['password'] || !isset($_SESSION['username'])) {
+          $lecture_structure= 'non';
+      }else {
+          $lecture_structure= 'oui';
+      }
+}
+?>

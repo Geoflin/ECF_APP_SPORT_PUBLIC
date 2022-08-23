@@ -7,27 +7,15 @@ require_once '../../Module/connexion/debug.php';
 /*on vérifie l'identité de l'utilisateur*/
 require_once '../../Module/connexion/verification_identite.php';
 
-//require_once '../../Module/connexion/View.php';
 
-/*
-require_once "../../env/secret2.php";
-require_once "../../env/secret.php";
-on masque les erreurs pour raison de sécurité
-require_once '../../Module/connexion/debug.php';
-on vérifie l'identité de l'utilisateur
-require_once '../../Module/connexion/verification_identite.php';
-formulaire de connexion
-//require_once 'connexion.php';
-*/
-
-if ($isAdmin== 'oui' || $lecture_seule== 'oui'){
+if ($isAdmin== 'oui' || $lecture_seule== 'oui' || $lecture_structure== 'oui'){
 
 ?>
 
 
 <!--Vérification d'identité-->
 <?php
-if ($_SESSION['username'] == $dataCompte['username']  && MD5($_SESSION['password']) == MD5($password) || $_SESSION['username'] == $dataCompte2['client_name']  && $_SESSION['password2'] == $dataCompte2['password']) {
+if ($_SESSION['username'] == $dataCompte['username']  && MD5($_SESSION['password']) == MD5($password) || $_SESSION['username'] == $dataCompte2['client_name']  && $_SESSION['password2'] == $dataCompte2['password'] || $_SESSION['username_structure'] == $structure['Nom']  && $_SESSION['password_structure'] == $structure['password']) {
 ?>
 
 <!DOCTYPE html>
@@ -69,7 +57,7 @@ if ($_SESSION['username'] == $dataCompte['username']  && MD5($_SESSION['password
 
 
 <?php
-if($lecture_seule== 'oui'){
+if($lecture_seule== 'oui' || $lecture_structure=='oui'){
 ?>
 <style>
 .lecture_seule {

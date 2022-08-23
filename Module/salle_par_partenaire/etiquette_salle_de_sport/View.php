@@ -67,11 +67,25 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
   } else {
    $client_id_2= $client_id;
   };
-  
   ?>
 
+<?php
+foreach ($pdo->query('SELECT * FROM salle_de_sport3 WHERE Nom LIKE "'.$_SESSION['username_structure'].'" ', PDO::FETCH_ASSOC) as $api_clients) { 
+      $client_id2= $api_clients['client_id'];
+      $salle_id= $api_clients['salle_id'];
+    
+    ?>
+
+<?php
+if($dataCompte2['client_id'] != ""){
+    $sql = 'SELECT * FROM `salle_de_sport3` WHERE `client_id` LIKE "'.$client_id_2.'"  ';
+} else {
+    $sql = 'SELECT * FROM `salle_de_sport3` WHERE `salle_id` LIKE "'.$salle_id.'" AND `client_id` LIKE "'.$client_id_2.'"  ';
+}
+};
+?>
+
     <?php
-        $sql = 'SELECT * FROM `salle_de_sport3` WHERE `client_id` LIKE "'.$client_id_2.'"  ';
       //On vérifie si le filtre 'client_name' a été activé
       if (isset($_POST['Nom_2'])){
          $sql = 'SELECT * FROM salle_de_sport3 WHERE Nom LIKE "'.$_POST['Nom_2'].'" AND `client_id` LIKE "'.$client_id_2.'" LIMIT 1 OFFSET '.$super_plus.' ';
