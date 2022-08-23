@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+
 <!--Style etiquette_partenaire -->
 <link href="../../Module/salle_par_partenaire/etiquette_partenaire/style.css" rel="stylesheet" />
 
@@ -12,7 +15,7 @@
 </nav>
 
 <!--On crée le formulaire de modification du statut du partenaire-->
-<form method="POST" action="../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php">
+<form name="statut_partenaire" method="POST" action="../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php" onsubmit="return script_etiquette_partenaire()">
 
     <?php
   
@@ -57,28 +60,22 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
         </span>
 
         <?php 
-if($api_clients['actif']==1){
+if($api_clients['actif']=='1'){
    $checked_partenaire_actif= "checked";
+   $marque_active_ou_desactive= "désactivée";
+   $value='1';
 } else {
    $checked_partenaire_actif= "unchecked";
+   $marque_active_ou_desactive= "activée";
+   $value='0';
 }
 ?>
-
-        <!--on regarde si la permission est actif_inactif-->
-        <?php
-   if($checked== "checked"){
-      $marque_active_ou_desactive= "désactivée";
-   } else {
-      $marque_active_ou_desactive= "activée";
-   }
-   ?>
 
         <!--Section bouton_actif_inactif-->
         <section class="bouton_actif_inactif disabled">
 
-            <label class="toggleSwitch nolabel" onclick="">
-                <input class="" type="checkbox" id="actif" name="actif" value="1"
-                    <?php echo $checked_partenaire_actif; ?> />
+            <label class="toggleSwitch nolabel" onclick="return checkbox()">
+                <input class="" type="checkbox" id="actif" name="actif" value="1" <?php echo $checked_partenaire_actif; ?> onchange="this.value = this.checked ? '1' : '0'" />
                 <span>
                     <span>Inactif</span>
                     <span>Actif</span>
@@ -90,6 +87,13 @@ if($api_clients['actif']==1){
                 type="submit" value="Valider">
 
             <?php }; ?>
+
+            <!-- On indique la page de template de mail à ouvrir -->
+<input class="display_none" type="text" id="checked_partenaire_actif" name="checked_partenaire_actif" value="<?php echo $checked_partenaire_actif ?>">
+
+
+
+
 </form>
 
 <!--on envoie en POST le salle_id pour le formulaire de modification des permissions-->
@@ -113,3 +117,8 @@ if($api_clients['actif']==1){
 
 </section>
 </section>
+
+<script src="../../Module/salle_par_partenaire/etiquette_partenaire/script_etiquette_partenaire.js"></script>
+</body>
+
+</html>

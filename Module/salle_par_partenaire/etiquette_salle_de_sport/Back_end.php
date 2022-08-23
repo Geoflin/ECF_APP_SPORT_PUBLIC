@@ -45,7 +45,6 @@ if(isset($_POST['modification_statut_salle'])){
 <?php
 //On traite le formulaire de modification du statut partenaire
 if(isset($_POST['modification_statut_partenaire'])){
-
   
 
   $pdo->exec("SET CHARACTER SET utf8");
@@ -55,6 +54,7 @@ if(isset($_POST['modification_statut_partenaire'])){
   $count = $pdo->exec($sql);
                                  
   $pdo = null;
+  
 
   require_once '../../mail/marque_de_sport_activee_desactivee.php';
 
@@ -90,5 +90,7 @@ h3 {
     margin: 10% 10% 0% 10%;
 }
 </style>
+
+
 
 <?php require_once '../../twig/index.php' ?>
