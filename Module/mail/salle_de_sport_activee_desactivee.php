@@ -1,4 +1,5 @@
 <?php
+/*
 //On envoie un mail pour informer le partenaire de la modification du statut de la salle de sport avec sendinblue
 require_once('../../../vendor/autoload.php');
 
@@ -26,4 +27,5 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TransactionalEmailsApi->sendTransacEmail: ', $e->getMessage(), PHP_EOL;
 }
+*/
 ?>

@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
     
+<head>
 <!--Style du etiquette_salle_de_sport -->
 <link href="../../Module/salle_par_partenaire/etiquette_salle_de_sport/style.css" rel="stylesheet" />
+</head>
 
+<body>
 <?php
 
 //si un bouton de la barre de défilement est activé on va à la page $_POST['plus']
@@ -55,7 +58,7 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
 
 <!--On crée le formulaire de modification du statut de la salle-->
 <form class="pointer_events_none" method="POST"
-    action="../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php" onsubmit="return script_etiquette_salle_de_sport()">
+    action="../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php">
 
 
     <?php
@@ -189,7 +192,7 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
                 type="text" value="<?php echo $salle_active_ou_desactivee ?>">
 
             <input id="<?php $lecture_seule ?>" name="modification_statut_salle"
-                class="btn btn-outline-success btn-lg reset lecture_seule" type="submit" value="Valider">
+                class="btn btn-outline-success btn-lg reset lecture_seule" type="submit" value="Valider" onclick="return script_etiquette_salle_de_sport()">
 
             <?php }; ?>
 
@@ -285,7 +288,7 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
 </form>
 
 
-<script src="../../Module/salle_par_partenaire/etiquette_partenaire/script_etiquette_partenaire.js"></script>
+<script src="../../Module/salle_par_partenaire/etiquette_salle_de_sport/script_etiquette_salle_de_sport.js"></script>
 </body>
 
 </html>
