@@ -70,7 +70,7 @@ require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
   ?>
 
 <?php
-if($isAdmin== 'oui'){
+if($isAdmin== 'oui' || $lecture_seule== 'oui'){
 foreach ($pdo->query('SELECT * FROM salle_de_sport3 WHERE Nom LIKE "'.$_SESSION['username_structure'].'" ', PDO::FETCH_ASSOC) as $api_clients) { 
       $client_id2= $api_clients['client_id'];
       $salle_id= $api_clients['salle_id'];
