@@ -177,7 +177,7 @@ foreach ($pdo->query('SELECT * FROM salle_de_sport3 WHERE Nom LIKE "'.$_SESSION[
             </label>
 
             <!--on envoie en POST le salle_id pour le formulaire de modification des permissions-->
-            <input name="salle_id_1" id="salle_id_1" class="display_none" type="text"
+            <input name="salle_id" id="salle_id" class="display_none" type="text"
                 value="<?php echo $salle_de_sport3['salle_id'] ?>">
 
             <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
@@ -257,7 +257,7 @@ foreach ($pdo->query('SELECT * FROM `salle_de_sport3` WHERE `salle_id` LIKE "'.$
 
                         <!--on regarde si la permission est actif_inactif-->
                         <?php
-   if($api_install_perm[$permissions[$i]]==1 && $Salle_active['Salle_active']==1 && $client_actif==1 && $permission_globale[$permissions[$i]]== 1){
+   if($api_install_perm[$permissions[$i]]==1 && $Salle_active['Salle_active']==1 && $client_actif==1 ){
       $checked= "checked";
    } else {
       $checked= "unchecked";
