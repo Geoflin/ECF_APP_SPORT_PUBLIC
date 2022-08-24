@@ -86,7 +86,7 @@ if($api_clients['actif']=='1'){
             <input name="modification_statut_partenaire" class="btn btn-outline-success btn-lg lecture_seule"
                 type="submit" value="Valider">
 
-            <?php }; ?>
+            
 
             <!-- On indique la page de template de mail à ouvrir -->
 <input class="display_none" type="text" id="checked_partenaire_actif" name="checked_partenaire_actif" value="<?php echo $checked_partenaire_actif ?>">
@@ -116,9 +116,13 @@ if($api_clients['actif']=='1'){
 <input class="display_none" type="text" id="template" name="template" value="marque_de_sport_activee_desactivee">
 
 </section>
-</section>
+
+<?php require_once '../../Module/salle_par_partenaire/permission_globale/View.php' ?>
+
+<?php }; ?>
 
 <script src="../../Module/salle_par_partenaire/etiquette_partenaire/script_etiquette_partenaire.js"></script>
+
 </body>
 
 </html>
