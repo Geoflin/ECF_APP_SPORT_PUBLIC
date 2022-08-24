@@ -48,7 +48,8 @@
             <?php } ?>
 
         </section>
-
+        <!-- On indique le client_id -->
+        <input class="display_none" type="text" id="client_id" name="client_id" value="<?php echo $client_id ?>">
         <!-- On indique la page de template de mail à ouvrir -->
 <input class="display_none" type="text" id="template" name="template" value="modifications_permissions_globales">
 

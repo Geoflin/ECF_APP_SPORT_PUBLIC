@@ -73,12 +73,42 @@ if ($isAdmin== 'oui'){
                     <input class="display_none" type="text" name="actif" value="1">
                 </span>
 
-            
+                            <!--Tableau des permissions-->
+            <?php $permissions= array ("members_read", "members_write", "members_add", "members_products_add", "members_payment_schedules_read", "members_statistiques_read", "members_subscription_read", "payment_schedules_read", "payment_schedules_write", "payment_day_read"); ?>
 
+<section class="droits_client ">
+
+    <?php for ($i=0; $i < 10; $i++) { ?>
+
+    <label for="<?php echo $permissions[$i]; ?>"><?php echo $permissions[$i]; ?></label>
+
+    <?php } ?>
+
+
+<section class="toggle">
+
+    <?php for ($ii=0; $ii < 10; $ii++) { ?>
+
+    <label class="toggleSwitch_permissions_des_salles nolabel" onclick="">
+        <input type="checkbox" id="<?php echo $permissions[$ii]; ?>" name="<?php echo $permissions[$ii]; ?>"
+            value="1" checked>
+        <span>
+            <span>Inactif</span>
+            <span>Actif</span>
+        </span>
+        <a></a>
+    </label>
+
+    <?php } ?>
+
+
+    </section>
             <!-- On indique la page de template de mail à ouvrir -->
             <input class="display_none" type="text" id="template" name="template" value="Ajout_partenaire">
 
             <input name="inscription_partenaire" class="btn btn-outline-success btn-lg" type="submit" value="Valider">
+
+            </section>
 
             </section>
 
