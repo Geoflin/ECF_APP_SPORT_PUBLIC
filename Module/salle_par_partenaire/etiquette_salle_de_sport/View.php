@@ -177,7 +177,7 @@ foreach ($pdo->query('SELECT * FROM salle_de_sport3 WHERE Nom LIKE "'.$_SESSION[
             </label>
 
             <!--on envoie en POST le salle_id pour le formulaire de modification des permissions-->
-            <input name="salle_id_1" id="salle_id" class="display_none" type="text"
+            <input name="salle_id_1" id="salle_id_1" class="display_none" type="text"
                 value="<?php echo $salle_de_sport3['salle_id'] ?>">
 
             <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
@@ -209,7 +209,7 @@ foreach ($pdo->query('SELECT * FROM `salle_de_sport3` WHERE `salle_id` LIKE "'.$
       $mail_structure= $salle_de_sport3['mail'];
       ?>
                             <!--on envoie en POST le mail et le client_name pour le mail de modification-->
-            <input name="mail_structure" id="mail_structure" class="display_none" type="text" value="<?php echo $salle_de_sport3['mail'] ?>">
+            <input name="mail_structure" id="mail_structure" class="display_none" type="text" value="<?php echo $mail_structure ?>">
             <?php
         };
         ?>
