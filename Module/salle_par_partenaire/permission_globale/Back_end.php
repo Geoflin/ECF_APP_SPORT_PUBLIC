@@ -8,7 +8,7 @@ require_once "../../../env/secret2.php";
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
 <?php
-if ($pdo->exec('UPDATE permission_globale SET members_read= "'. $_POST['members_read'] . '", members_write= "'. $_POST['members_write'] . '", members_add= "'. $_POST['members_add'] . '", members_products_add= "'. $_POST['members_products_add'] . '", members_payment_schedules_read= "'. $_POST['members_payment_schedules_read'] . '", members_statistiques_read= "'. $_POST['members_statistiques_read'] . '", members_subscription_read = "'. $_POST['members_subscription_read'] . '", payment_schedules_read = "'. $_POST['payment_schedules_read'] . '", payment_schedules_write="'. $_POST['payment_schedules_write'] . '", payment_day_read= "'. $_POST['payment_day_read'] . '" WHERE client_id = 7 ;' ) !== false){};
+if ($pdo->exec('UPDATE permission_globale SET members_read= "'. $_POST['members_read'] . '", members_write= "'. $_POST['members_write'] . '", members_add= "'. $_POST['members_add'] . '", members_products_add= "'. $_POST['members_products_add'] . '", members_payment_schedules_read= "'. $_POST['members_payment_schedules_read'] . '", members_statistiques_read= "'. $_POST['members_statistiques_read'] . '", members_subscription_read = "'. $_POST['members_subscription_read'] . '", payment_schedules_read = "'. $_POST['payment_schedules_read'] . '", payment_schedules_write="'. $_POST['payment_schedules_write'] . '", payment_day_read= "'. $_POST['payment_day_read'] . '" WHERE client_id = "'.$_POST['client_id'].'" ;' ) !== false){};
 ?>
 
 <form method="POST" action="../../../Pages/salle_par_partenaire/View.php">

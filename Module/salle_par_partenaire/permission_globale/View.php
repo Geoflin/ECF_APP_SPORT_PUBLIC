@@ -24,7 +24,7 @@
             <?php for ($ii=0; $ii < 10; $ii++) { ?>
 
                 <?php 
-            foreach ($pdo->query('SELECT * FROM `permission_globale` WHERE client_id LIKE "7" AND "'.$permissions[$ii].'" LIKE "'.$permissions[$ii].'"  ', PDO::FETCH_ASSOC) as $permission_globale) { 
+            foreach ($pdo->query('SELECT * FROM `permission_globale` WHERE client_id LIKE "'.$client_id.'" AND "'.$permissions[$ii].'" LIKE "'.$permissions[$ii].'"  ', PDO::FETCH_ASSOC) as $permission_globale) { 
 
             if($permission_globale[$permissions[$ii]]== 1){
             $checked= "checked";
