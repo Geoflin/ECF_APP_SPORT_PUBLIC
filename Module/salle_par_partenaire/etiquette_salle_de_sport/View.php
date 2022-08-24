@@ -74,6 +74,7 @@ if($isAdmin== 'oui' || $lecture_seule== 'oui'){
 foreach ($pdo->query('SELECT * FROM salle_de_sport3 WHERE Nom LIKE "'.$_SESSION['username_structure'].'" ', PDO::FETCH_ASSOC) as $api_clients) { 
       $client_id2= $api_clients['client_id'];
       $salle_id= $api_clients['salle_id'];
+      $mail_structure= $api_clients['mail'];
     };
     ?>
 
@@ -183,9 +184,6 @@ foreach ($pdo->query('SELECT * FROM salle_de_sport3 WHERE Nom LIKE "'.$_SESSION[
             <input name="client_id" id="client_id" class="display_none" type="text"
                 value="<?php echo $_POST['client_id'] ?>">
 
-            <!--on envoie en POST le mail et le client_name pour le mail de modification-->
-            <input name="mail" id="mail" class="display_none" type="mail" value="geoffrey.marhoffer@gmail.com">
-
             <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
             <input name="nom_salle" id="nom_salle" class="display_none" type="text"
                 value="<?php echo $salle_de_sport3['Nom'] ?>">
@@ -206,6 +204,17 @@ foreach ($pdo->query('SELECT * FROM salle_de_sport3 WHERE Nom LIKE "'.$_SESSION[
             <input name="salle_active_ou_desactivee_2" id="salle_active_ou_desactivee_2" class="display_none"
                 type="text" value="<?php echo $salle_active_ou_desactivee ?>">
 
+                <?php
+foreach ($pdo->query('SELECT * FROM `salle_de_sport3` WHERE `salle_id` LIKE "'.$salle_de_sport3['salle_id'].'" ', PDO::FETCH_ASSOC) as $salle_de_sport3) { 
+      $mail_structure= $salle_de_sport3['mail'];
+      ?>
+                            <!--on envoie en POST le mail et le client_name pour le mail de modification-->
+            <input name="mail_structure" id="mail_structure" class="display_none" type="text" value="<?php echo $salle_de_sport3['mail'] ?>">
+            <?php
+        };
+        ?>
+                                    <!--on envoie en POST le mail et le client_name pour le mail de modification-->
+                                    <input name="mail_partenaire" id="mail_partenaire" class="display_none" type="text" value="<?php echo $api_clients['mail'] ?>">
             <input id="<?php $lecture_seule ?>" name="modification_statut_salle"
                 class="btn btn-outline-success btn-lg reset lecture_seule" type="submit" value="Valider" onclick="return script_etiquette_salle_de_sport()">
 
