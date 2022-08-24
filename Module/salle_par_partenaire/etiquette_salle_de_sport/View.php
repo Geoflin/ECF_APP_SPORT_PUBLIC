@@ -269,9 +269,8 @@ foreach ($pdo->query('SELECT * FROM `salle_de_sport3` WHERE `salle_id` LIKE "'.$
 
                             <label class="toggleSwitch_permissions_des_salles nolabel" onclick="">
 
-                                <input class="" type="checkbox" id="<?php echo $permissions[$i]; ?>"
+                                <input class="display_none" type="checkbox" id="<?php echo $permissions[$i]; ?>"
                                     name="<?php echo $permissions[$i]; ?>" value="1" <?php echo $checked; ?> />
-
                                 <span>
                                     <span>Inactif</span>
                                     <span>Actif</span>

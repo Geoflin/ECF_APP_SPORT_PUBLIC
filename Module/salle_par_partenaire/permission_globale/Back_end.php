@@ -1,6 +1,7 @@
 <?php
 require_once "../../../env/secret.php";
 require_once "../../../env/secret2.php";
+require_once "../../../Module/salle_par_partenaire/recuperer_id_partenaire.php";
 ?>
 
 <!--CDN Bootstrap -->
@@ -16,7 +17,7 @@ if ($pdo->exec('UPDATE permission_globale SET members_read= "'. $_POST['members_
         sport</button>
     <h3>Permissions globales ajoutées</h3>
     <!-- On indique le client_id -->
-    <input class="display_none" type="text" id="client_id" name="client_id" value="<?php echo $_POST['client_id'] ?>">
+    <input class="display_none" type="text" id="client_id" name="client_id" value="<?php echo $client_id ?>">
 </form>
 
 <style>
@@ -35,6 +36,11 @@ h3 {
     margin: 10% 10% 0% 10%;
 }
 </style>
-<?php //require_once '../../mail/identifiant_mail_ajout_salle_de_sport.php' ?>
-<?php //require_once '../../mail/Ajout_salle_de_sport.php' ?>
-<?php //require_once '../../twig/index.php' ?>
+
+        <!-- On indique le client_id -->
+        <input class="display_none" type="text" id="client_id" name="client_id" value="<?php echo $client_id ?>">
+
+
+
+<?php require_once '../../mail/modification_permission_globale.php' ?>
+<?php require_once '../../twig/index.php' ?>

@@ -1,3 +1,7 @@
+.display_none{
+  display: none;
+}
+
 .etiquette_salle_de_sport{
     height: max-content;
     width: 90vw;
