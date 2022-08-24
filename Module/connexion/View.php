@@ -42,6 +42,7 @@ foreach ($pdo->query('SELECT * FROM `api_clients` WHERE client_name= "'.$_POST['
 foreach ($pdo->query('SELECT * FROM `salle_de_sport3` WHERE Nom= "'.$_POST['username'].'" AND password="'.MD5($_POST['password']).'" ', PDO::FETCH_ASSOC) as $structure) {
   $username = $structure['Nom'];
   $password = $structure['password'];
+  $salle_active = $structure['Salle_active'];
   };
 ?>
 
@@ -85,7 +86,7 @@ if ($_SESSION['username'] == $dataCompte['username']  && MD5($_SESSION['password
     <?php 
     } else { 
         //verification partenaire
-        if($_SESSION['username'] == $dataCompte2['client_name']  && MD5($_SESSION['password']) == MD5($dataCompte2['password'])){
+        if($_SESSION['username'] == $dataCompte2['client_name']  && MD5($_SESSION['password']) == MD5($dataCompte2['password']) && $dataCompte2['actif']){
             ?>
     <div><a href="Pages/salle_par_partenaire/View.php"><button type="button"
                 class="btn btn-outline-success btn-lg">Accèder à mon espace</button></a></div>
@@ -103,8 +104,8 @@ if ($_SESSION['username'] == $dataCompte['username']  && MD5($_SESSION['password
         
 
     }else {
-        //verification partenaire
-        if($_SESSION['username_structure'] == $structure['Nom']  && MD5($_SESSION['password_structure']) == MD5($structure['password'])){
+        //verification structure
+        if($_SESSION['username_structure'] == $structure['Nom']  && MD5($_SESSION['password_structure']) == MD5($structure['password']) && $structure['Salle_active'] == '1'){
             ?>
     <div><a href="Pages/salle_par_partenaire/View.php"><button type="button"
                 class="btn btn-outline-success btn-lg">Accèder à mon espace</button></a></div>

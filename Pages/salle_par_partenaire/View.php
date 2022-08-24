@@ -15,7 +15,7 @@ if ($isAdmin== 'oui' || $lecture_seule== 'oui' || $lecture_structure== 'oui'){
 
 <!--Vérification d'identité-->
 <?php
-if ($_SESSION['username'] == $dataCompte['username']  && MD5($_SESSION['password']) == MD5($password) || $_SESSION['username'] == $dataCompte2['client_name']  && $_SESSION['password2'] == $dataCompte2['password'] || $_SESSION['username_structure'] == $structure['Nom']  && $_SESSION['password_structure'] == $structure['password']) {
+if ($_SESSION['username'] == $dataCompte['username']  && MD5($_SESSION['password']) == MD5($password) || $_SESSION['username'] == $dataCompte2['client_name']  && $_SESSION['password'] == $dataCompte2['password'] && $dataCompte2['actif']=='1' || $_SESSION['username_structure'] == $structure['Nom']  && $_SESSION['password_structure'] == $structure['password']) {
 ?>
 
 <!DOCTYPE html>

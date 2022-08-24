@@ -20,10 +20,11 @@ if($isAdmin== 'non'){
     foreach ($pdo->query('SELECT * FROM `api_clients` WHERE client_name= "'.$_SESSION['username'].'" AND password="'.$_SESSION['password2'].'" ', PDO::FETCH_ASSOC) as $dataCompte2) {
         $username = $dataCompte2['client_name'];
         $password = $dataCompte2['password'];
+        $actif= $dataCompte2['actif'];
         };
       
       /*Vérification d'identité*/
-      if ($_SESSION['username'] !== $dataCompte2['client_name']  && $_SESSION['password2'] !== $dataCompte2['password'] || !isset($_SESSION['username'])) {
+      if ($_SESSION['username'] !== $dataCompte2['client_name']  && $_SESSION['password'] !== MD5($dataCompte2['password']) && $actif=='1') {
           $lecture_seule= 'non';
       }else {
           $lecture_seule= 'oui';
