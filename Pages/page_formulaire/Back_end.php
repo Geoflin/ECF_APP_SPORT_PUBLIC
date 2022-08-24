@@ -7,7 +7,7 @@
 
 <?php
   
-  //if ($pdo->exec('INSERT INTO api_clients (actif, client_name, password, active, short_description, full_description, urll, mail) VALUES ("'. $_POST['actif'] . '", "'. $_POST['client_name'] . '", "'. $_POST['password'] . '", "On", "'. $_POST['short_description'] . '", "'. $_POST['full_description'] . '", "'. $_POST['urll'] . '", "'. $_POST['mail'] . '");') !== false){};
+  if ($pdo->exec('INSERT INTO api_clients (actif, client_name, password, active, short_description, full_description, urll, mail) VALUES ("'. $_POST['actif'] . '", "'. $_POST['client_name'] . '", "'. MD5($_POST['password']) . '", "On", "'. $_POST['short_description'] . '", "'. $_POST['full_description'] . '", "'. $_POST['urll'] . '", "'. $_POST['mail'] . '");') !== false){};
 ?>
 
 <form method="POST" action="../page_des_partenaires/View.php">
@@ -30,5 +30,5 @@ h3 {
 </style>
 
 
-<?php //require_once '../../Module/mail/Ajout partenaire.php' ?>
+<?php require_once '../../Module/mail/Ajout partenaire.php' ?>
 <?php require_once '../../Module/twig/index.php' ?>

@@ -31,7 +31,7 @@ foreach ($pdo->query('SELECT * FROM `password` WHERE id="1" ', PDO::FETCH_ASSOC)
 
     <!--Actualisation de la session partenaire lecture seule-->
     <?php
-foreach ($pdo->query('SELECT * FROM `api_clients` WHERE client_name= "'.$_POST['username'].'" AND password="'.$_POST['password'].'" ', PDO::FETCH_ASSOC) as $dataCompte2) {
+foreach ($pdo->query('SELECT * FROM `api_clients` WHERE client_name= "'.$_POST['username'].'" AND password="'.MD5($_POST['password']).'" ', PDO::FETCH_ASSOC) as $dataCompte2) {
   $username = $dataCompte2['client_name'];
   $password = $dataCompte2['password'];
   };
@@ -39,7 +39,7 @@ foreach ($pdo->query('SELECT * FROM `api_clients` WHERE client_name= "'.$_POST['
 
     <!--Actualisation de la session structure lecture seule-->
     <?php
-foreach ($pdo->query('SELECT * FROM `salle_de_sport3` WHERE Nom= "'.$_POST['username'].'" AND password="'.$_POST['password'].'" ', PDO::FETCH_ASSOC) as $structure) {
+foreach ($pdo->query('SELECT * FROM `salle_de_sport3` WHERE Nom= "'.$_POST['username'].'" AND password="'.MD5($_POST['password']).'" ', PDO::FETCH_ASSOC) as $structure) {
   $username = $structure['Nom'];
   $password = $structure['password'];
   };
@@ -53,10 +53,9 @@ foreach ($pdo->query('SELECT * FROM `salle_de_sport3` WHERE Nom= "'.$_POST['user
 $_SESSION['username'] = $_POST['username'];
 $_SESSION['password'] = MD5($_POST['password']);
 // data_partenaire
-$_SESSION['password2'] = $_POST['password'];
 $_SESSION['client_id'] = $dataCompte2['client_id'];
 // data_structure
-$_SESSION['password_structure'] = $_POST['password'];
+$_SESSION['password_structure'] = MD5($_POST['password']);
 $_SESSION['username_structure'] = $structure['Nom'];
 $_SESSION['salle_id_structure'] = $structure['salle_id'];
 $_SESSION['client_id_structure'] = $structure['client_id'];
@@ -86,7 +85,7 @@ if ($_SESSION['username'] == $dataCompte['username']  && MD5($_SESSION['password
     <?php 
     } else { 
         //verification partenaire
-        if($_SESSION['username'] == $dataCompte2['client_name']  && $_SESSION['password2'] == $dataCompte2['password']){
+        if($_SESSION['username'] == $dataCompte2['client_name']  && MD5($_SESSION['password']) == MD5($dataCompte2['password'])){
             ?>
     <div><a href="Pages/salle_par_partenaire/View.php"><button type="button"
                 class="btn btn-outline-success btn-lg">Accèder à mon espace</button></a></div>
@@ -105,7 +104,7 @@ if ($_SESSION['username'] == $dataCompte['username']  && MD5($_SESSION['password
 
     }else {
         //verification partenaire
-        if($_SESSION['username_structure'] == $structure['Nom']  && $_SESSION['password_structure'] == $structure['password']){
+        if($_SESSION['username_structure'] == $structure['Nom']  && MD5($_SESSION['password_structure']) == MD5($structure['password'])){
             ?>
     <div><a href="Pages/salle_par_partenaire/View.php"><button type="button"
                 class="btn btn-outline-success btn-lg">Accèder à mon espace</button></a></div>
