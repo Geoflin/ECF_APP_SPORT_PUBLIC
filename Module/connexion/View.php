@@ -12,9 +12,9 @@
 
     <!--Actualisation de la session administrateur-->
     <?php
-foreach ($pdo->query('SELECT * FROM `password` WHERE id="1" ', PDO::FETCH_ASSOC) as $dataCompte) {
-  $username = $dataCompte['username'];
-  $password = $dataCompte['password'];
+foreach ($pdo->query('SELECT * FROM `password` WHERE id="1" ', PDO::FETCH_ASSOC) as $password_admin) {
+  $username = $password_admin['username'];
+  $password = $password_admin['password'];
   };
 ?>
 
@@ -67,7 +67,7 @@ $_SESSION['client_id_structure'] = $structure['client_id'];
     <!--Vérification d'identité-->
     <!--Vérification admin-->
     <?php
-if ($_SESSION['username'] == $dataCompte['username']  && MD5($_SESSION['password']) == MD5($password)) {
+if ($_SESSION['username'] == $password_admin['username']  && MD5($_SESSION['password']) == MD5($password)) {
 ?>
     <div><a href="Pages/page_des_partenaires/View.php"><button type="button"
                 class="btn btn-outline-success btn-lg">Accèder à mon espace</button></a></div>

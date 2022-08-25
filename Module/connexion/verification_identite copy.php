@@ -1,13 +1,13 @@
 <!--Actualisation de la session administrateur-->
 <?php
     session_start();
-foreach ($pdo->query('SELECT * FROM `password` WHERE username= "'.$_SESSION['username'].'" AND password="'.$_SESSION['password'].'" ', PDO::FETCH_ASSOC) as $password_admin) {
-  $username = $password_admin['username'];
-  $password = $password_admin['password'];
+foreach ($pdo->query('SELECT * FROM `password` WHERE username= "'.$_SESSION['username'].'" AND password="'.$_SESSION['password'].'" ', PDO::FETCH_ASSOC) as $dataCompte) {
+  $username = $dataCompte['username'];
+  $password = $dataCompte['password'];
   };
 
 /*Vérification d'identité*/
-if ($_SESSION['username'] == $password_admin['username']  && $_SESSION['password'] == $password_admin['password'] ) {
+if ($_SESSION['username'] == $dataCompte['username']  && $_SESSION['password'] == $dataCompte['password'] || isset($_SESSION['username']) ) {
     $isAdmin= 'oui';
 }else {
     $isAdmin= 'non';
@@ -47,4 +47,5 @@ if($isAdmin== 'non' && $lecture_seule== 'non'){
           $lecture_structure= 'oui';
       }
 }
+
 ?>

@@ -12,9 +12,9 @@
 
     <!--Actualisation de la session administrateur-->
     <?php
-foreach ($pdo->query('SELECT * FROM `password` WHERE id="1" ', PDO::FETCH_ASSOC) as $dataCompte) {
-  $username = $dataCompte['username'];
-  $password = $dataCompte['password'];
+foreach ($pdo->query('SELECT * FROM `password` WHERE id="1" ', PDO::FETCH_ASSOC) as $password_admin) {
+  $username = $password_admin['username'];
+  $password = $password_admin['password'];
   };
 ?>
 
