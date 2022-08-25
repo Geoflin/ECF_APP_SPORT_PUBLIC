@@ -31,7 +31,7 @@ if(isset($_POST['modification_statut_salle'])){
   $sql2 = "UPDATE `salle_de_sport3` SET `Salle_active` = '".$_POST['Salle_active']."' WHERE `salle_id` = '".$_POST['salle_id']."' ";
 
   $pdo->exec($sql);
-  $pdo->exec($sql2);
+  $pdo->exec($sql2); 
 
 //on détermine si la marque de sport est activée ou désactivée
           if($_POST['Salle_active']=='1'){
