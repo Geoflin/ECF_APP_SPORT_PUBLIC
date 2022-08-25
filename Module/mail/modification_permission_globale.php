@@ -1,5 +1,6 @@
                         <!-- On indique le mail du client -->
                         <?php
+                        /*
                 foreach ($pdo->query('SELECT * FROM `api_clients` WHERE client_id LIKE "7" ', PDO::FETCH_ASSOC) as $api_clients) { 
                 $api_clients['mail'];
                 $api_clients['client_name'];
@@ -34,4 +35,5 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TransactionalEmailsApi->sendTransacEmail: ', $e->getMessage(), PHP_EOL;
 }
+*/
 ?>

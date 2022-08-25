@@ -12,10 +12,8 @@
 //On traite le formulaire de modification des permissions
 if(isset($_POST['modification_permission'])){
 
-  
-
   $pdo->exec("SET CHARACTER SET utf8");
-  $sql = "UPDATE `api_install_perm` SET `members_read` = '".$_POST['members_read']."', `members_write` = '".$_POST['members_write']."', `members_add` = '".$_POST['members_add']."', `members_products_add` = '".$_POST['members_products_add']."', `members_payment_schedules_read` = '".$_POST['members_payment_schedules_read']."', `members_statistiques_read` = '".$_POST['members_statistiques_read']."', `members_subscription_read` = '".$_POST['members_subscription_read']."', `payment_schedules_read` = '".$_POST['payment_schedules_read']."', `payment_schedules_write` = '".$_POST['payment_schedules_write']."', `payment_day_read` = '".$_POST['payment_day_read']."' WHERE `salle_id` = '".$_POST['salle_id']."' ";
+  $sql = "UPDATE `api_install_perm` SET `members_read` = '".$_POST['members_read']."', `members_write` = '".$_POST['members_write']."', `members_add` = '".$_POST['members_add']."', `members_products_add` = '".$_POST['members_products_add']."', `members_payment_schedules_read` = '".$_POST['members_payment_schedules_read']."', `members_statistiques_read` = '".$_POST['members_statistiques_read']."', `members_subscription_read` = '".$_POST['members_subscription_read']."', `payment_schedules_read` = '".$_POST['payment_schedules_read']."', `payment_schedules_write` = '".$_POST['payment_schedules_write']."', `payment_day_read` = '".$_POST['payment_day_read']."' WHERE `salle_id` = '".$_POST['salle_id_permissions']."' ";
   $pdo->exec($sql);
 
   $count = $pdo->exec($sql);
@@ -79,7 +77,7 @@ if(isset($_POST['modification_statut_partenaire'])){
     <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
     <input name="client_id" id="client_id" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
     <!--on envoie en POST le $_POST['Nom_2'] pour ne pas perturber le code précèdent-->
-    <input name="salle_id" id="salle_id" class="display_none" type="text" value="<?php echo $_POST['salle_id_1'] ?>">
+    <input name="salle_id" id="salle_id" class="display_none" type="text" value="<?php echo $_POST['salle_id'] ?>">
 
     <button name="accueil" type="submit" class="btn btn-outline-success btn-lg">Retourner à la liste des salles</button>
     <h3>Les modifications ont été effectuée</h3>
