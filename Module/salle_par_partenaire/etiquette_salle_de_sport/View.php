@@ -143,7 +143,9 @@ foreach ($pdo->query('SELECT * FROM salle_de_sport3 WHERE Nom LIKE "'.$_SESSION[
 
         <!--on regarde si la salle est actif_inactif-->
         <?php foreach ($pdo->query('SELECT * FROM `api_install_perm` WHERE `salle_id` LIKE "'.$salle_de_sport3['salle_id'].'"  ', PDO::FETCH_ASSOC) as $Salle_active) { ?>
-
+            <?php
+            //On recupère les informations grâce à l'ID du partenaire sur lesquel nous avons cliqué
+  foreach ($pdo->query('SELECT * FROM api_clients WHERE client_id LIKE "'.$Salle_active['client_id'].'" ', PDO::FETCH_ASSOC) as $api_clients) { ?>
         <!--on regarde si les filtres ont été activé pour savoir quel 'client_actif on prend'-->
         <?php
    if(isset($_POST['client_actif'])){
@@ -307,7 +309,9 @@ foreach ($pdo->query('SELECT * FROM `salle_de_sport3` WHERE `salle_id` LIKE "'.$
 </section>
 
 
-<?php }; ?>
+<?php };
+}
+?>
 
 </form>
 
