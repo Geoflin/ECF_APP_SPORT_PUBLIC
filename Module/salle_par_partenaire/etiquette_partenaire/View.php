@@ -100,7 +100,9 @@ if($api_clients['actif']=='1'){
     value="<?php echo $salle_de_sport3['salle_id'] ?>">
 
 <!--on envoie en POST le mail et le client_name pour le mail de modification-->
-<input name="mail" id="mail" class="display_none" type="mail" value="geoffrey.marhoffer@gmail.com">
+<input name="mail" id="mail" class="display_none" type="mail" value="<?php echo $api_clients['mail'] ?>">
+
+<!--on envoie en POST le mail et le client_name pour le mail de modification-->
 <input name="client_name" id="client_name" class="display_none" type="text"
     value="<?php echo $api_clients['client_name'] ?>">
 

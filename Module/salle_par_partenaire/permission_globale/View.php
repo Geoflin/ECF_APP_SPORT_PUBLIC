@@ -50,17 +50,20 @@
         </section>
         <!-- On indique le client_id -->
         <input class="display_none" type="text" id="client_id" name="client_id" value="<?php echo $client_id ?>">
-        <!-- On indique la page de template de mail à ouvrir -->
-<input class="display_none" type="text" id="template" name="template" value="modifications_permissions_globales">
 
 <!--on envoie en POST le salle_id pour le formulaire de modification des permissions-->
 <input name="salle_id" id="salle_id" class="display_none" type="text"
     value="<?php echo $_POST_['salle_id'] ?>">
     
     <!--on envoie en POST le mail et le client_name pour le mail de modification-->
-<input name="mail" id="mail" class="display_none" type="mail" value="geoffrey.marhoffer@gmail.com">
+<input name="mail" id="mail" class="display_none" type="mail" value="<?php echo $api_clients['mail'] ?>">
+
+<!--on envoie en POST le mail et le client_name pour le mail de modification-->
 <input name="client_name" id="client_name" class="display_none" type="text"
-    value="<?php echo $_POST['client_name'] ?>">
+    value="<?php echo $api_clients['client_name'] ?>">
+
+            <!-- On indique la page de template de mail à ouvrir -->
+<input class="display_none" type="text" id="template" name="template" value="modifications_permissions_globales">
 
         <input name="inscription_partenaire" class="btn btn-outline-success btn-lg lecture_seul" type="submit"
             value="Valider">
