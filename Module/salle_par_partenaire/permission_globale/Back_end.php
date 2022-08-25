@@ -16,7 +16,9 @@ if ($pdo->exec('UPDATE permission_globale SET members_read= "'. $_POST['members_
     <h3>Permissions globales ajoutées</h3>
     <!-- On indique le client_id -->
     <input class="display_none" type="text" id="client_id" name="client_id" value="<?php echo $_POST['client_id'] ?>">
-    <input class="display_none" type="text" id="client_id" name="client_id" value="<?php echo $client_id ?>">
+    <!--on envoie en POST le salle_id pour le formulaire de modification des permissions-->
+<input name="salle_id" id="salle_id" class="display_none" type="text"
+    value="<?php echo $_POST_['salle_id'] ?>">
 </form>
 
 <style>

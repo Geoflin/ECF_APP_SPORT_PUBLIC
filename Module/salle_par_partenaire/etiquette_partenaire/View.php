@@ -94,7 +94,6 @@ if($api_clients['actif']=='1'){
 
 
 
-</form>
 
 <!--on envoie en POST le salle_id pour le formulaire de modification des permissions-->
 <input name="salle_id" id="salle_id" class="display_none" type="text"
@@ -116,6 +115,9 @@ if($api_clients['actif']=='1'){
 <input class="display_none" type="text" id="template" name="template" value="marque_de_sport_activee_desactivee">
 
 </section>
+
+
+</form>
 
 <?php require_once '../../Module/salle_par_partenaire/permission_globale/View.php' ?>
 
