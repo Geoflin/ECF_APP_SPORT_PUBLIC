@@ -1,27 +1,26 @@
 <?php
 //on invoque tout les requires_once commun des pages
 require_once '../Commun/require_once.php';
-
+//On ouvre cette page uniquement aux administrateurs
 if ($isAdmin== 'oui'){
-
 ?>
 
 <!DOCTYPE html>
 <html>
-
+<!-- on lie la page à sa feuille de style -->
 <?php require_once '../Commun/Head.php' ?>
 
+<!-- on crée les boutons de navigations -->
 <nav>
     <span>
-        <a href="../../index.php"><button name="accueil" type="button"
-                class="btn btn-outline-success btn-lg">Accueil</button></a>
+        <?php require_once '../Commun/Btn_accueil.php' ?>
         <a href="../page_des_partenaires/View.php"><button type="button" class="btn btn-outline-success btn-lg">Voir
                 Partenaire</button></a>
     </span>
 </nav>
 
 <body>
-
+    <!-- formulaire inscription partenaire -->
     <form name="inscription_partenaire_1" method="POST" action="Back_end.php" onsubmit="return myFunction()">
 
         <section class="informations_client_et_droits_client">
@@ -61,24 +60,22 @@ if ($isAdmin== 'oui'){
                     <input class="display_none" type="text" name="actif" value="1">
                 </span>
 
-            
-
             <!-- On indique la page de template de mail à ouvrir -->
             <input class="display_none" type="text" id="template" name="template" value="Ajout_partenaire">
 
             <input name="inscription_partenaire" class="btn btn-outline-success btn-lg" type="submit" value="Valider">
-
             </section>
 
     </form>
+    <!-- on securise la validation du formulaire -->
     <script src="script.js"></script>
 </body>
-
 
 </html>
 
 <?php 
 } else {
-  echo "Accès non autorisé";
+    // message "accès non autorisé"
+    require_once '../Commun/Acces_non_autorise.php';
 };
 ?>

@@ -14,7 +14,7 @@ if ($_SESSION['username'] == $data_admin['username']  && $_SESSION['password'] =
 
 <!--Actualisation de la session partenaire lecture seule-->
 <?php
-if($isAdmin== 'non'){
+if($isAdmin== 'non' || !isset($isAdmin)){
     foreach ($pdo->query('SELECT * FROM `api_clients` WHERE client_name= "'.$_SESSION['username'].'" AND password="'.$_SESSION['password'].'" ', PDO::FETCH_ASSOC) as $data_partenaire) {
         $actif= $data_partenaire['actif'];
       /*Vérification d'identité*/
@@ -23,7 +23,7 @@ if($isAdmin== 'non'){
       }else {
           $lecture_seule= 'non';
       }
-}
+  }
 };
 ?>
 

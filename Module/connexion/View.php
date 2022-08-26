@@ -58,40 +58,37 @@ if ($_SESSION['username'] == $data_admin['username']  && MD5($_SESSION['password
                 class="<?php echo $btn_1 ?>">déconnexion</button></form>
     </div>
     <style>
-    .form,
-    .center {
+    .form, .center {
         display: none;
     }
     </style>
     <?php 
     } else { 
         //verification partenaire
-        if($_SESSION['username'] == $data_partenaire['client_name']  && MD5($_SESSION['password']) == MD5($data_partenaire['password']) && $data_partenaire['actif']){
+        if($_SESSION['username'] == $data_partenaire['client_name']  && MD5($_SESSION['password']) == MD5($data_partenaire['password']) && $data_partenaire['actif'] == '1'){
             ?>
     <div>
-        <a href="Pages/salle_par_partenaire/View.php"><button type="button" class="<?php echo $btn_1 ?>">Accèder à mon
-espace</button></a>
+        <a href="Pages/salle_par_partenaire/View.php"><button type="button" class="<?php echo $btn_1 ?>">Accèder à mon espace</button></a>
     </div>
     <div>
         <form>
             <button name="deconnexion" type="submit" onclick='window.location.reload(false)' class="<?php echo $btn_1 ?>">déconnexion</button>
         </form>
     </div>
+
     <style>
     .form,
     .center {
         display: none;
     }
     </style>
-    <?php
-        
 
+    <?php
     }else {
         //verification data_structure
         if($_SESSION['username_structure'] == $data_structure['Nom']  && MD5($_SESSION['password']) == MD5($data_structure['password']) && $data_structure['Salle_active'] == '1'){
             ?>
-    <div><a href="Pages/salle_par_partenaire/View.php"><button type="button" class="<?php echo $btn_1 ?>">Accèder à mon
-                espace</button></a></div>
+    <div><a href="Pages/salle_par_partenaire/View.php"><button type="button" class="<?php echo $btn_1 ?>">Accèder à mon espace</button></a></div>
     <div>
         <form><button name="deconnexion" type="submit" onclick='window.location.reload(false)'
                 class="<?php echo $btn_1 ?>">déconnexion</button></form>

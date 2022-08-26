@@ -1,3 +1,6 @@
+<!-- on detruit la session précèdente -->
+<?php require_once 'Module/connexion/session_destroy.php'; ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -24,7 +27,7 @@
 
   /*on charge la page de connexion*/
   require_once 'Module/connexion/View.php';
-  
+
   /*on vérifie l'identité de l'utilisateur*/
   require_once 'Module/connexion/verification_identite.php';
 ?>
