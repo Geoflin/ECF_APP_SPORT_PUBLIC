@@ -4,11 +4,6 @@ require_once '../Commun/require_once.php';
 if ($isAdmin== 'oui' || $lecture_seule== 'oui' || $lecture_structure== 'oui'){
 ?>
 
-<!--Vérification d'identité-->
-<?php
-if ($_SESSION['username'] == $data_admin['username']  && MD5($_SESSION['password']) == MD5($password) || $_SESSION['username'] == $data_partenaire['client_name']  && $_SESSION['password'] == $data_partenaire['password'] && $data_partenaire['actif']=='1' || $_SESSION['username_structure'] == $data_structure['Nom']  && $_SESSION['password'] == $data_structure['password']) {
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -54,5 +49,5 @@ if($lecture_seule== 'oui' || $lecture_structure=='oui'){
 ?>
 <?php 
 }
-}
+
   ?>
