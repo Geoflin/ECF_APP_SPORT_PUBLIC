@@ -14,6 +14,16 @@ if ($isAdmin== 'oui' || $lecture_seule== 'oui' || $lecture_structure== 'oui'){
     require_once '../Commun/CDN_Google_Fonts.php';
     ?>
 
+    <!-- on crée les boutons de navigations -->
+    <nav>
+    <a href="../../index.php"><button name="accueil" type="button"
+            class="btn btn-outline-success btn-lg lecture_admin">Accueil</button></a>
+    <a href="../../Pages/page_des_partenaires/View.php"><button type="button"
+            class="btn btn-outline-success btn-lg lecture_seule">
+            << Liste des partenaires </button></a>
+    </span>
+</nav>
+
 <body>
     <main>
         <?php

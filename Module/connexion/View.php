@@ -86,7 +86,7 @@ if ($_SESSION['username'] == $data_admin['username']  && MD5($_SESSION['password
     <?php
     }else {
         //verification data_structure
-        if($_SESSION['username_structure'] == $data_structure['Nom']  && MD5($_SESSION['password']) == MD5($data_structure['password']) && $data_structure['Salle_active'] == '1'){
+        if($_SESSION['username'] == $data_structure['Nom']  && MD5($_SESSION['password']) == MD5($data_structure['password']) && $data_structure['Salle_active'] == '1'){
             ?>
     <div><a href="Pages/salle_par_partenaire/View.php"><button type="button" class="<?php echo $btn_1 ?>">Accèder à mon espace</button></a></div>
     <div>

@@ -1,7 +1,7 @@
 <?php
 // require_once "../../env/secret2.php";
   //On recupère les informations grâce à l'ID du partenaire sur lesquel nous avons cliqué
-  if($dataCompte2['client_id'] != ""){
+  if($data_partenaire['client_id'] != ""){
     foreach ($pdo->query('SELECT client_id FROM api_clients WHERE client_name LIKE "'.$_SESSION['username'].'" ', PDO::FETCH_ASSOC) as $api_clients) { 
       $client_id2= $api_clients['client_id'];
     };

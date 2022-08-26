@@ -1,2 +1,2 @@
 <a href="../../index.php"><button name="accueil" type="button"
-                class="btn btn-outline-success btn-lg">Accueil</button></a>
+                class="<?php echo $btn_1 ?>">Accueil</button></a>

@@ -43,5 +43,6 @@
                   <input name="filtre" class="<?php echo $btn_1 ?>" type="submit" value="Chercher">
               </form>
           </button>
+          
       </row_1>
   </section>

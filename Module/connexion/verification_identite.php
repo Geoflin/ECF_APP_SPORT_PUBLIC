@@ -29,10 +29,10 @@ if($isAdmin== 'non' || !isset($isAdmin)){
 
 <!--Actualisation de la session data_structure lecture seule-->
 <?php
-if($isAdmin== 'non' && $lecture_seule== 'non'){
-    foreach ($pdo->query('SELECT * FROM `salle_de_sport3` WHERE Nom= "'.$_SESSION['username_structure'].'" AND password="'.$_SESSION['password'].'" ', PDO::FETCH_ASSOC) as $data_structure) {
+if($isAdmin== 'non' && $lecture_seule== 'non' || !isset($lecture_seule) ){
+    foreach ($pdo->query('SELECT * FROM `salle_de_sport3` WHERE Nom= "'.$_SESSION['username'].'" AND password="'.$_SESSION['password'].'" ', PDO::FETCH_ASSOC) as $data_structure) {
       /*Vérification d'identité*/
-      if ($_SESSION['username_structure'] == $data_structure['Nom']  && $_SESSION['password'] == $data_structure['password']) {
+      if ($_SESSION['username'] == $data_structure['Nom']  && $_SESSION['password'] == $data_structure['password']) {
           $lecture_structure= 'oui';
       }else {
           $lecture_structure= 'non';
