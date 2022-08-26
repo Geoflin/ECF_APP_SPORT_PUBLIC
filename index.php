@@ -5,25 +5,29 @@
     <title>Gestionnaire de salle de sport</title>
     <link rel="stylesheet" href="style.css" />
     <!--CDN Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <?php require_once 'Style/Bootstrap.php' ?>
 </head>
 
 <body>
-
     <h1>Gestionnaire salle de sport</h1>
-
     <img src="Img/marque_de_sport.png" />
 
-    <?php 
+<?php 
   /*on masque les erreurs pour raison de sécurité*/
   require_once 'Module/connexion/debug.php';
+
+  /*on charge la clès api de sendinblue (le gestionnaire d'envoie de mail)*/
   require_once "env/secret.php";
+
+  /*on charge les identifiants pdo*/
   require_once "env/secret2.php";
+
+  /*on charge la page de connexion*/
   require_once 'Module/connexion/View.php';
+  
   /*on vérifie l'identité de l'utilisateur*/
   require_once 'Module/connexion/verification_identite.php';
-  ?>
+?>
 
 </body>
 

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -12,9 +13,9 @@
 
     <!--Actualisation de la session administrateur-->
     <?php
-foreach ($pdo->query('SELECT * FROM `password` WHERE id="1" ', PDO::FETCH_ASSOC) as $password_admin) {
-  $username = $password_admin['username'];
-  $password = $password_admin['password'];
+foreach ($pdo->query('SELECT * FROM `password` WHERE id="1" ', PDO::FETCH_ASSOC) as $data_admin) {
+  $username = $data_admin['username'];
+  $password = $data_admin['password'];
   };
 ?>
 
@@ -31,8 +32,8 @@ foreach ($pdo->query('SELECT * FROM `password` WHERE id="1" ', PDO::FETCH_ASSOC)
 
     <!--Actualisation de la session partenaire lecture seule-->
     <?php
-foreach ($pdo->query('SELECT * FROM `api_clients` WHERE client_name= "'.$_POST['username'].'" AND password="'.$_POST['password'].'" ', PDO::FETCH_ASSOC) as $dataCompte2) {
-  $username = $dataCompte2['client_name'];
-  $password = $dataCompte2['password'];
+foreach ($pdo->query('SELECT * FROM `api_clients` WHERE client_name= "'.$_POST['username'].'" AND password="'.$_POST['password'].'" ', PDO::FETCH_ASSOC) as $data_partenaire) {
+  $username = $data_partenaire['client_name'];
+  $password = $data_partenaire['password'];
   };
 ?>

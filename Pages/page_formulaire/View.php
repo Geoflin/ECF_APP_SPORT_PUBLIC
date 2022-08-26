@@ -1,10 +1,7 @@
 <?php
-require_once "../../env/secret2.php";
-require_once "../../env/secret.php";
-/*on masque les erreurs pour raison de sécurité*/
-require_once '../../Module/connexion/debug.php';
-/*on vérifie l'identité de l'utilisateur*/
-require_once '../../Module/connexion/verification_identite.php';
+//on invoque tout les requires_once commun des pages
+require_once '../Commun/require_once.php';
+
 if ($isAdmin== 'oui'){
 
 ?>
@@ -12,16 +9,7 @@ if ($isAdmin== 'oui'){
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Page_formulaire</title>
-    <!--CDN Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <!--tyle de l'index -->
-    <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
+<?php require_once '../Commun/Head.php' ?>
 
 <nav>
     <span>
