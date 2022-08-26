@@ -33,6 +33,7 @@ if ($isAdmin== 'oui' || $lecture_seule== 'oui' || $lecture_structure== 'oui'){
 
 
 <?php
+//on masque des éléments en fonction du statut de l'utilisateur
 if($lecture_seule== 'oui' || $lecture_structure=='oui'){
 ?>
 

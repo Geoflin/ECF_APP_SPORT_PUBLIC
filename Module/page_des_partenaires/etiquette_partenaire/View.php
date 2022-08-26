@@ -1,105 +1,43 @@
 <!--Style du etiquette_partenaire -->
 <link href="../../Module/page_des_partenaires/etiquette_partenaire/style.css" rel="stylesheet" />
 
-
 <?php
-
-//si un bouton de la barre de défilement est activé on va à la page $_POST['plus']
-if(isset($_POST['plus'])){
-  $plus= $_POST['plus'];
-  if($plus<'1'){$plus='1';};
-  if($plus>'5'){$plus='5';};
-} else {
-//si un bouton de la barre de défilement est activé on va à la page $_POST['plus2']
-  if(isset($_POST['plus2'])){
-    $plus= $_POST['plus2'];
-    if($plus<'1'){$plus='1';};
-    if($plus>'5'){$plus='5';};
-  }else{
-//Par défaut la barre de défilement des étiquettes ce situe à la page 1 sinon on va à la page $_POST['plus']
-    $plus= '1';
-  };
-};
+//on traite l'activation des btn de défilement des pages
+require_once 'Defilement_des_pages/btn_active.php';
 
 //on calcule le nombre total de partenaire
-    //nb_de_ligne_database
-    foreach ($pdo->query('SELECT client_id FROM api_clients', PDO::FETCH_ASSOC) as $Id){ 
-      $ID[]= $Id['client_id'];
-      $nb_ID= round((count($ID)), 0, PHP_ROUND_HALF_DOWN);
-  }
+require_once 'Defilement_des_pages/calcul_nb_total_partenaire.php';
 
 //Si on appuie sur les flèches vers la gauche on va à la page n-1 de la barre de défilement des étiquettes
-$moins= ($plus-'1')*'6';
+require_once 'Defilement_des_pages/aller_au_page_precedente.php';
 
-      //On divise le nombre total de partenaire par 6 et on arrondi le résultat et on ajoute +1 pour obtenir le nombre de page d'étiquette
-      $nb_ID= round($nb_ID/'6')+'1';
+//On divise le nombre total de partenaire par le nb d'etiquette par page(6) +1 et on arrondi le résultat pour obtenir le nombre de page d'étiquette
+require_once 'Defilement_des_pages/Calcul_nb_total_page.php';
 
+//Par défaut: offset requête= 0 sinon le offset est égal à $super_plus= ($plus*'6')-'6'; (-6 car on enlève la première page 0 constistué de 6 étiquettes)
+require_once 'Defilement_des_pages/Calcul_offset_des_requetes.php';
 
-//Par défaut le offset de la requête se situe à 0 sinon on le offset est égal à $super_plus= ($plus*'6')-'6'; (-6 car on enlève la première page 0 constistué de 6 étiquettes)
-if($plus== '1'){
-  $super_plus= '0';
-} else {
-  $super_plus= ($plus*'6')-'6';
-  if($super_plus<'0'){$super_plus='0';};
-};
-
-?>
+//On choisit la requête $sql en fonction des filtres active
+require_once 'Gestion_des_filtres.php';
 
 
-<?php
+//On execute la pdo query sql
+foreach ($pdo->query($sql, PDO::FETCH_ASSOC) as $api_clients) { ?>
 
-  //On vérifie si le filtre 'client_name' a été activé
-  if (isset($_POST['Nom'])){
-    $sql = 'SELECT * FROM api_clients WHERE client_name LIKE "'.$_POST['Nom'].'" LIMIT 6 OFFSET '.$super_plus.'';
-  } else {
-    $sql = 'SELECT * FROM api_clients LIMIT 6 OFFSET '.$super_plus.' ';
-
-      //On vérifie si le filtre 'client_id' a été activé
-      if (isset($_POST['id'])){
-        $sql = 'SELECT * FROM api_clients WHERE client_id LIKE "'.$_POST['id'].'" LIMIT 6 OFFSET '.$super_plus.' ';
-      } else {
-        $sql = 'SELECT * FROM api_clients LIMIT 6 OFFSET '.$super_plus.' ';
-
-      //On vérifie si le filtre 'actif' a été activé
-      if (isset($_POST['actif'])){
-        $sql = 'SELECT * FROM api_clients WHERE actif LIKE 1 LIMIT 100 OFFSET '.$super_plus.'';
-      } else {
-        $sql = "SELECT * FROM api_clients LIMIT 6 OFFSET '.$super_plus.'";
-
-      //On vérifie si le filtre 'inactif' a été activé
-      if (isset($_POST['inactif'])){
-        $sql = 'SELECT * FROM api_clients WHERE actif LIKE 0 LIMIT 100 OFFSET '.$super_plus.' ';
-      } else {
-        $sql = 'SELECT * FROM api_clients LIMIT 6 OFFSET '.$super_plus.'';
-      //On vérifie si le filtre 'tout' a été activé
-      if (isset($_POST['tout'])){
-        $sql = 'SELECT * FROM api_clients LIMIT 100 OFFSET '.$super_plus.' ';
-      } else {
-        $sql = 'SELECT * FROM api_clients LIMIT 6 OFFSET '.$super_plus.' ';
-      }
-      }
-      }
-      }
-  }
-
-
-    foreach ($pdo->query($sql, PDO::FETCH_ASSOC) as $api_clients) { ?>
-
-<!--on regarde si la permission est actif_inactif-->
+<!--on détermine le statement du partenaire-->
 <?php
    if($api_clients['actif']==1){
       $checked= "checked";
    } else {
       $checked= "unchecked";
    }
-   ?>
-
+?>
 
 <!--View etiquette_partenaire-->
 
 <!--formulaire indiquant l'id_client à la page suivante-->
 <form method="POST" action="../../Pages/salle_par_partenaire/View.php">
-    <button name="salle_par_partenaire" type="submit" class="etiquette_partenaire btn btn-outline-success btn-lg">
+    <button name="salle_par_partenaire" type="submit" class="etiquette_partenaire <?php echo $btn_1; ?>">
 
         <!--Span reliant image_client_et_information_client-->
         <span class="image_client_et_information_client">
@@ -120,14 +58,11 @@ if($plus== '1'){
         </span>
 
         <input type="text" id="client_id" name="client_id" value="<?php echo $api_clients['client_id'] ?>">
-
 </form>
 
 <!--Section bouton_actif_inactif-->
 <section class="bouton_actif_inactif">
-
-    <label class="toggleSwitch nolabel" onclick="">
-
+    <label class="toggleSwitch nolabel">
         <input type="checkbox" id="<?php echo $api_clients['actif']; ?>" name="<?php echo $api_clients['actif']; ?>"
             value="1" <?php echo $checked; ?> />
         <span>
@@ -136,9 +71,7 @@ if($plus== '1'){
         </span>
         <a></a>
     </label>
-
 </section>
-
 </button>
 
 
