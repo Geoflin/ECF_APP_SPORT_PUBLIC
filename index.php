@@ -16,7 +16,7 @@
     <img src="Img/marque_de_sport.png" />
 
 <?php 
-  /*on charge la page de connexion*/
+  /*on charge la page de connexion*/ 
   require_once 'Module/connexion/View.php';
 
   /*on masque les erreurs pour raison de sécurité*/
