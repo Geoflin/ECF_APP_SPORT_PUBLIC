@@ -7,11 +7,6 @@
 <!--On crée le formulaire de modification du statut du partenaire-->
 <form name="statut_partenaire" method="POST" action="../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php" onsubmit="return script_etiquette_partenaire()">
 
-    <?php
-  
-
-//foreach ($pdo->query('SELECT * FROM `api_clients` WHERE `client_id` LIKE "'.$_POST['client_id'].'" ', PDO::FETCH_ASSOC) as $api_clients) { ?>
-
     <!--View etiquette_partenaire-->
     <section class="etiquette_partenaire <?php echo $_POST['lecture_seule'] ?>">
 

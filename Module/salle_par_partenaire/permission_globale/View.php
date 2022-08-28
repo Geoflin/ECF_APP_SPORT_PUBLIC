@@ -3,13 +3,13 @@
     <form name="ajouter_une_salle" method="POST"
         action="../../Module/salle_par_partenaire/permission_globale/Back_end.php" onsubmit="return myFunction()">
 
-
         <!--Tableau des permissions-->
-        <?php $permissions= array ("members_read", "members_write", "members_add", "members_products_add", "members_payment_schedules_read", "members_statistiques_read", "members_subscription_read", "payment_schedules_read", "payment_schedules_write", "payment_day_read"); ?>
+        <?php require_once '../../Module/salle_par_partenaire/Commun/Tableau_permissions.php'; ?>
 
 
         <section class="droits_client ">
 
+            <!-- on fait défiler les permissions du tableau -->
             <?php for ($i=0; $i < 10; $i++) { ?>
 
             <label for="<?php echo $permissions[$i]; ?>"><?php echo $permissions[$i]; ?></label>
@@ -20,7 +20,7 @@
 
 
         <section class="toggle">
-
+            <!-- on fait défiler les permissions du tableau -->
             <?php for ($ii=0; $ii < 10; $ii++) { ?>
 
                 <?php 

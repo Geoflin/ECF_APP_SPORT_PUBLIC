@@ -11,8 +11,6 @@
       $salle_id= $api_clients['salle_id'];
     };
   }
-
-
 ?>
 
 <?php

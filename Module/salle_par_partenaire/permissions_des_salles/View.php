@@ -14,21 +14,22 @@
 
                 <section class="box_bouton_actif_inactif">
 
-                    <!--Tableau des permissions-->
-                    <?php $permissions= array ("members_read", "members_write", "members_add", "members_products_add", "members_payment_schedules_read", "members_statistiques_read", "members_subscription_read", "payment_schedules_read", "payment_schedules_write", "payment_day_read"); ?>
+        <!--Tableau des permissions-->
+        <?php 
+        require_once '../../Module/salle_par_partenaire/Commun/Tableau_permissions.php'; 
 
-                    <?php for ($i=0; $i < 10; $i++) { ?>
+                    // on fait défiler les permissions du tableau
+                    for ($i=0; $i < 10; $i++) {
 
-                    <?php foreach ($pdo->query('SELECT * FROM `api_install_perm` WHERE `salle_id` LIKE "'.$salle_de_sport3['salle_id'].'" AND "'.$permissions[$i].'" LIKE "'.$permissions[$i].'"  ', PDO::FETCH_ASSOC) as $api_install_perm) { ?>
+                    foreach ($pdo->query('SELECT * FROM `api_install_perm` WHERE `salle_id` LIKE "'.$salle_de_sport3['salle_id'].'" AND "'.$permissions[$i].'" LIKE "'.$permissions[$i].'"  ', PDO::FETCH_ASSOC) as $api_install_perm) {
 
-                    <!--on regarde si la permission est actif_inactif-->
-                    <?php
-   if($api_install_perm[$permissions[$i]]==1 && $Salle_active['Salle_active']==1 && $client_actif==1){
-      $checked= "checked";
-   } else {
-      $checked= "unchecked";
-   }
-   ?>
+                    // on regarde si la permission est actif_inactif
+                    if($api_install_perm[$permissions[$i]]==1 && $Salle_active['Salle_active']==1 && $client_actif==1){
+                       $checked= "checked";
+                       } else {
+                       $checked= "unchecked";
+                    }
+                    ?>
 
                     <!--Section bouton_actif_inactif-->
                     <section class="bouton_actif_inactif">
@@ -47,13 +48,13 @@
 
                     </section>
 
-                    <?php }; ?>
-                    <?php }; ?>
+                    <?php 
+                      };
+                    }; 
+                    ?>
 
                     <input id="<?php $lecture_seule ?>" name="modification_permission"
                         class="btn btn-outline-success btn-lg" type="submit" value="Valider">
-
-
 
                 </section>
 </section>
@@ -67,9 +68,6 @@
 <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
 <input name="client_id" id="client_id" class="display_none" type="text"
     value="<?php echo $salle_de_sport3['client_id'] ?>">
-
-
-<?php }; ?>
 
 
 </form>
