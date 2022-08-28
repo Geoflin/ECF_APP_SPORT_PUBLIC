@@ -8,8 +8,8 @@ require_once '../../Module/connexion/verification_identite.php';
 if ($isAdmin== 'oui'){
 
 ?>
-
-<!DOCTYPE html>
+ 
+<!DOCTYPE html>   
 <html>
 
     <head>
