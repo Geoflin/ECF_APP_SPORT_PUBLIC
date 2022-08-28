@@ -7,9 +7,12 @@ body{
     display: flex;
     width: 1700px;
     height: max-content;
-    /*border: solid 3px blueviolet;*/
     flex-wrap: wrap;
 }
+.test_1{
+    width: 1700px;
+}
+
 
 /*style sur petits écrans*/
 @media screen and (max-width: 750px){
@@ -20,5 +23,12 @@ body{
     }
     .wrap{
         width: 100vw;
+        margin-left: 70%;
+        margin-top: 5%;
+    }
+    .footer{
+        width: 100vw;
+        margin-left: 70%;
+        margin-top: 5%;
     }
 }

@@ -195,8 +195,8 @@ a:hover {
 @media screen and (max-width: 750px){
   .etiquette_partenaire{
     height: max-content;
-    width: 100vw;
     border: 3px solid green;
-    margin: 0px 0px 0px 0px;
+    margin: 10px 20px 10px 20px;
+    text-align: justify;
 }
 }

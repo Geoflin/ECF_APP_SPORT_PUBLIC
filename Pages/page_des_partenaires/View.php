@@ -19,18 +19,24 @@ if ($isAdmin== 'oui'){
 </nav>
 
 <body>
-    <main>
+
+    <nav class="test_1">
         <!-- on invoque la barre de filtre des partenaires -->
         <?php require_once '../../Module/page_des_partenaires/filtre_partenaire/View.php'  ?>
+    </nav>
+
+    <main>
         <!-- etiquette des partenaires -->
         <section class="wrap">
             <?php require_once '../../Module/page_des_partenaires/etiquette_partenaire/View.php'  ?>
         </section>
     </main>
-    <footer>
+
+    <footer class="footer">
         <!-- barre de navigation entre les pages -->
         <?php require_once '../../Module/page_des_partenaires/footer_partenaire/View.php'  ?>
     </footer>
+
 </body>
 </html>
 
