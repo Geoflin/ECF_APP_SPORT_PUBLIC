@@ -11,8 +11,7 @@
         <label for="password">mot de passe</label>
         <input type="text" required="required" name="password" id="password" placeholder="password">
         <br />
-        <button name="connexion_admin_principal" type="submit" type="button"
-            class="<?php echo $btn_1 ?>">connexion</button>
+        <button name="connexion_admin_principal" type="submit" type="button" class="<?php echo $btn_1 ?>" id="connexion">connexion</button>
     </form>
 
     <!--Actualisation de la session administrateur-->
@@ -49,13 +48,12 @@ $_SESSION['salle_id_structure'] = $data_structure['salle_id'];
     <?php
 if ($_SESSION['username'] == $data_admin['username']  && MD5($_SESSION['password']) == MD5($password)) {
 ?>
-    <div><a href="Pages/page_des_partenaires/View.php"><button type="button" class="<?php echo $btn_1 ?>">Accèder à mon
+    <div><a href="Pages/page_des_partenaires/View.php"><button type="button" class="<?php echo $btn_1 ?>" id="connexion">Accèder à mon
                 espace</button></a></div>
-    <div><a href="Pages/page_formulaire/View.php"><button type="button" class="<?php echo $btn_1 ?>">Inscrire
+    <div><a href="Pages/page_formulaire/View.php"><button type="button" class="<?php echo $btn_1 ?>" id="connexion">Inscrire
                 un partenaire</button></a></div>
     <div>
-        <form><button name="deconnexion" type="submit" onclick='window.location.reload(false)'
-                class="<?php echo $btn_1 ?>">déconnexion</button></form>
+        <form><button name="deconnexion" type="submit" onclick='window.location.reload(false)' class="<?php echo $btn_1 ?>" id="connexion">déconnexion</button></form>
     </div>
     <style>
     .form, .center {
@@ -68,11 +66,11 @@ if ($_SESSION['username'] == $data_admin['username']  && MD5($_SESSION['password
         if($_SESSION['username'] == $data_partenaire['client_name']  && MD5($_SESSION['password']) == MD5($data_partenaire['password']) && $data_partenaire['actif'] == '1'){
             ?>
     <div>
-        <a href="Pages/salle_par_partenaire/View.php"><button type="button" class="<?php echo $btn_1 ?>">Accèder à mon espace</button></a>
+        <a href="Pages/salle_par_partenaire/View.php"><button type="button" class="<?php echo $btn_1 ?>" id="connexion">Accèder à mon espace</button></a>
     </div>
     <div>
         <form>
-            <button name="deconnexion" type="submit" onclick='window.location.reload(false)' class="<?php echo $btn_1 ?>">déconnexion</button>
+            <button name="deconnexion" type="submit" onclick='window.location.reload(false)' class="<?php echo $btn_1 ?>" id="connexion">déconnexion</button>
         </form>
     </div>
 
@@ -88,10 +86,9 @@ if ($_SESSION['username'] == $data_admin['username']  && MD5($_SESSION['password
         //verification data_structure
         if($_SESSION['username'] == $data_structure['Nom']  && MD5($_SESSION['password']) == MD5($data_structure['password']) && $data_structure['Salle_active'] == '1'){
             ?>
-    <div><a href="Pages/salle_par_partenaire/View.php"><button type="button" class="<?php echo $btn_1 ?>">Accèder à mon espace</button></a></div>
+    <div><a href="Pages/salle_par_partenaire/View.php"><button type="button" class="<?php echo $btn_1 ?>" id="connexion">Accèder à mon espace</button></a></div>
     <div>
-        <form><button name="deconnexion" type="submit" onclick='window.location.reload(false)'
-                class="<?php echo $btn_1 ?>">déconnexion</button></form>
+        <form><button name="deconnexion" type="submit" onclick='window.location.reload(false)' class="<?php echo $btn_1 ?>" id="connexion">déconnexion</button></form>
     </div>
     <style>
     .form,
