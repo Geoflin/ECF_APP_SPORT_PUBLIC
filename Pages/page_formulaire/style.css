@@ -212,51 +212,6 @@
         .toggleSwitch_permissions_des_salles.xlarge > span span:first-of-type {
           left: 50%;
         }
-      
-  /*style sur petits écrans*/
-  @media screen and (max-width: 750px){
-    .informations_client_et_droits_client{
-      display: block;
-      margin-top: 1%;
-      margin-right: auto;
-      margin-left: 1vw;
-      font-size: small;
-    }
-    .informations_client{
-      display: flex;
-      flex-direction: column;
-      width: none;
-      float: none;
-  }
-  section.informations_client > span *{
-    margin-left:0px ;
-    margin-bottom: 0vh;
-  }
-  .droits_client {
-    margin-top: 5%;
-    
-  }
-  .droits_client label{
-    display: flex;
-    border: 1px solid black;
-    width: 80%;
-    text-align: center;
-    margin-top: 1vh;
-    margin-bottom: 0.5vh;
-    font-size: small;
-  }
-  input{
-    margin-top: 1vh;
-    margin-left: 80vw;
-  }
-  .toggle{
-    margin-top: 4vh;
-    margin-left: 0vw;
-    display: flex;
-    flex-direction: column;
-    float: left;
-  }
-  }
   
   .droits_client, .toggle{
     float: left;

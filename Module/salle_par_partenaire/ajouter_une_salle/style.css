@@ -212,15 +212,29 @@
         .toggleSwitch_permissions_des_salles.xlarge > span span:first-of-type {
           left: 50%;
         }
+
+
+        .droits_client, .toggle{
+          float: left;
+        }
+      
+        .display_none{
+          display: none;
+        }
       
   /*style sur petits écrans*/
-  @media screen and (max-width: 750px){
+  @media screen and (max-width: 850px){
+    .ajouter_une_salle{
+      width: 150vw;
+      margin-left: 10vw;
+    }
     .informations_client_et_droits_client{
       display: block;
       margin-top: 1%;
       margin-right: 0;
       margin-left: 0vw;
       font-size: small;
+      width: min-content;
     }
     .informations_client{
       display: flex;
@@ -256,12 +270,4 @@
     flex-direction: column;
     float: left;
   }
-  }
-  
-  .droits_client, .toggle{
-    float: left;
-  }
-
-  .display_none{
-    display: none;
   }

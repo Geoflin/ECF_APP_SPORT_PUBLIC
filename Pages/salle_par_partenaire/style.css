@@ -2,31 +2,16 @@ body{
     margin-top: 5vw;
     margin-left: 5vw;
     margin-right: 5vw;
-    
 }
 .bouton_liste_partenaire{
     margin: 0px 0px 20px 0px;
 }
-.wrap{
-    display: flex;
-    width: 1700px;
-    height: max-content;
-    /*border: solid 3px blueviolet;*/
-    flex-wrap: wrap;
-}
-
-
 
 /*style sur petits écrans*/
-@media screen and (max-width: 1270px){
+@media screen and (max-width: 850px){
     body{
-        width: max-content;
-    }
-    .wrap{
-        display: flex;
-        width: 1700px;
-        height: max-content;
-        /*border: solid 3px blueviolet;*/
-        flex-wrap: wrap;
+        margin-top: 0vw;
+        margin-left: 0vw;
+        margin-right: 0vw;
     }
 }

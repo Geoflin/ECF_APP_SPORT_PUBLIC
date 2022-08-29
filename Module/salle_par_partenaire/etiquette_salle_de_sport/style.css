@@ -180,9 +180,16 @@
     
 /*style sur petits écrans*/
 @media screen and (max-width: 750px){
-  .etiquette_partenaire{
+  .etiquette_salle_de_sport{
     height: max-content;
     border: 3px solid green;
     margin: 0px 0px 0px 0px;
+    width: min-content;
+}
+.image_salle_de_sport_et_information_salle_de_sport{
+  display: flex;
+  justify-content: space-between;
+  width: min-content;
+  margin-left: 80vw;
 }
 }

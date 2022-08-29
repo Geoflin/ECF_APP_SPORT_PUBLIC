@@ -15,7 +15,7 @@ body{
 
 
 /*style sur petits écrans*/
-@media screen and (max-width: 750px){
+@media screen and (max-width: 850px){
     body{
         margin-top: 0px;
         margin-left: 0px;
