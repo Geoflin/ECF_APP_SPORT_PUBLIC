@@ -21,6 +21,11 @@ body{
         margin-left: 0px;
         margin-right: 0px;
     }
+    .wrap{
+        display: flex;
+        width: 0px;
+        height: max-content;
+    }
     .test_1{
         width: 0px;
     }

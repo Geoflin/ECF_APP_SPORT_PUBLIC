@@ -1,16 +1,15 @@
 .bouton_liste_partenaire{
   margin: 0px 0px 20px 0px;
 }
+
 .ajouter_une_salle{
   display: flex;
-  width: 1730px;
   height: max-content;
   /*border: solid 3px blueviolet;*/
   flex-wrap: wrap;
   border: 3px solid green;
 }
 
-  
   .informations_client_et_droits_client{
       display: flex;
       justify-content: space-between;
@@ -57,10 +56,8 @@
       flex-direction: column;
       width: max-content;
   }
-  
-  
-  
-  
+
+
   /*toggleSwitch_permissions_des_salles*/
   .toggleSwitch_permissions_des_salles {
       display: inline-block;
@@ -221,8 +218,8 @@
     .informations_client_et_droits_client{
       display: block;
       margin-top: 1%;
-      margin-right: auto;
-      margin-left: 1vw;
+      margin-right: 0;
+      margin-left: 0vw;
       font-size: small;
     }
     .informations_client{

@@ -4,9 +4,8 @@
 
 .etiquette_salle_de_sport{
     height: max-content;
-    width: 90vw;
     border: 3px solid green;
-    margin: 0px 0px 20px 0px;
+    margin: 0px 0px 0px 0px;
 }
 .image_salle_de_sport_et_information_salle_de_sport{
     display: flex;
@@ -183,7 +182,6 @@
 @media screen and (max-width: 750px){
   .etiquette_partenaire{
     height: max-content;
-    width: 100vw;
     border: 3px solid green;
     margin: 0px 0px 0px 0px;
 }
