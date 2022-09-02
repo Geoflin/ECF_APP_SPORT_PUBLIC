@@ -70,7 +70,7 @@
 
 
             <!--Tableau des permissions-->
-            <?php $permissions= array ("Lire", "Ecrire", "Ajouter", "Ajouter une production", "Lecture des paiements", "Lecture des statistques", "Abonnement", "Lecture date paiements", "Ecriture des paiements", "Lecture jours paiements"); ?>
+            <?php $permissions= array ("Lire", "Ecrire", "Ajouter", "Ajouter une production", "Lecture des paiements", "Lecture des statistques", "Abonnement", "Lecture_des_horaires_de_paiements", "Ecriture des paiements", "Lecture_des_jours_de_paiements"); ?>
 
             <section class="droits_client ">
 

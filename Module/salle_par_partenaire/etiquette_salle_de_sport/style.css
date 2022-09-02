@@ -41,8 +41,11 @@ span.image_salle_de_sport_et_information_salle_de_sport{
   margin-left: 0vw;
   width: 50%;
 }
+section.permissions_des_salles#permissions_des_salles{
+  width: 400vw;
+}
 section.bouton_actif_inactif{
-  font-size: 40px;
+  font-size: 50px;
 }
 img.image_salle_de_sport{
   width: 60%;
@@ -54,4 +57,5 @@ input.btn{
 input.valider{
   font-size: 60px;
 }
+
 }
