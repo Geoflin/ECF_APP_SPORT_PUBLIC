@@ -48,7 +48,7 @@ foreach ($pdo->query($sql, PDO::FETCH_ASSOC) as $api_clients) {
 <!--formulaire indiquant l'id_client à la page suivante-->
 <form method="POST" action="../../Pages/salle_par_partenaire/View.php">
     <button name="salle_par_partenaire" type="submit" class="etiquette_partenaire <?php echo $btn_1; ?>">
-
+    <h3>Etiquette partenaire</h3>
         <!--Span reliant image_client_et_information_client-->
         <span class="image_client_et_information_client">
 

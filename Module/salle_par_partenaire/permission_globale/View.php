@@ -8,7 +8,7 @@
         <!--Tableau des permissions-->
         <?php require_once '../../Module/salle_par_partenaire/Commun/Tableau_permissions.php'; ?>
 
-
+        <h3>Permissions globales</h3>
         <section class="droits_client_global ">
 
             <!-- on fait défiler les permissions du tableau -->

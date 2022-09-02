@@ -7,6 +7,7 @@
 <section class="ajouter_une_salle lecture_seule">
 
 <body>
+     <h3>Ajouter une salle</h3>
     <form name="ajouter_une_salle" method="POST" action="../../Module/salle_par_partenaire/ajouter_une_salle/Back_end.php" onsubmit="return script_ajout_salle_de_sport()">
 
         <section class="informations_client_et_droits_client">

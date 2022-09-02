@@ -42,7 +42,7 @@
 
             <!--Span reliant image_salle_de_sport_et_information_salle_de_sport-->
             <span class="image_salle_de_sport_et_information_salle_de_sport">
-
+            <h3>Etiquette structure</h3>
                 <!--Section image_salle_de_sport-->
                 <!-- <section class="image_salle_de_sport"> -->
                     <img class="image_salle_de_sport" src="../../Img/salle_de_sport.jpg" width="200" height="170">
