@@ -1,0 +1,36 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  table, th, td {
+    border: 1px solid black;
+  }
+  thead {
+    background-color: #1c87c9;
+    color: #ffffff;
+  }
+  th {
+    text-align: center;
+    height: 50px;
+  }
+  tbody tr:nth-child(odd) {
+    background: #ffffff;
+  }
+  tbody tr:nth-child(even) {
+    background: #f4f4f4;
+  }
+
+.main{
+    text-align: center;
+}
+
+.small{
+  font-size: small;
+  pointer-events: none;
+} 
+
+.white, .white:hover{
+  color: white;
+  text-decoration: none;
+}
+
