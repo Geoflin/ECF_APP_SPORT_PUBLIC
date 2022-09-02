@@ -1,0 +1,49 @@
+body {
+  font-family: Calibri, serif;
+  font-size: 40px;
+}
+h1, h3{
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-top: 80px;
+font-size: 40px;
+}
+
+img{
+margin-top: -30px;
+padding-top: 80px;
+height: 300px;
+width: 300px;
+margin-left: 42%;
+margin-right: 42%;
+
+}
+
+nav, h3, h2, form{
+margin: 1vw 1vw 1vw 1vw;
+}
+
+form, div{
+display: flex;
+flex-direction: column;
+width: max-content;
+padding-top: 20px;
+margin-left: 30%;
+margin-right: 42%;
+}
+
+button{
+font-size: 100px;
+width: 45vw;
+height: 100px;
+}
+
+#connexion{
+font-size: 40px;
+}
+
+input{
+font-size: 40px;
+width: 45vw;
+}

@@ -1,0 +1,25 @@
+body{
+    margin-top: 5vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+.bouton_liste_partenaire{
+    margin: 0px 0px 20px 0px;
+}
+
+/*style sur petits écrans*/
+@media screen and (max-width: 850px){
+    html{
+        width: max-content;
+    }
+    body{
+        margin-top: 5vw;
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+    button.accueil{
+        font-size: 50px;
+        width: 15%;
+        height: 10%;
+    }
+}

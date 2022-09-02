@@ -1,0 +1,19 @@
+{
+    "name": "root/router",
+    "authors": [
+        {
+            "name": "Guillaume Baur",
+            "email": "guilaume.baur@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "Router"
+        }
+    },
+    "require": {
+        "sendinblue/api-v3-sdk": "8.x.x",
+        "symfony/mailer": "^5.4",
+        "twig/twig": "^3.4"
+    }
+}

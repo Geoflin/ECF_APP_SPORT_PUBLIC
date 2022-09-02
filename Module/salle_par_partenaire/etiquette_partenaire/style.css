@@ -1,0 +1,42 @@
+.etiquette_partenaire{
+    border: 3px solid green;
+    margin: 0px 0px 0px 0px;
+}
+.image_client_et_information_client{
+    display: flex;
+    justify-content: space-between;
+}
+.image_client{
+    float: left;
+}
+.information_client, .information_client_2{
+    margin-top: 50px;
+}
+    
+/*style sur petits écrans*/
+@media screen and (max-width: 850px){
+    .image_client_et_information_client{
+        display: block;
+        justify-content: space-between;
+    }
+  section.etiquette_partenaire{
+    border: 3px solid green;
+    margin: 0px 0px 20px 0px;
+    width: 100%;
+    font-size: 40px;
+    flex-wrap: wrap;
+}
+#permissions_des_salles{
+  margin-left: 10vw;
+  width: 150vw;
+  font-size: 50px;
+}
+img.image_client{
+    width: 30%;
+    height: 20%;
+  }
+  input#valider{
+    font-size: 60px;
+}
+
+}

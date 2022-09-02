@@ -1,0 +1,64 @@
+.filtre_partenaire{
+    margin-bottom: 1rem;
+    width: 90vw;
+}
+row_1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    float: none;
+    padding: 1em;
+}
+row2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    float: none;
+    padding: 1em;
+}
+button.aide {
+    width: 500px;
+    height: 100px;
+}
+
+input.aide2{
+    margin: 0px 0px 0px 0px;
+}
+
+/*style sur petits écrans*/
+@media screen and (max-width: 850px){
+    .filtre_partenaire{
+        width: 0vw;
+  }
+  row_1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    float: none;
+    padding-left: 20em;
+    margin-left: 5em;
+}
+row2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    float: none;
+}
+button.aide {
+    width: 1000px;
+    height: 200px;
+    margin-left: 4em;
+}
+button.aide2{
+    margin-left: 2em;
+}
+form.form, input.aide2.btn {
+    font-size: 50px;
+}
+button.btn{
+    font-size: 50px;
+}
+  }
+  

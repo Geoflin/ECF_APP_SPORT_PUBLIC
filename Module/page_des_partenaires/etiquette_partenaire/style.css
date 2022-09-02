@@ -1,0 +1,47 @@
+a:link, a:visited, a:active{
+  text-decoration: underline;
+  color: green;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.etiquette_partenaire:hover a{
+  color: #fff;
+}
+
+#client_id{
+  display: none;
+}
+
+.etiquette_partenaire{
+    height: max-content;
+    width: 800px;
+    border: 3px solid green;
+    margin: 10px 20px 10px 20px;
+    text-align: justify;
+}
+.image_client_et_information_client{
+    display: flex;
+    justify-content: space-between;
+}
+.image_client{
+    float: left;
+}
+.information_client{
+    margin-top: 50px;
+    margin-right: 600px;
+    margin-left: 50px;
+}
+    
+/*style sur petits écrans*/
+@media screen and (max-width: 750px){
+  .etiquette_partenaire{
+    height: max-content;
+    border: 3px solid green;
+    margin: 10px 20px 10px 20px;
+    text-align: justify;
+}
+}

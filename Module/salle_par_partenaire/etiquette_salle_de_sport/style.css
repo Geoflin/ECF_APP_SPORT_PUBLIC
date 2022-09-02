@@ -1,0 +1,61 @@
+.display_none{
+  display: none;
+}
+
+.etiquette_salle_de_sport{
+    height: max-content;
+    border: 3px solid green;
+    margin: 0px 0px 0px 0px;
+}
+.image_salle_de_sport_et_information_salle_de_sport{
+    display: flex;
+    justify-content: space-between;
+    width: max-content;
+}
+span.image_salle_de_sport_et_information_salle_de_sport{
+  width: max-content;
+}
+.image_salle_de_sport{
+    float: left;
+}
+.information_salle_de_sport{
+    margin-top: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+/*style sur petits écrans*/
+@media screen and (max-width: 850px){
+  .etiquette_salle_de_sport{
+    display: block;
+    height: max-content;
+    border: 3px solid green;
+    margin: 0px 0px 20px 0px;
+    width: 100%;
+    font-size: 40px;
+}
+.image_salle_de_sport_et_information_salle_de_sport{
+  display: flex;
+  justify-content: space-between;
+  width: max-content;
+  margin-left: 0vw;
+  width: 50%;
+}
+section.permissions_des_salles#permissions_des_salles{
+  width: 400vw;
+}
+section.bouton_actif_inactif{
+  font-size: 50px;
+}
+img.image_salle_de_sport{
+  width: 60%;
+  height: 30%;
+}
+input.btn{
+  font-size: 40px;
+}
+input.valider{
+  font-size: 60px;
+}
+
+}

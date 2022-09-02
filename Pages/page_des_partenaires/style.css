@@ -1,0 +1,32 @@
+body{
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.wrap{
+    display: flex;
+    width: 1700px;
+    height: max-content;
+    flex-wrap: wrap;
+}
+.test_1{
+    width: 1700px;
+}
+
+
+/*style sur petits écrans*/
+@media screen and (max-width: 850px){
+    body{
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .wrap{
+        display: flex;
+        width: 0px;
+        height: max-content;
+    }
+    .test_1{
+        width: 0px;
+    }
+}

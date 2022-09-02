@@ -1,0 +1,69 @@
+.bouton_liste_partenaire{
+  margin: 0px 0px 20px 0px;
+}
+.ajouter_une_salle{
+  display: flex;
+  width: 1730px;
+  height: max-content;
+  /*border: solid 3px blueviolet;*/
+  flex-wrap: wrap;
+  border: 3px solid green;
+}
+
+  
+  .informations_client_et_droits_client{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5vw;
+      margin-right: 5vw;
+      margin-left: 1vw;
+      width: max-content;
+  }
+  
+  .informations_client{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      width: max-content;
+  }
+  
+  section.informations_client > span *{
+      margin-left: 50px;
+      margin-bottom: -10vh;
+      width: max-content;
+  }
+  
+  .droits_client label{
+      border: 1px solid black;
+      width: max-content;
+      text-align: center;
+      margin-left: 10vw;
+      margin-bottom: 0.5vh;
+      display: flex;
+      justify-content: center;
+      width: 20vw;
+  }
+  
+  input{
+      margin-top: 3vh;
+      margin-left: 54vw;
+      width: max-content;
+  }
+  
+  .toggle{
+      margin-left: 1vw;
+      display: flex;
+      flex-direction: column;
+      width: max-content;
+  }
+  
+  .droits_client, .toggle{
+    float: left;
+  }
+
+  .display_none{
+    display: none;
+  }
+
+  

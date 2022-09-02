@@ -1,0 +1,19 @@
+.filtre_partenaire{
+    border: 3px solid green;
+    margin-bottom: 1rem;
+}
+row_1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    float: none;
+    padding: 1em;
+}
+
+
+/*style sur petits écrans*/
+@media screen and (max-width: 750px){
+    .filtre_partenaire{
+        margin-bottom: 0rem;
+  }
+  }

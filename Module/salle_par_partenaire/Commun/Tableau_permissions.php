@@ -1,0 +1,2 @@
+<!--Tableau des permissions-->
+<?php $permissions= array ("Lire", "Ecrire", "Ajouter", "Ajouter_une_production", "Lecture_des_paiements", "Lecture_des_statistques", "Abonnement", "Lecture_des_horaires_de_paiements", "Ecriture_des_paiements", "Lecture_des_jours_de_paiements"); ?>

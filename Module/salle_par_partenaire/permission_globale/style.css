@@ -1,0 +1,150 @@
+.bouton_liste_partenaire{
+  margin: 20px 0px 20px 0px;
+}
+
+.ajouter_une_salle{
+  display: flex;
+  height: min-content;
+  flex-wrap: wrap;
+  border: 3px solid green;
+}
+
+  .informations_client_et_droits_client_global{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5vw;
+      margin-right: 0vw;
+      margin-left: 1vw;
+      width: min-content;
+  }
+  
+  .informations_client{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      width: max-content;
+  }
+
+  section.droits_client_global {
+    margin-top: 0.5%;
+    margin-right: ;
+    margin-left: ;
+  }
+  
+  section.informations_client > span *{
+      margin-left: 50px;
+      margin-bottom: -10vh;
+      width: max-content;
+  }
+
+  .droits_client_global label{
+      border: 1px solid black;
+      width: min-content;
+      text-align: center;
+      margin-left: 10vw;
+      margin-bottom: 0.6vh;
+      display: flex;
+      justify-content: center;
+      width: 20vw;
+  }
+  
+  input{
+      margin-top: 3vh;
+      margin-left: 54vw;
+      width: min-content;
+  }
+  
+  .toggle_global{
+      margin-left: 1vw;
+      display: flex;
+      flex-direction: column;
+      width: max-content;
+  }
+
+  .toggle_gloal_Switch_permissions_des_salles{
+    margin-bottom: -0.6vh;
+  }
+
+        .droits_client_global, .toggle_global{
+          float: left;
+        }
+      
+        .display_none{
+          display: none;
+        }
+      
+  /*style sur petits écrans*/
+  @media screen and (max-width: 850px){
+
+    .ajouter_une_salle{
+      width: 90%;
+      margin-left: 5vw;
+    }
+    .informations_client_et_droits_client_global{
+      display: flex;
+      margin-top: 1%;
+      margin-right: 0;
+      margin-left: 10vw;
+      font-size: 25px;
+      width: min-content;
+    }
+    .informations_client{
+      display: flex;
+      flex-direction: column;
+      width: none;
+      float: none;
+  }
+  section.informations_client > span *{
+    display: flex;
+    margin-left: 0px;
+    margin-bottom: 1vh;
+    width: max-content;
+
+}
+  section.droits_client_global {
+    margin-top: 2%;
+    margin-right: ;
+    margin-left: ;
+  }
+  .droits_client_global label{
+    display: flex;
+    border: 1px solid black;
+    width: 100%;
+    text-align: start;
+    margin-right: 50px;
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+    font-size: 50px;
+  }
+  input{
+    margin-top: 1vh;
+    margin-left: 80vw;
+  }
+  .valider{
+    font-size: 50px;
+  }
+  .toggle_global{
+    margin-top: 10vh;
+    margin-bottom: 6vh;
+    margin-left: 0vw;
+    display: flex;
+    flex-direction: column;
+    float: left;
+  }
+  .toggle_gloal_Switch_permissions_des_salles{
+    margin-bottom: 10vh;
+  }
+  section.toggle_global{
+    margin-top: 5vh;
+    font-size: 50px;
+  }
+  }
+
+  .display_none{
+    display: none;
+  }
+
+  input#client_name.display_none{
+    display: none;
+  }
