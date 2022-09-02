@@ -17,7 +17,7 @@ if ($isAdmin== 'oui' || $partenaire== 'oui' || $lecture_structure== 'oui'){
     <!-- on crée les boutons de navigations -->
     <nav>
     <a href="../../index.php"><button name="accueil" type="button"
-            class="btn btn-outline-success btn-lg lecture_admin">Accueil</button></a>
+            class="accueil btn btn-outline-success btn-lg lecture_admin">Accueil</button></a>
     <a href="../../Pages/page_des_partenaires/View.php"><button type="button"
             class="btn btn-outline-success btn-lg partenaire">
             << Liste des partenaires </button></a>
