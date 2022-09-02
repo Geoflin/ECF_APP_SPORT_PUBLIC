@@ -2,6 +2,7 @@
 
 //Ajout_salle_de_sport:
 //https://my.sendinblue.com/template/fZChLEgR15F_NWtXcO3OCXNb5SwY_KfZB3WeKgPNMJlmpqPEU9krPBDf
+
 $Id_Ajout_salle_de_sport= mettez_id_template;
 
 //marque_de_sport_activée/désactivée

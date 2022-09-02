@@ -17,4 +17,9 @@ body{
         margin-left: 5vw;
         margin-right: 5vw;
     }
+    button.accueil{
+        font-size: 50px;
+        width: 15%;
+        height: 10%;
+    }
 }
