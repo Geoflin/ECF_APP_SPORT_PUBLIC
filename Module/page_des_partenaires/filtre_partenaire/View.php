@@ -4,14 +4,14 @@
   <!--View filtre partenaire-->
   <section class="filtre_partenaire">
       <row_1>
-          <!--Filtre client_id-->
+          <!--Filtre client_name-->
           <button type="button" class="<?php echo $btn_1 ?>">
               <form class="form" method="post" action="">
                   <span>
-                      <label for="Nom">client_name:</label>
+                      <label for="Nom">Nom:</label>
                       <input type="text" id="Nom" name="Nom">
                   </span>
-                  <input name="filtre" class="<?php echo $btn_1 ?>" type="submit" value="Chercher">
+                  <input name="client_name" class="<?php echo $btn_1 ?>" type="submit" value="Chercher">
               </form>
           </button>
 
@@ -37,10 +37,10 @@
           <button type="button" class="<?php echo $btn_1 ?>">
               <form class="form" method="post" action="">
                   <span>
-                      <label for="id">client_id:</label>
+                      <label for="id">Id:</label>
                       <input type="text" id="id" name="id">
                   </span>
-                  <input name="filtre" class="<?php echo $btn_1 ?>" type="submit" value="Chercher">
+                  <input name="client_id" class="<?php echo $btn_1 ?>" type="submit" value="Chercher">
               </form>
           </button>
           

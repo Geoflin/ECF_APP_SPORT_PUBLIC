@@ -37,6 +37,7 @@ input.aide2{
     align-items: center;
     float: none;
     padding-left: 20em;
+    margin-left: 5em;
 }
 row2{
     display: flex;
@@ -44,7 +45,20 @@ row2{
     justify-content: center;
     align-items: center;
     float: none;
-    
+}
+button.aide {
+    width: 1000px;
+    height: 200px;
+    margin-left: 4em;
+}
+button.aide2{
+    margin-left: 2em;
+}
+form.form, input.aide2.btn {
+    font-size: 50px;
+}
+button.btn{
+    font-size: 50px;
 }
   }
   

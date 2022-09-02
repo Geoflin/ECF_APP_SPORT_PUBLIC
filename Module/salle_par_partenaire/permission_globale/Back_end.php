@@ -1,10 +1,12 @@
 <?php
+/*on masque les erreurs pour raison de sécurité*/
+require_once '../../../Module/connexion/debug.php';
 //cles secretes
 require_once '../../../Module/salle_par_partenaire/Commun/Require_once.php'; 
 //CDN Bootstrap
 require_once '../../../Style/Bootstrap.php'; 
 //on update les pêrmissions globales
-if ($pdo->exec('UPDATE permission_globale SET members_read= "'. $_POST['members_read'] . '", members_write= "'. $_POST['members_write'] . '", members_add= "'. $_POST['members_add'] . '", members_products_add= "'. $_POST['members_products_add'] . '", members_payment_schedules_read= "'. $_POST['members_payment_schedules_read'] . '", members_statistiques_read= "'. $_POST['members_statistiques_read'] . '", members_subscription_read = "'. $_POST['members_subscription_read'] . '", payment_schedules_read = "'. $_POST['payment_schedules_read'] . '", payment_schedules_write="'. $_POST['payment_schedules_write'] . '", payment_day_read= "'. $_POST['payment_day_read'] . '" WHERE client_id = "'.$_POST['client_id'].'" ;' ) !== false){};
+if ($pdo->exec('UPDATE permission_globale SET Lire= "'. $_POST['Lire'] . '", Ecrire= "'. $_POST['Ecrire'] . '", Ajouter= "'. $_POST['Ajouter'] . '", Ajouter_une_production= "'. $_POST['Ajouter_une_production'] . '", Lecture_des_paiements= "'. $_POST['Lecture_des_paiements'] . '", Lecture_des_statistques= "'. $_POST['Lecture_des_statistques'] . '", Abonnement= "'. $_POST['Abonnement'] . '", Lecture_des_horaires_de_paiements= "'. $_POST['Lecture_des_horaires_de_paiements'] . '", Ecriture_des_paiements="'. $_POST['Ecriture_des_paiements'] . '", Lecture_des_jours_de_paiements= "'. $_POST['Lecture_des_jours_de_paiements'] . '" WHERE client_id = "'.$_POST['client_id'].'" ;' ) !== false){};
 ?>
 
 

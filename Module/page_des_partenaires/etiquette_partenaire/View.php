@@ -1,9 +1,11 @@
 <!--Style du etiquette_partenaire -->
 <link href="../../Module/page_des_partenaires/etiquette_partenaire/style.css" rel="stylesheet" />
+<!--Style bouton actif/inactif -->
+<link href="../../Style/Toggleswitch/etiquette_partenaire_2.css" rel="stylesheet" />
 
 <?php
 //on traite l'activation des btn de défilement des pages
-require_once 'Defilement_des_pages/btn_active.php';
+require_once 'Defilement_des_pages/defilement_des_pages.php';
 
 //on calcule le nombre total de partenaire
 require_once 'Defilement_des_pages/calcul_nb_total_partenaire.php';
@@ -18,14 +20,22 @@ require_once 'Defilement_des_pages/Calcul_nb_total_page.php';
 require_once 'Defilement_des_pages/Calcul_offset_des_requetes.php';
 
 //On choisit la requête $sql en fonction des filtres active
-require_once 'Gestion_des_filtres.php';
+require_once 'Gestion_des_filtres/Gestion_des_filtres.php';
 
+//On vérifie si le filtre 'client_name' a été activé
+require_once 'Gestion_des_filtres/Recherche_par_nom.php';
+              
+//On crée une boucle for pour répéter le code autant de fois qu'il y a de résultat lors de la recherche du nom du partenaire                       
+for ($a=0; $a < $counti; $a++) {  
+//On sélectionne la clès pdo de la recherche du nom du client                        
+if (isset($_POST['client_name'])){
+    $sql = 'SELECT * FROM api_clients WHERE client_name LIKE "'.$Nom_fetch[$a].'" ';
+}
 
 //On execute la pdo query sql
-foreach ($pdo->query($sql, PDO::FETCH_ASSOC) as $api_clients) { ?>
+foreach ($pdo->query($sql, PDO::FETCH_ASSOC) as $api_clients) { 
 
-<!--on détermine le statement du partenaire-->
-<?php
+// on détermine le statement du partenaire
    if($api_clients['actif']==1){
       $checked= "checked";
    } else {
@@ -75,4 +85,7 @@ foreach ($pdo->query($sql, PDO::FETCH_ASSOC) as $api_clients) { ?>
 </button>
 
 
-<?php } ?>
+<?php 
+ };
+};
+?>

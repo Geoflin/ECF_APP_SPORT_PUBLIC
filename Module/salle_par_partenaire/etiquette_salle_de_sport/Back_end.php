@@ -6,7 +6,7 @@ require_once '../../../Module/salle_par_partenaire/Commun/Require_once.php';
 require_once '../../../Style/Bootstrap.php'; 
 
 /*on masque les erreurs pour raison de sécurité*/
-require_once '../../../Module/connexion/debug.php';
+//require_once '../../../Module/connexion/debug.php';
 
 //On traite le formulaire de modification des permissions
 require_once '../../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end/Update_permissions.php';

@@ -1,10 +1,8 @@
-/ecfppsport
+composer.json
+composer.lock
 /env
 secret.php
 secret2.php
-vendor
-composer.json
-composer.lock
+/vendor
 table.sql
 salle_de_sport.sql
-Untitled-1.php

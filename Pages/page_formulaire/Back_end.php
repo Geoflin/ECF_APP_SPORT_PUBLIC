@@ -6,8 +6,8 @@
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
 <?php
-  if ($pdo->exec('INSERT INTO api_clients (actif, client_name, password, active, short_description, full_description, urll, mail) VALUES ("'. $_POST['actif'] . '", "'. $_POST['client_name'] . '", "'. MD5($_POST['password']) . '", "On", "'. $_POST['short_description'] . '", "'. $_POST['full_description'] . '", "'. $_POST['urll'] . '", "'. $_POST['mail'] . '");') !== false){};
-  if ($pdo->exec('INSERT INTO permission_globale (members_read, members_write, members_add, members_products_add, members_payment_schedules_read, members_statistiques_read, members_subscription_read, payment_schedules_read, payment_schedules_write, payment_day_read) VALUES ("1", "1", "1", "1" , "1" , "1" , "1", "1", "1", "1");') !== false){};
+  if ($pdo->exec('INSERT INTO api_clients (actif, client_name, password, short_description, full_description, urll, mail) VALUES ("'. $_POST['actif'] . '", "'. $_POST['client_name'] . '", "'. MD5($_POST['password']) . '", "'. $_POST['short_description'] . '", "'. $_POST['full_description'] . '", "'. $_POST['urll'] . '", "'. $_POST['mail'] . '");') !== false){};
+  if ($pdo->exec('INSERT INTO permission_globale (Lire, Ecrire, Ajouter, Ajouter_une_production, Lecture_des_paiements, Lecture_des_statistques, Abonnement, Lecture_des_horaires_de_paiements, Ecriture_des_paiements, Lecture_des_jours_de_paiements) VALUES ("1", "1", "1", "1" , "1" , "1" , "1", "1", "1", "1");') !== false){};
 ?>
 
 <form method="POST" action="../page_des_partenaires/View.php">

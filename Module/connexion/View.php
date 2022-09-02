@@ -38,6 +38,7 @@ foreach ($pdo->query('SELECT * FROM `salle_de_sport3` WHERE Nom= "'.$_POST['user
 // data_admin_ou_partenaire
 $_SESSION['username'] = $_POST['username'];
 $_SESSION['password'] = MD5($_POST['password']);
+$_SESSION['client_id'] = $data_structure['salle_id'];
 // data_structure
 $_SESSION['username_structure'] = $data_structure['Nom'];
 $_SESSION['salle_id_structure'] = $data_structure['salle_id'];

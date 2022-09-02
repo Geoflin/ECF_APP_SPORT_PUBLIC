@@ -1,4 +1,6 @@
 <?php
+/*on masque les erreurs pour raison de sécurité*/
+require_once '../../connexion/debug.php';
 //On traite le formulaire de modification du statut des salles
 if(isset($_POST['modification_statut_salle'])){
 

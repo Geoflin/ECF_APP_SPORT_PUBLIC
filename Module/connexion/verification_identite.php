@@ -19,9 +19,9 @@ if($isAdmin== 'non' || !isset($isAdmin)){
         $actif= $data_partenaire['actif'];
       /*Vérification d'identité*/
       if ($_SESSION['username'] == $data_partenaire['client_name']  && $_SESSION['password'] == $data_partenaire['password'] && $actif=='1') {
-          $lecture_seule= 'oui';
+          $partenaire= 'oui';
       }else {
-          $lecture_seule= 'non';
+          $partenaire= 'non';
       }
   }
 };
@@ -29,7 +29,7 @@ if($isAdmin== 'non' || !isset($isAdmin)){
 
 <!--Actualisation de la session data_structure lecture seule-->
 <?php
-if($isAdmin== 'non' && $lecture_seule== 'non' || !isset($lecture_seule) ){
+if($isAdmin== 'non' && $partenaire== 'non' || !isset($partenaire) ){
     foreach ($pdo->query('SELECT * FROM `salle_de_sport3` WHERE Nom= "'.$_SESSION['username'].'" AND password="'.$_SESSION['password'].'" ', PDO::FETCH_ASSOC) as $data_structure) {
       /*Vérification d'identité*/
       if ($_SESSION['username'] == $data_structure['Nom']  && $_SESSION['password'] == $data_structure['password']) {

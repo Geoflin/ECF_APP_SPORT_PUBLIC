@@ -1,5 +1,7 @@
 <!--Style du permissions_des_salles -->
 <link href="../../Module/salle_par_partenaire/permissions_des_salles/style.css" rel="stylesheet" />
+<!--Style du etiquette_salle_de_sport -->
+<link href="../../Style/Toggleswitch/permissions_des_salles.css" rel="stylesheet" />
 
 <!--View permissions_des_salles-->
 <section class="permissions_des_salles">
@@ -44,17 +46,17 @@
                             </span>
                             <a></a>
                         </label>
-                        <?php echo $permissions[$i]; ?>
 
                     </section>
+
+                    <label class="permission" id="<?php echo $permissions[$i] ?><"><?php echo $permissions[$i]; ?></label>
 
                     <?php 
                       };
                     }; 
                     ?>
 
-                    <input id="<?php $lecture_seule ?>" name="modification_permission"
-                        class="btn btn-outline-success btn-lg" type="submit" value="Valider">
+                    <input id="<?php $lecture_seule ?>" name="modification_permission" class="valider btn btn-outline-success btn-lg" type="submit" value="Valider">
 
                 </section>
 </section>

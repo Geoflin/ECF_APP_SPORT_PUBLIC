@@ -1,4 +1,6 @@
 <?php
+/*on masque les erreurs pour raison de sécurité*/
+require_once '../../connexion/debug.php';
 //On traite le formulaire de modification du statut partenaire
 if(isset($_POST['modification_statut_partenaire'])){
   

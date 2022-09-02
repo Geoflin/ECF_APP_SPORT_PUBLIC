@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html>
-
 <head>
     <link href="../../Module/salle_par_partenaire/ajouter_une_salle/style.css" rel="stylesheet" type="text/css" />
+    <!--Style bouton actif/inactif -->
+<link href="../../Style/Toggleswitch/permissions_des_salles.css" rel="stylesheet" />
 </head>
 
 <section class="ajouter_une_salle lecture_seule">
 
-    <form name="ajouter_une_salle" method="POST" action="../../Module/salle_par_partenaire/ajouter_une_salle/Back_end.php" onsubmit="return myFunction()">
+<body>
+    <form name="ajouter_une_salle" method="POST" action="../../Module/salle_par_partenaire/ajouter_une_salle/Back_end.php" onsubmit="return script_ajout_salle_de_sport()">
 
         <section class="informations_client_et_droits_client">
 
@@ -27,9 +27,6 @@
                     <input name="client_name" id="client_name" class="display_none" type="text"
                         value="<?php echo $api_clients['client_name'] ?>">
                     <?php } ?>
-
-
-                    <label for="client_name"><?php echo $api_clients['client_name'] ?></label>
 
                 </span>
 
@@ -73,7 +70,7 @@
 
 
             <!--Tableau des permissions-->
-            <?php $permissions= array ("members_read", "members_write", "members_add", "members_products_add", "members_payment_schedules_read", "members_statistiques_read", "members_subscription_read", "payment_schedules_read", "payment_schedules_write", "payment_day_read"); ?>
+            <?php $permissions= array ("Lire", "Ecrire", "Ajouter", "Ajouter une production", "Lecture des paiements", "Lecture des statistques", "Abonnement", "Lecture date paiements", "Ecriture des paiements", "Lecture jours paiements"); ?>
 
             <section class="droits_client ">
 
@@ -109,13 +106,10 @@
                         <!-- On indique le client_id -->
                         <input class="display_none" type="text" id="client_id" name="client_id" value="<?php echo $client_id ?>">
 
-        <input name="inscription_partenaire" class="btn btn-outline-success btn-lg lecture_seul" type="submit"
-            value="Valider">
+        <input name="ajouter_une_salle" class="valider btn btn-outline-success btn-lg lecture_seul" type="submit" value="Valider" onclick="return script_ajout_salle_de_sport()">
 
     </form>
 
 </section>
 <script src="../../Module/salle_par_partenaire/ajouter_une_salle/script_ajouter_une_salle.js"></script>
 </body>
-
-</html>

@@ -1,0 +1,154 @@
+/*toggleSwitch_permissions_des_salles*/
+.toggleSwitch_permissions_des_salles {
+    display: inline-block;
+    height: 18px;
+    position: relative;
+    overflow: visible;
+    padding: 0;
+    margin-left: 70px;
+    cursor: pointer;
+    width: 80px;
+    margin-top: 1.20vh;
+  }
+.toggleSwitch_permissions_des_salles label,
+.toggleSwitch_permissions_des_salles > span {
+  line-height: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+.toggleSwitch_permissions_des_salles label {
+  position: relative;
+  z-index: 3;
+  display: block;
+  width: 100%;
+}
+.toggleSwitch_permissions_des_salles input:focus ~ a,
+.toggleSwitch_permissions_des_salles input:focus + label {
+  outline: none;
+}
+.toggleSwitch_permissions_des_salles input {
+    position: absolute;
+    opacity: 0;
+    z-index: 5;
+  }
+.toggleSwitch_permissions_des_salles span span {
+  display: none;
+}
+.toggleSwitch_permissions_des_salles > span {
+    position: absolute;
+    left: -50px;
+    width: 100%;
+    margin: 0;
+    padding-right: 50px;
+    text-align: left;
+    white-space: nowrap;
+  }
+  .toggleSwitch_permissions_des_salles > span span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: block;
+    width: 50%;
+    margin-left: 50px;
+    text-align: left;
+    font-size: 0.9em;
+    width: 100%;
+    left: 15%;
+    top: -1px;
+    opacity: 0;
+  }
+  .toggleSwitch_permissions_des_salles a {
+    position: absolute;
+    right: 50%;
+    z-index: 4;
+    display: block;
+    height: 100%;
+    padding: 0;
+    left: 2px;
+    width: 18px;
+    background-color: #fff;
+    border: 1px solid #CCC;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+    .toggleSwitch_permissions_des_salles > span span:first-of-type {
+    color: #ccc;
+    opacity: 1;
+    left: 45%;
+  }
+  .toggleSwitch_permissions_des_salles > span:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50px;
+    top: -2px;
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .toggleSwitch_permissions_des_salles input:checked ~ a {
+    border-color: #fff;
+    left: 100%;
+    margin-left: -20px;
+  }
+  .toggleSwitch_permissions_des_salles input:checked ~ span:before {
+    border-color: #0097D1;
+    box-shadow: inset 0 0 0 30px #0097D1;
+  }
+  .toggleSwitch_permissions_des_salles input:checked ~ span span:first-of-type {
+    opacity: 0;
+  }
+  .toggleSwitch_permissions_des_salles input:checked ~ span span:last-of-type {
+    opacity: 1;
+    color: #fff;
+  }
+    /* Switch Sizes */
+    .toggleSwitch_permissions_des_salles.large {
+        width: 60px;
+        height: 27px;
+      }
+      .toggleSwitch_permissions_des_salles.large a {
+        width: 27px;
+      }
+      .toggleSwitch_permissions_des_salles.large > span {
+        height: 29px;
+        line-height: 28px;
+      }
+      .toggleSwitch_permissions_des_salles.large input:checked ~ a {
+        left: 41px;
+      }
+      .toggleSwitch_permissions_des_salles.large > span span {
+        font-size: 1.1em;
+      }
+      .toggleSwitch_permissions_des_salles.large > span span:first-of-type {
+        left: 50%;
+      }
+      .toggleSwitch_permissions_des_salles.xlarge {
+        width: 80px;
+        height: 36px;
+      }
+      .toggleSwitch_permissions_des_salles.xlarge a {
+        width: 36px;
+      }
+      .toggleSwitch_permissions_des_salles.xlarge > span {
+        height: 38px;
+        line-height: 37px;
+      }
+      .toggleSwitch_permissions_des_salles.xlarge input:checked ~ a {
+        left: 52px;
+      }
+      .toggleSwitch_permissions_des_salles.xlarge > span span {
+        font-size: 1.4em;
+      }
+      .toggleSwitch_permissions_des_salles.xlarge > span span:first-of-type {
+        left: 50%;
+      }

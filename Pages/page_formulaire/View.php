@@ -7,6 +7,8 @@ if ($isAdmin== 'oui'){
 
 <!DOCTYPE html>
 <html>
+<!--Style du etiquette_salle_de_sport -->
+<link href="../../Style/Toggleswitch/page_formulaire.css" rel="stylesheet" />
 <!-- on lie la page à sa feuille de style -->
 <?php require_once '../Commun/Head.php' ?>
 

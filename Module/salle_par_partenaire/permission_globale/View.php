@@ -1,4 +1,6 @@
-<section class="ajouter_une_salle lecture_seule">
+<link href="../../Module/salle_par_partenaire/permission_globale/style.css" rel="stylesheet" type="text/css" />
+<link href="../../Style/Toggleswitch/permission_globale.css" rel="stylesheet" type="text/css" />
+<section class="ajouter_une_salle lecture_structure">
 
     <form name="ajouter_une_salle" method="POST"
         action="../../Module/salle_par_partenaire/permission_globale/Back_end.php" onsubmit="return myFunction()">
@@ -7,7 +9,7 @@
         <?php require_once '../../Module/salle_par_partenaire/Commun/Tableau_permissions.php'; ?>
 
 
-        <section class="droits_client ">
+        <section class="droits_client_global ">
 
             <!-- on fait défiler les permissions du tableau -->
             <?php for ($i=0; $i < 10; $i++) { ?>
@@ -19,7 +21,7 @@
         </section>
 
 
-        <section class="toggle">
+        <section class="toggle_global">
             <!-- on fait défiler les permissions du tableau -->
             <?php for ($ii=0; $ii < 10; $ii++) { ?>
 
@@ -35,7 +37,7 @@
             }
             ?>
 
-            <label class="toggleSwitch_permissions_des_salles nolabel" onclick="">
+            <label class="toggle_gloal_Switch_permissions_des_salles nolabel" onclick="">
                 <input type="checkbox" id="<?php echo $permissions[$ii]; ?>" name="<?php echo $permissions[$ii]; ?>"
                     value="1" <?php echo $checked; ?>>
                 <span>
@@ -65,8 +67,8 @@
             <!-- On indique la page de template de mail à ouvrir -->
 <input class="display_none" type="text" id="template" name="template" value="modifications_permissions_globales">
 
-        <input name="inscription_partenaire" class="btn btn-outline-success btn-lg lecture_seul" type="submit"
-            value="Valider">
+        <input id="valider" name="inscription_partenaire" class="btn btn-outline-success btn-lg lecture_structure valider" type="submit"
+            value="Valider" onclick="return script_permissions_globales()">
 </section>
 </form>
 

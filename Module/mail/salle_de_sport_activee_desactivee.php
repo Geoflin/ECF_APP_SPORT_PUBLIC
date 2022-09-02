@@ -1,4 +1,8 @@
 <?php
+
+//on active le debug pour des raisons de sécurité
+require_once "../../connexion/debug.php";
+
 //On envoie un mail pour informer le partenaire de la modification du statut de la salle de sport avec sendinblue
 require_once('../../../vendor/autoload.php');
 
@@ -22,7 +26,6 @@ $sendSmtpEmail['headers'] = array('X-Mailin-custom'=>'custom_header_1:custom_val
 
 try {
     $result = $apiInstance->sendTransacEmail($sendSmtpEmail);
-    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionalEmailsApi->sendTransacEmail: ', $e->getMessage(), PHP_EOL;
 }
@@ -52,7 +55,6 @@ $sendSmtpEmail['headers'] = array('X-Mailin-custom'=>'custom_header_1:custom_val
 
 try {
     $result = $apiInstance->sendTransacEmail($sendSmtpEmail);
-    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionalEmailsApi->sendTransacEmail: ', $e->getMessage(), PHP_EOL;
 }

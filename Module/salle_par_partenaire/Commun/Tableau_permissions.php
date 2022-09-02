@@ -1,2 +1,2 @@
 <!--Tableau des permissions-->
-<?php $permissions= array ("members_read", "members_write", "members_add", "members_products_add", "members_payment_schedules_read", "members_statistiques_read", "members_subscription_read", "payment_schedules_read", "payment_schedules_write", "payment_day_read"); ?>
+<?php $permissions= array ("Lire", "Ecrire", "Ajouter", "Ajouter_une_production", "Lecture_des_paiements", "Lecture_des_statistques", "Abonnement", "Lecture_des_horaires_de_paiements", "Ecriture_des_paiements", "Lecture_des_jours_de_paiements"); ?>

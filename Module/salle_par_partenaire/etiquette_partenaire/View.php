@@ -1,22 +1,21 @@
-<!DOCTYPE html>
-<html>
-
 <!--Style etiquette_partenaire -->
 <link href="../../Module/salle_par_partenaire/etiquette_partenaire/style.css" rel="stylesheet" />
+<!--Style bouton actif/inactif -->
+<link href="../../Style/Toggleswitch/etiquette_partenaire.css" rel="stylesheet" />
 
 <!--On crée le formulaire de modification du statut du partenaire-->
 <form name="statut_partenaire" method="POST" action="../../Module/salle_par_partenaire/etiquette_salle_de_sport/Back_end.php" onsubmit="return script_etiquette_partenaire()">
 
     <!--View etiquette_partenaire-->
-    <section class="etiquette_partenaire <?php echo $_POST['lecture_seule'] ?>">
+    <section class="etiquette_partenaire <?php echo $_POST['partenaire'] ?>">
 
         <!--Span reliant image_client_et_information_client-->
         <span class="image_client_et_information_client">
 
             <!--Section image_client-->
-            <section class="image_client">
-                <img src="../../Img/marque_de_sport.png" width="200" height="170">
-            </section>
+            <!-- <section class="image_client"> -->
+                <img class="image_client" src="../../Img/marque_de_sport.png" width="200" height="170">
+            <!-- </section> -->
 
 
             <?php   
@@ -59,7 +58,7 @@ if($api_clients['actif']=='1'){
         <!--Section bouton_actif_inactif-->
         <section class="bouton_actif_inactif disabled">
 
-            <label class="toggleSwitch nolabel" onclick="return checkbox()">
+            <label class="toggle_gloal_Switch_etiquette_partenaire nolabel" onclick="return checkbox()">
                 <input class="" type="checkbox" id="actif" name="actif" value="1" <?php echo $checked_partenaire_actif; ?> onchange="this.value = this.checked ? '1' : '0'" />
                 <span>
                     <span>Inactif</span>
@@ -68,10 +67,7 @@ if($api_clients['actif']=='1'){
                 <a></a>
             </label>
 
-            <input name="modification_statut_partenaire" class="btn btn-outline-success btn-lg lecture_seule"
-                type="submit" value="Valider">
-
-            
+            <input name="modification_statut_partenaire" class="valider btn btn-outline-success btn-lg partenaire" type="submit" value="Valider" id="valider">            
 
             <!-- On indique la page de template de mail à ouvrir -->
 <input class="display_none" type="text" id="checked_partenaire_actif" name="checked_partenaire_actif" value="<?php echo $checked_partenaire_actif ?>">
@@ -92,7 +88,7 @@ if($api_clients['actif']=='1'){
     value="<?php echo $api_clients['client_name'] ?>">
 
 <!--on envoie en POST le client_id pour ne pas perturber le code précèdent-->
-<input name="client_id" id="client_id" class="display_none" type="text" value="<?php echo $_POST['client_id'] ?>">
+<input name="client_id" id="client_id" class="display_none" type="text" value="<?php echo $client_id ?>">
 
 
 <input type="text" id="marque_active_ou_desactive" class="display_none" name="marque_active_ou_desactive"
@@ -113,5 +109,3 @@ if($api_clients['actif']=='1'){
 <script src="../../Module/salle_par_partenaire/etiquette_partenaire/script_etiquette_partenaire.js"></script>
 
 </body>
-
-</html>

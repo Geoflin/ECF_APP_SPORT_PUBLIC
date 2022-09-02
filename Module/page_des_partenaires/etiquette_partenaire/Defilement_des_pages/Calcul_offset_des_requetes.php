@@ -3,7 +3,7 @@
 if($plus== '1'){
   $super_plus= '0';
 } else {
-  $super_plus= ($plus*'6')-'6';
+  $super_plus= ($plus*'6')-6;
   if($super_plus<'0'){$super_plus='0';};
 };
 ?>

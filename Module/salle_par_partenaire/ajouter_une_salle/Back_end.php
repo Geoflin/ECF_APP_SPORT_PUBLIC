@@ -1,4 +1,6 @@
 <?php
+/*on masque les erreurs pour raison de sécurité*/
+//require_once '../../../Module/connexion/debug.php';
 //on recupere api sendinblue (gestionnaire de mail)
 require_once "../../../env/secret.php";
 //on recupere identifiant pdo
@@ -10,7 +12,7 @@ require_once "../../../env/secret2.php";
 //on insere data clients dans table salle_de_sport3
 if ($pdo->exec('INSERT INTO salle_de_sport3 (client_id, Nom, branche, zones, password, mail) VALUES ("'. $_POST['client_id'] . '", "'. $_POST['Nom'] . '", "'. $_POST['branche'] . '", "'. $_POST['zones'] . '", "'. MD5($_POST['password_salle']) . '", "'. $_POST['mail_salle'] . '");') !== false){};
 //on insere permissions client dans table api_install_perm
-if ($pdo->exec('INSERT INTO api_install_perm (client_id, members_read, members_write, members_add, members_products_add, members_payment_schedules_read, members_statistiques_read, members_subscription_read, payment_schedules_read, payment_schedules_write, payment_day_read) VALUES ("'. $_POST['client_id'] . '", "'. $_POST['members_read'] . '", "'. $_POST['members_write'] . '", "'. $_POST['members_add'] . '", "'. $_POST['members_products_add'] . '" , "'. $_POST['members_payment_schedules_read'] . '" , "'. $_POST['members_statistiques_read'] . '" , "'. $_POST['members_subscription_read'] . '", "'. $_POST['payment_schedules_read'] . '", "'. $_POST['payment_schedules_write'] . '", "'. $_POST['payment_day_read'] . '");') !== false){};
+if ($pdo->exec('INSERT INTO api_install_perm (client_id, Lire, Ecrire, Ajouter, Ajouter_une_production, Lecture_des_paiements, Lecture_des_statistques, Abonnement, Lecture_des_horaires_de_paiements, Ecriture_des_paiements, Lecture_des_jours_de_paiements) VALUES ("'. $_POST['client_id'] . '", "'. $_POST['Lire'] . '", "'. $_POST['Ecrire'] . '", "'. $_POST['Ajouter'] . '", "'. $_POST['Ajouter_une_production'] . '" , "'. $_POST['Lecture_des_paiements'] . '" , "'. $_POST['Lecture_des_statistques'] . '" , "'. $_POST['Abonnement'] . '", "'. $_POST['Lecture_des_horaires_de_paiements'] . '", "'. $_POST['Ecriture_des_paiements'] . '", "'. $_POST['Lecture_des_jours_de_paiements'] . '");') !== false){};
 ?>
 
 <!-- partie redirection client -->

@@ -1,4 +1,7 @@
 <?php
+//on active le debug pour des raisons de sécurité
+require_once "../../Module/connexion/debug.php";
+
 //Envoie du mail de confimation d'inscription au partenaire avec sendinblue
 require_once('../../vendor/autoload.php');
 
@@ -19,7 +22,6 @@ $sendSmtpEmail['headers'] = array('X-Mailin-custom'=>'custom_header_1:custom_val
 
 try {
     $result = $apiInstance->sendTransacEmail($sendSmtpEmail);
-    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionalEmailsApi->sendTransacEmail: ', $e->getMessage(), PHP_EOL;
 }

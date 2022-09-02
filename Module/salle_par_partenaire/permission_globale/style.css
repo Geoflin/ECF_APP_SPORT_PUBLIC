@@ -9,7 +9,7 @@
   border: 3px solid green;
 }
 
-  .informations_client_et_droits_client{
+  .informations_client_et_droits_client_global{
       display: flex;
       justify-content: space-between;
       margin-top: 5vw;
@@ -25,6 +25,12 @@
       align-items: flex-end;
       width: max-content;
   }
+
+  section.droits_client_global {
+    margin-top: 0.5%;
+    margin-right: ;
+    margin-left: ;
+  }
   
   section.informations_client > span *{
       margin-left: 50px;
@@ -32,12 +38,12 @@
       width: max-content;
   }
 
-  .droits_client label{
+  .droits_client_global label{
       border: 1px solid black;
       width: min-content;
       text-align: center;
       margin-left: 10vw;
-      margin-bottom: 0.5vh;
+      margin-bottom: 0.6vh;
       display: flex;
       justify-content: center;
       width: 20vw;
@@ -49,15 +55,18 @@
       width: min-content;
   }
   
-  .toggle{
+  .toggle_global{
       margin-left: 1vw;
       display: flex;
       flex-direction: column;
       width: max-content;
   }
 
+  .toggle_gloal_Switch_permissions_des_salles{
+    margin-bottom: -0.6vh;
+  }
 
-        .droits_client, .toggle{
+        .droits_client_global, .toggle_global{
           float: left;
         }
       
@@ -68,20 +77,16 @@
   /*style sur petits écrans*/
   @media screen and (max-width: 850px){
 
-    section.ajouter_une_salle{
+    .ajouter_une_salle{
       width: 90%;
       margin-left: 5vw;
-      font-size: 50px;
     }
-    .valider{
-      font-size: 50px;
-    }
-    .informations_client_et_droits_client{
+    .informations_client_et_droits_client_global{
       display: flex;
       margin-top: 1%;
       margin-right: 0;
       margin-left: 10vw;
-      font-size: 50px;
+      font-size: 25px;
       width: min-content;
     }
     .informations_client{
@@ -89,51 +94,50 @@
       flex-direction: column;
       width: none;
       float: none;
-      font-size: 50px;
   }
   section.informations_client > span *{
     display: flex;
     margin-left: 0px;
     margin-bottom: 1vh;
-    width: 200px;
-    font-size: 40px;
+    width: max-content;
 
 }
-  section .droits_client {
-    margin-top: 5%;
-    margin-right: 1%;
-    margin-left: 1%;
-    font-size: 30px;
-    width: 700px;
+  section.droits_client_global {
+    margin-top: 2%;
+    margin-right: ;
+    margin-left: ;
   }
-  .droits_client label{
+  .droits_client_global label{
     display: flex;
     border: 1px solid black;
     width: 100%;
-    text-align: center;
+    text-align: start;
     margin-right: 50px;
     margin-top: 1vh;
-    margin-bottom: 0.5vh;
-    font-size: 40px;
+    margin-bottom: 3vh;
+    font-size: 50px;
   }
   input{
     margin-top: 1vh;
     margin-left: 80vw;
   }
-  .toggle{
+  .valider{
+    font-size: 50px;
+  }
+  .toggle_global{
     margin-top: 10vh;
-    margin-bottom: 0.5vh;
+    margin-bottom: 6vh;
     margin-left: 0vw;
     display: flex;
     flex-direction: column;
     float: left;
+  }
+  .toggle_gloal_Switch_permissions_des_salles{
+    margin-bottom: 10vh;
+  }
+  section.toggle_global{
+    margin-top: 5vh;
     font-size: 50px;
-  }
-  .toggleSwitch_permissions_des_salles{
-    margin-bottom: 5vh;
-  }
-  section.toggle{
-    margin-top: 10vh;
   }
   }
 

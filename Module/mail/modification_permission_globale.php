@@ -1,7 +1,9 @@
 <!-- On indique le mail du client -->
 <?php
-        
-foreach ($pdo->query('SELECT * FROM `api_clients` WHERE client_id LIKE "7" ', PDO::FETCH_ASSOC) as $api_clients) { 
+//on active le debug pour des raisons de sécurité
+require_once "../../connexion/debug.php";
+
+foreach ($pdo->query('SELECT * FROM `api_clients` WHERE client_id LIKE "'.$_POST['client_id'].'" ', PDO::FETCH_ASSOC) as $api_clients) { 
 $api_clients['mail'];
 $api_clients['client_name'];
 }
@@ -28,7 +30,6 @@ $sendSmtpEmail['headers'] = array('X-Mailin-custom'=>'custom_header_1:custom_val
 
 try {
     $result = $apiInstance->sendTransacEmail($sendSmtpEmail);
-    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionalEmailsApi->sendTransacEmail: ', $e->getMessage(), PHP_EOL;
 }

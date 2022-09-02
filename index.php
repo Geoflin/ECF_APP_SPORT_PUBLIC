@@ -25,11 +25,12 @@
   /*on charge les identifiants pdo*/
   require_once "env/secret2.php";
 
+    /*on charge la page de connexion*/ 
+    require_once 'Module/connexion/View.php';
+
   /*on vérifie l'identité de l'utilisateur*/
   require_once 'Module/connexion/verification_identite.php';
 
-  /*on charge la page de connexion*/ 
-  require_once 'Module/connexion/View.php';
 ?>
 
 </body>
