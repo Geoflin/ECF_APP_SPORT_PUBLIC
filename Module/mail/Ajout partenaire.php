@@ -1,4 +1,6 @@
 <?php
+//on récupère l'id du template
+require_once "../../env/template_sendinblue.php";
 //on active le debug pour des raisons de sécurité
 require_once "../../Module/connexion/debug.php";
 
@@ -16,7 +18,7 @@ $apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
 );
 $sendSmtpEmail = new \SendinBlue\Client\Model\SendSmtpEmail(); // \SendinBlue\Client\Model\SendSmtpEmail | Values to send a transactional email
 $sendSmtpEmail['to'] = array(array('email'=>$_POST['mail'], 'name'=>$_POST['client_name']));
-$sendSmtpEmail['templateId'] = 12;
+$sendSmtpEmail['templateId'] = $Id_Ajout_partenaire;
 $sendSmtpEmail['params'] = array('client_name'=>$_POST['client_name'], 'password'=>$_POST['password']);
 $sendSmtpEmail['headers'] = array('X-Mailin-custom'=>'custom_header_1:custom_value_1|custom_header_2:custom_value_2');
 

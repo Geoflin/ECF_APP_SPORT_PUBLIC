@@ -6,10 +6,13 @@
 <link href="../../Module/salle_par_partenaire/etiquette_salle_de_sport/style.css" rel="stylesheet" />
 <!--Style du etiquette_salle_de_sport -->
 <link href="../../Style/Toggleswitch/etiquette_salle_de_sport.css" rel="stylesheet" />
+<!--Style du permissions_des_salles -->
+<link href="../../Module/salle_par_partenaire/permissions_des_salles/style.css" rel="stylesheet" />
+<!--Style du etiquette_salle_de_sport -->
+<link href="../../Style/Toggleswitch/permissions_des_salles.css" rel="stylesheet" />
 </head>
 
 <body>
-
 <?php
     //on recupère l'id du partenaire
     require_once '../../Module/salle_par_partenaire/recuperer_id_partenaire.php';
@@ -39,10 +42,10 @@
 
         <!--View etiquette_partenaire-->
         <section class="etiquette_salle_de_sport">
-
+        <h3>Etiquette structure</h3>
             <!--Span reliant image_salle_de_sport_et_information_salle_de_sport-->
             <span class="image_salle_de_sport_et_information_salle_de_sport">
-            <h3>Etiquette structure</h3>
+
                 <!--Section image_salle_de_sport-->
                 <!-- <section class="image_salle_de_sport"> -->
                     <img class="image_salle_de_sport" src="../../Img/salle_de_sport.jpg" width="200" height="170">

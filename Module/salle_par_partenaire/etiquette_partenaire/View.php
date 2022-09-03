@@ -10,7 +10,7 @@
     <section class="etiquette_partenaire <?php echo $_POST['partenaire'] ?>">
 
     <h3>Etiquette partenaire</h3>
-
+    
         <!--Span reliant image_client_et_information_client-->
         <span class="image_client_et_information_client">
 
