@@ -1,2 +1,2 @@
 <?php
-$api= 'Votre clès api sendinblue';
+$api= 'Votre clé api sendinblue';
