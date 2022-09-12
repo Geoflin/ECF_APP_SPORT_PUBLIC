@@ -8,7 +8,7 @@
            <!--BARRE_DE_PAGE-->
            <div class="btn-group">
                <button name="plus" type="submit" class="flex_start" id="small_width" value="<?php echo $plus-'5' ?>">
-                   <<< </button>
+                   << </button>
                        <button name="plus" type="submit" id="small_width" value="<?php echo $plus-'1' ?>">
                            < </button>
                                <div><?php echo $plus."/".$nb_ID ?></div>
