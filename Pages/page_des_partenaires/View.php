@@ -25,6 +25,15 @@ if ($isAdmin== 'oui'){
         <?php require_once '../../Module/page_des_partenaires/filtre_partenaire/View.php'  ?>
     </nav>
 
+        <!-- search_ajax -->
+<div class="ajax" id="search_ajax"></div>
+<style>
+            .ajax{
+                display: block;
+            }
+            </style>
+<!-- search_ajax -->
+
     <main>
         <!-- etiquette des partenaires -->
         <section class="wrap">
@@ -38,6 +47,34 @@ if ($isAdmin== 'oui'){
     </footer>
 
 </body>
+
+<!-- search_ajax -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('#Nom').keyup(function(){
+            $('#search_ajax').html('');
+            var utilisateur = $(this).val();
+            if(utilisateur != ""){
+                $.ajax({
+                    type: 'POST',
+                    url: '../../Module/page_des_partenaires/etiquette_partenaire/Gestion_des_filtres/Recherche_par_nom.php',
+                    data: 'Nom=' + encodeURIComponent(utilisateur),
+                    success: function(data){
+                        if(data != ""){
+                            $('#search_ajax').append(data);
+                        }else{
+                            document.getElementById('search_ajax').innerHTML = "<div>Aucun utilisateurs</div>"
+                        }
+                    }
+                });
+            }
+        });
+    });
+</script>
+<!-- search_ajax -->
+
 </html>
 
 <?php 
