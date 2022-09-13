@@ -31,6 +31,8 @@
 
      <button class="btn btn-primary"><a class="white" href='../../../index.php' target="_blank">Mon espace client</a></button>
 
+     <p><strong>Remarque:</strong> si votre marque de sport a été désactivée : il vous sera impossible d'accéder à votre espace.</p>
+
      <p>Cordialement</p>
      <p><strong>Gestionnaire de salle de sport</strong></p>
 
