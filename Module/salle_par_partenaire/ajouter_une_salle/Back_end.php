@@ -1,6 +1,6 @@
 <?php
 /*on masque les erreurs pour raison de sécurité*/
-//require_once '../../../Module/connexion/debug.php';
+require_once '../../../Module/connexion/debug.php';
 //on recupere api sendinblue (gestionnaire de mail)
 require_once "../../../env/secret.php";
 //on recupere identifiant pdo
